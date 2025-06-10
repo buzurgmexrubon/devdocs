@@ -7,9 +7,9 @@ sidebar_position: 2
 
 Docusaurus provides some APIs on the clients that can be helpful to you when building your site.
 
-## Components {#components}
+## Components
 
-### `<ErrorBoundary />` {#errorboundary}
+### `<ErrorBoundary />`
 
 This component creates a [React error boundary](https://reactjs.org/docs/error-boundaries.html).
 
@@ -55,7 +55,7 @@ This component doesn't catch build-time errors and only protects against client-
 
 :::
 
-#### Props {#errorboundary-props}
+#### Props
 
 - `fallback`: an optional render callback returning a JSX element. It will receive an object with 2 attributes: `error`, the error that was caught, and `tryAgain`, a function (`() => void`) callback to reset the error in the component and try rendering it again. If not present, `@theme/Error` will be rendered instead. `@theme/Error` is used for the error boundaries wrapping the site, above the layout.
 
@@ -65,7 +65,7 @@ The `fallback` prop is a callback, and **not a React functional component**. You
 
 :::
 
-### `<Head/>` {#head}
+### `<Head/>`
 
 This reusable React component will manage all of your changes to the document head. It takes plain HTML tags and outputs plain HTML tags and is beginner-friendly. It is a wrapper around [React Helmet](https://github.com/nfl/react-helmet).
 
@@ -118,7 +118,7 @@ Outputs:
 </head>
 ```
 
-### `<Link/>` {#link}
+### `<Link/>`
 
 This component enables linking to internal pages as well as a powerful performance feature called preloading. Preloading is used to prefetch resources so that the resources are fetched by the time the user navigates with this component. We use an `IntersectionObserver` to fetch a low-priority request when the `<Link>` is in the viewport and then use an `onMouseOver` event to trigger a high-priority request when it is likely that a user will navigate to the requested resource.
 
@@ -145,7 +145,7 @@ const Page = () => (
 )
 ```
 
-#### `to`: string {#to-string}
+#### `to`: string
 
 The target location to navigate to. Example: `/docs/introduction`.
 
@@ -159,7 +159,7 @@ Prefer this component to vanilla `<a>` tags because Docusaurus does a lot of opt
 
 :::
 
-### `<Redirect/>` {#redirect}
+### `<Redirect/>`
 
 Rendering a `<Redirect>` will navigate to a new location. The new location will override the current location in the history stack like server-side redirects (HTTP 3xx) do. You can refer to [React Router's Redirect documentation](https://reacttraining.com/react-router/web/api/Redirect) for more info on available props.
 
@@ -182,7 +182,7 @@ const Home = () => {
 
 :::
 
-### `<BrowserOnly/>` {#browseronly}
+### `<BrowserOnly/>`
 
 The `<BrowserOnly>` component permits to render React components only in the browser after the React app has hydrated.
 
@@ -192,12 +192,12 @@ Use it for integrating with code that can't run in Node.js, because the `window`
 
 :::
 
-#### Props {#browseronly-props}
+#### Props
 
 - `children`: render function prop returning browser-only JSX. Will not be executed in Node.js
 - `fallback` (optional): JSX to render on the server (Node.js) and until React hydration completes.
 
-#### Example with code {#browseronly-example-code}
+#### Example with code
 
 ```jsx
 // highlight-start
@@ -215,7 +215,7 @@ const MyComponent = () => {
 }
 ```
 
-#### Example with a library {#browseronly-example-library}
+#### Example with a library
 
 ```jsx
 // highlight-start
@@ -236,13 +236,13 @@ const MyComponent = (props) => {
 }
 ```
 
-### `<Interpolate/>` {#interpolate}
+### `<Interpolate/>`
 
 A simple interpolation component for text containing dynamic placeholders.
 
 The placeholders will be replaced with the provided dynamic values and JSX elements of your choice (strings, links, styled elements...).
 
-#### Props {#interpolate-props}
+#### Props
 
 - `children`: text containing interpolation placeholders like `{placeholderName}`
 - `values`: object containing interpolation placeholder values
@@ -272,7 +272,7 @@ export default function VisitMyWebsiteMessage() {
 }
 ```
 
-### `<Translate/>` {#translate}
+### `<Translate/>`
 
 When [localizing your site](./i18n/i18n-introduction.mdx), the `<Translate/>` component will allow providing **translation support to React components**, such as your homepage. The `<Translate>` component supports [interpolation](#interpolate).
 
@@ -286,14 +286,14 @@ Apart from the `values` prop used for interpolation, it is **not possible to use
 
 :::
 
-#### Props {#translate-props}
+#### Props
 
 - `children`: untranslated string in the default site locale (can contain [interpolation placeholders](#interpolate))
 - `id`: optional value to be used as the key in JSON translation files
 - `description`: optional text to help the translator
 - `values`: optional object containing interpolation placeholder values
 
-#### Example {#example}
+#### Example
 
 ```jsx title="src/pages/index.js"
 import React from "react"
@@ -344,9 +344,9 @@ The `<Translate>` component supports interpolation. You can also implement [stri
 
 :::
 
-## Hooks {#hooks}
+## Hooks
 
-### `useDocusaurusContext` {#useDocusaurusContext}
+### `useDocusaurusContext`
 
 React hook to access Docusaurus Context. The context contains the `siteConfig` object from [docusaurus.config.js](api/docusaurus.config.js.mdx) and some additional site metadata.
 
@@ -411,7 +411,7 @@ The `siteConfig` object only contains **serializable values** (values that are p
 
 :::
 
-### `useIsBrowser` {#useIsBrowser}
+### `useIsBrowser`
 
 Returns `true` when the React app has successfully hydrated in the browser.
 
@@ -437,7 +437,7 @@ const MyComponent = () => {
 }
 ```
 
-### `useBaseUrl` {#useBaseUrl}
+### `useBaseUrl`
 
 React hook to prepend your site `baseUrl` to a string.
 
@@ -452,7 +452,7 @@ The `/baseUrl/` prefix is automatically added to all **absolute paths** by defau
 
 :::
 
-#### Options {#options}
+#### Options
 
 ```ts
 type BaseUrlOptions = {
@@ -461,7 +461,7 @@ type BaseUrlOptions = {
 }
 ```
 
-#### Example usage: {#example-usage}
+#### Example usage:
 
 ```jsx
 import React from "react"
@@ -487,7 +487,7 @@ Prefer a `require()` call for [assets](./guides/markdown-features/markdown-featu
 
 :::
 
-### `useBaseUrlUtils` {#useBaseUrlUtils}
+### `useBaseUrlUtils`
 
 Sometimes `useBaseUrl` is not good enough. This hook return additional utils related to your site's base URL.
 
@@ -507,7 +507,7 @@ const Component = () => {
 }
 ```
 
-### `useGlobalData` {#useGlobalData}
+### `useGlobalData`
 
 React hook to access Docusaurus global data created by all the plugins.
 
@@ -551,7 +551,7 @@ Inspect your site's global data at `.docusaurus/globalData.json`
 
 :::
 
-### `usePluginData` {#usePluginData}
+### `usePluginData`
 
 Access global data created by a specific plugin instance.
 
@@ -582,7 +582,7 @@ const MyComponent = () => {
 }
 ```
 
-### `useAllPluginInstancesData` {#useAllPluginInstancesData}
+### `useAllPluginInstancesData`
 
 Access global data created by a specific plugin. Given a plugin name, it returns the data of all the plugins instances of that name, by plugin id.
 
@@ -609,7 +609,7 @@ const MyComponent = () => {
 }
 ```
 
-### `useBrokenLinks` {#useBrokenLinks}
+### `useBrokenLinks`
 
 React hook to access the Docusaurus broken link checker APIs, exposing a way for a Docusaurus pages to report and collect their links and anchors.
 
@@ -646,13 +646,13 @@ export default function MyLink(props) {
 }
 ```
 
-## Functions {#functions}
+## Functions
 
-### `interpolate` {#interpolate-1}
+### `interpolate`
 
 The imperative counterpart of the [`<Interpolate>`](#interpolate) component.
 
-#### Signature {#signature}
+#### Signature
 
 ```ts
 // Simple string interpolation
@@ -662,7 +662,7 @@ function interpolate(text: string, values: Record<string, string>): string
 function interpolate(text: string, values: Record<string, ReactNode>): ReactNode
 ```
 
-#### Example {#example-1}
+#### Example
 
 ```js
 // highlight-next-line
@@ -671,7 +671,7 @@ import { interpolate } from "@docusaurus/Interpolate"
 const message = interpolate("Welcome {firstName}", { firstName: "Sébastien" })
 ```
 
-### `translate` {#translate-imperative}
+### `translate`
 
 The imperative counterpart of the [`<Translate>`](#translate) component. Also supporting [placeholders interpolation](#interpolate).
 
@@ -685,7 +685,7 @@ Use the imperative API for the **rare cases** where a **component cannot be used
 
 :::
 
-#### Signature {#signature-1}
+#### Signature
 
 ```ts
 function translate(
@@ -694,7 +694,7 @@ function translate(
 ): string
 ```
 
-#### Example {#example-2}
+#### Example
 
 ```jsx title="src/pages/index.js"
 import React from "react"
@@ -730,9 +730,9 @@ export default function Home() {
 }
 ```
 
-## Modules {#modules}
+## Modules
 
-### `ExecutionEnvironment` {#executionenvironment}
+### `ExecutionEnvironment`
 
 A module that exposes a few boolean variables to check the current rendering environment.
 
@@ -759,7 +759,7 @@ if (ExecutionEnvironment.canUseDOM) {
 | `ExecutionEnvironment.canUseIntersectionObserver` | `true` if on client and has `IntersectionObserver`.           |
 | `ExecutionEnvironment.canUseViewport`             | `true` if on client and has `window.screen`.                  |
 
-### `constants` {#constants}
+### `constants`
 
 A module exposing useful constants to client-side theme code.
 
