@@ -7,13 +7,13 @@ slug: /api/plugins/@docusaurus/plugin-pwa
 
 Docusaurus Plugin to add PWA support using [Workbox](https://developers.google.com/web/tools/workbox). This plugin generates a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers) in production build only, and allows you to create fully PWA-compliant documentation site with offline and installation support.
 
-## Installation {#installation}
+## Installation
 
 ```bash npm2yarn
 npm install --save @docusaurus/plugin-pwa
 ```
 
-## Configuration {#configuration}
+## Configuration
 
 Create a [PWA manifest](https://web.dev/add-manifest/) at `./static/manifest.json`.
 
@@ -23,38 +23,38 @@ Modify `docusaurus.config.js` with a minimal PWA config, like:
 export default {
   plugins: [
     [
-      '@docusaurus/plugin-pwa',
+      "@docusaurus/plugin-pwa",
       {
         debug: true,
         offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
+          "appInstalled",
+          "standalone",
+          "queryString",
         ],
         pwaHead: [
           {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/img/docusaurus.png',
+            tagName: "link",
+            rel: "icon",
+            href: "/img/docusaurus.png",
           },
           {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json', // your PWA manifest
+            tagName: "link",
+            rel: "manifest",
+            href: "/manifest.json", // your PWA manifest
           },
           {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: 'rgb(37, 194, 160)',
+            tagName: "meta",
+            name: "theme-color",
+            content: "rgb(37, 194, 160)",
           },
         ],
       },
     ],
   ],
-};
+}
 ```
 
-## Progressive Web App {#progressive-web-app}
+## Progressive Web App
 
 Having a service worker installed is not enough to make your application a PWA. You'll need to at least include a [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and have the correct tags in `<head>` ([Options > pwaHead](#pwahead)).
 
@@ -62,7 +62,7 @@ After deployment, you can use [Lighthouse](https://developers.google.com/web/too
 
 For a more exhaustive list of what it takes for your site to be a PWA, refer to the [PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist)
 
-## App installation support {#app-installation-support}
+## App installation support
 
 If your browser supports it, you should be able to install a Docusaurus site as an app.
 
@@ -74,7 +74,7 @@ App installation requires the HTTPS protocol and a valid manifest.
 
 :::
 
-## Offline mode (precaching) {#offline-mode-precaching}
+## Offline mode (precaching)
 
 We enable users to browse a Docusaurus site offline, by using service-worker precaching.
 
@@ -96,9 +96,9 @@ Offline mode / precaching requires downloading all the static assets of the site
 
 :::
 
-## Options {#options}
+## Options
 
-### `debug` {#debug}
+### `debug`
 
 - Type: `boolean`
 - Default: `false`
@@ -110,7 +110,7 @@ Turn debug mode on:
 - Unoptimized SW file output
 - Source maps
 
-### `offlineModeActivationStrategies` {#offlinemodeactivationstrategies}
+### `offlineModeActivationStrategies`
 
 - Type: `('appInstalled' | 'mobile' | 'saveData'| 'queryString' | 'always')[]`
 - Default: `['appInstalled', 'queryString', 'standalone']`
@@ -140,7 +140,7 @@ The [`standalone` strategy](https://petelepage.com/blog/2019/07/is-my-pwa-instal
 
 :::
 
-### `injectManifestConfig` {#injectmanifestconfig}
+### `injectManifestConfig`
 
 [Workbox options](https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-InjectManifestOptions) to pass to `workbox.injectManifest()`. This gives you control over which assets will be precached, and be available offline.
 
@@ -151,7 +151,7 @@ The [`standalone` strategy](https://petelepage.com/blog/2019/07/is-my-pwa-instal
 export default {
   plugins: [
     [
-      '@docusaurus/plugin-pwa',
+      "@docusaurus/plugin-pwa",
       {
         injectManifestConfig: {
           manifestTransforms: [
@@ -162,16 +162,16 @@ export default {
           },
           // We already add regular static assets (HTML, images...) to be available offline
           // You can add more files according to your needs
-          globPatterns: ['**/*.{pdf,docx,xlsx}'],
+          globPatterns: ["**/*.{pdf,docx,xlsx}"],
           // ...
         },
       },
     ],
   ],
-};
+}
 ```
 
-### `pwaHead` {#pwahead}
+### `pwaHead`
 
 - Type: `({ tagName: string; [attributeName: string]: string })[]`
 - Default: `[]`
@@ -182,63 +182,63 @@ Array of objects containing `tagName` and key-value pairs for attributes to inje
 export default {
   plugins: [
     [
-      '@docusaurus/plugin-pwa',
+      "@docusaurus/plugin-pwa",
       {
         pwaHead: [
           {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/img/docusaurus.png',
+            tagName: "link",
+            rel: "icon",
+            href: "/img/docusaurus.png",
           },
           {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json',
+            tagName: "link",
+            rel: "manifest",
+            href: "/manifest.json",
           },
           {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: 'rgb(37, 194, 160)',
+            tagName: "meta",
+            name: "theme-color",
+            content: "rgb(37, 194, 160)",
           },
           {
-            tagName: 'meta',
-            name: 'apple-mobile-web-app-capable',
-            content: 'yes',
+            tagName: "meta",
+            name: "apple-mobile-web-app-capable",
+            content: "yes",
           },
           {
-            tagName: 'meta',
-            name: 'apple-mobile-web-app-status-bar-style',
-            content: '#000',
+            tagName: "meta",
+            name: "apple-mobile-web-app-status-bar-style",
+            content: "#000",
           },
           {
-            tagName: 'link',
-            rel: 'apple-touch-icon',
-            href: '/img/docusaurus.png',
+            tagName: "link",
+            rel: "apple-touch-icon",
+            href: "/img/docusaurus.png",
           },
           {
-            tagName: 'link',
-            rel: 'mask-icon',
-            href: '/img/docusaurus.svg',
-            color: 'rgb(37, 194, 160)',
+            tagName: "link",
+            rel: "mask-icon",
+            href: "/img/docusaurus.svg",
+            color: "rgb(37, 194, 160)",
           },
           {
-            tagName: 'meta',
-            name: 'msapplication-TileImage',
-            content: '/img/docusaurus.png',
+            tagName: "meta",
+            name: "msapplication-TileImage",
+            content: "/img/docusaurus.png",
           },
           {
-            tagName: 'meta',
-            name: 'msapplication-TileColor',
-            content: '#000',
+            tagName: "meta",
+            name: "msapplication-TileColor",
+            content: "#000",
           },
         ],
       },
     ],
   ],
-};
+}
 ```
 
-### `swCustom` {#swcustom}
+### `swCustom`
 
 - Type: `string | undefined`
 - Default: `undefined`
@@ -248,15 +248,15 @@ Useful for additional Workbox rules. You can do whatever a service worker can do
 For example, to cache files from external routes:
 
 ```js
-import {registerRoute} from 'workbox-routing';
-import {StaleWhileRevalidate} from 'workbox-strategies';
+import { registerRoute } from "workbox-routing"
+import { StaleWhileRevalidate } from "workbox-strategies"
 
 // default fn export receiving some useful params
 export default function swCustom(params) {
   const {
     debug, // :boolean
     offlineMode, // :boolean
-  } = params;
+  } = params
 
   // Cache responses from external resources
   registerRoute((context) => {
@@ -264,14 +264,14 @@ export default function swCustom(params) {
       /graph\.facebook\.com\/.*\/picture/,
       /netlify\.com\/img/,
       /avatars1\.githubusercontent/,
-    ].some((regex) => context.url.href.match(regex));
-  }, new StaleWhileRevalidate());
+    ].some((regex) => context.url.href.match(regex))
+  }, new StaleWhileRevalidate())
 }
 ```
 
 The module should have a `default` function export, and receives some params.
 
-### `swRegister` {#swregister}
+### `swRegister`
 
 - Type: `string | false`
 - Default: `'docusaurus-plugin-pwa/src/registerSW.js'`
@@ -280,7 +280,7 @@ Adds an entry before the Docusaurus app so that registration can happen before t
 
 Passing `false` will disable registration entirely.
 
-## Manifest example {#manifest-example}
+## Manifest example
 
 The Docusaurus site manifest can serve as an inspiration:
 
@@ -292,7 +292,7 @@ import CodeBlock from '@theme/CodeBlock';
 </CodeBlock>
 ```
 
-## Customizing reload popup {#customizing-reload-popup}
+## Customizing reload popup
 
 The `@theme/PwaReloadPopup` component is rendered when a new service worker is waiting to be installed, and we suggest a reload to the user. You can [swizzle](../../swizzling.mdx) this component and implement your own UI. It will receive an `onReload` callback as props, which should be called when the `reload` button is clicked. This will tell the service worker to install the waiting service worker and reload the page.
 

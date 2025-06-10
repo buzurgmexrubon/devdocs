@@ -4,13 +4,13 @@ slug: /api/misc/@docusaurus/eslint-plugin/no-untranslated-text
 
 # no-untranslated-text
 
-import APITable from '@site/src/components/APITable';
+import APITable from "@site/src/components/APITable"
 
 Enforce text labels in JSX to be wrapped by translate calls.
 
 When the [i18n feature](../../../i18n/i18n-introduction.mdx) is used, this rule ensures that all labels appearing on the website are translatable, so no string accidentally slips through untranslated.
 
-## Rule Details {#details}
+## Rule Details
 
 Examples of **incorrect** code for this rule:
 
@@ -28,7 +28,7 @@ Examples of **correct** code for this rule:
 </Component>
 ```
 
-## Rule Configuration {#configuration}
+## Rule Configuration
 
 Accepted fields:
 
@@ -36,19 +36,19 @@ Accepted fields:
 <APITable>
 ```
 
-| Option | Type | Default | Description |
-| --- | --- | --- | --- |
-| `ignoredStrings` | `string[]` | `[]` | Text labels that only contain strings in this list will not be reported. |
+| Option           | Type       | Default | Description                                                              |
+| ---------------- | ---------- | ------- | ------------------------------------------------------------------------ |
+| `ignoredStrings` | `string[]` | `[]`    | Text labels that only contain strings in this list will not be reported. |
 
 ```mdx-code-block
 </APITable>
 ```
 
-## When Not To Use It {#when-not-to-use}
+## When Not To Use It
 
 If you're not using the [i18n feature](../../../i18n/i18n-introduction.mdx), you can disable this rule. You can also disable this rule where the text is not supposed to be translated.
 
-## Further Reading {#further-reading}
+## Further Reading
 
 - https://docusaurus.io/docs/docusaurus-core#translate
 - https://docusaurus.io/docs/docusaurus-core#translate-imperative

@@ -32,7 +32,7 @@ Prettier, the most popular formatter, [supports only the legacy MDX v1](https://
 
 :::
 
-### Exporting components {#exporting-components}
+### Exporting components
 
 To define any custom component within an MDX file, you have to export it: only paragraphs that start with `export` will be parsed as components instead of prose.
 
@@ -93,7 +93,7 @@ Since all doc files are parsed using MDX, anything that looks like HTML is actua
 
 :::
 
-### Importing components {#importing-components}
+### Importing components
 
 You can also import your own components defined in other files or third-party components installed via npm.
 
@@ -146,7 +146,7 @@ If you use the same component across a lot of files, you don't need to import it
 
 :::
 
-### MDX component scope {#mdx-component-scope}
+### MDX component scope
 
 Apart from [importing a component](#importing-components) and [exporting a component](#exporting-components), a third way to use a component in MDX is to **register it to the global scope**, which will make it automatically available in every MDX file, without any import statements.
 
@@ -233,7 +233,7 @@ If you don't wrap your imported MDX with `MDXContent`, the global scope will not
 
 :::
 
-### Markdown and JSX interoperability {#markdown-and-jsx-interoperability}
+### Markdown and JSX interoperability
 
 Docusaurus v3 is using [MDX v3](https://mdxjs.com/blog/v3/).
 
@@ -257,7 +257,7 @@ This feature is **experimental** and currently has a few [limitations](https://g
 
 :::
 
-## Importing code snippets {#importing-code-snippets}
+## Importing code snippets
 
 You can not only import a file containing a component definition, but also import any code file as raw text, and then insert it in a code block, thanks to [Webpack raw-loader](https://webpack.js.org/loaders/raw-loader/). In order to use `raw-loader`, you first need to install it in your project:
 
@@ -300,7 +300,7 @@ This feature is experimental and might be subject to breaking API changes in the
 
 :::
 
-## Importing Markdown {#importing-markdown}
+## Importing Markdown
 
 You can use Markdown files as components and import them elsewhere, either in Markdown files or in React pages. Each MDX file default-exports its page content as a React component. In the `import` statement, you can default-import this component with any name, but it must be capitalized following React's naming rules.
 
@@ -329,7 +329,7 @@ import PartialExample from './_markdown-partial-example.mdx';
 
 This way, you can reuse content among multiple pages and avoid duplicating materials.
 
-## Available exports {#available-exports}
+## Available exports
 
 Within the MDX page, the following variables are available as globals:
 

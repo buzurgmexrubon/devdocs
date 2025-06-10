@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Plugins use these lifecycles to load i18n-related data.
 
-## `getTranslationFiles({content})` {#getTranslationFiles}
+## `getTranslationFiles({content})`
 
 Plugins declare the JSON translation files they want to use.
 
@@ -22,28 +22,28 @@ Example:
 ```js title="my-plugin.js"
 export default function (context, options) {
   return {
-    name: 'my-plugin',
+    name: "my-plugin",
     // highlight-start
-    async getTranslationFiles({content}) {
+    async getTranslationFiles({ content }) {
       return [
         {
-          path: 'sidebar-labels',
+          path: "sidebar-labels",
           content: {
             someSidebarLabel: {
-              message: 'Some Sidebar Label',
-              description: 'A label used in my plugin in the sidebar',
+              message: "Some Sidebar Label",
+              description: "A label used in my plugin in the sidebar",
             },
             someLabelFromContent: content.myLabel,
           },
         },
-      ];
+      ]
     },
     // highlight-end
-  };
+  }
 }
 ```
 
-## `translateContent({content,translationFiles})` {#translateContent}
+## `translateContent({content,translationFiles})`
 
 Translate the plugin content, using the localized translation files.
 
@@ -56,23 +56,23 @@ Example:
 ```js title="my-plugin.js"
 export default function (context, options) {
   return {
-    name: 'my-plugin',
+    name: "my-plugin",
     // highlight-start
-    translateContent({content, translationFiles}) {
+    translateContent({ content, translationFiles }) {
       const myTranslationFile = translationFiles.find(
-        (f) => f.path === 'myTranslationFile',
-      );
+        (f) => f.path === "myTranslationFile"
+      )
       return {
         ...content,
         someContentLabel: myTranslationFile.someContentLabel.message,
-      };
+      }
     },
     // highlight-end
-  };
+  }
 }
 ```
 
-## `translateThemeConfig({themeConfig,translationFiles})` {#translateThemeConfig}
+## `translateThemeConfig({themeConfig,translationFiles})`
 
 Translate the site `themeConfig` labels, using the localized translation files.
 
@@ -83,23 +83,23 @@ Example:
 ```js title="my-plugin.js"
 export default function (context, options) {
   return {
-    name: 'my-theme',
+    name: "my-theme",
     // highlight-start
-    translateThemeConfig({themeConfig, translationFiles}) {
+    translateThemeConfig({ themeConfig, translationFiles }) {
       const myTranslationFile = translationFiles.find(
-        (f) => f.path === 'myTranslationFile',
-      );
+        (f) => f.path === "myTranslationFile"
+      )
       return {
         ...themeConfig,
         someThemeConfigLabel: myTranslationFile.someThemeConfigLabel.message,
-      };
+      }
     },
     // highlight-end
-  };
+  }
 }
 ```
 
-## `async getDefaultCodeTranslationMessages()` {#getDefaultCodeTranslationMessages}
+## `async getDefaultCodeTranslationMessages()`
 
 Themes using the `<Translate>` API can provide default code translation messages.
 
@@ -110,12 +110,12 @@ Example:
 ```js title="my-plugin.js"
 export default function (context, options) {
   return {
-    name: 'my-theme',
+    name: "my-theme",
     // highlight-start
     async getDefaultCodeTranslationMessages() {
-      return readJsonFile(`${context.i18n.currentLocale}.json`);
+      return readJsonFile(`${context.i18n.currentLocale}.json`)
     },
     // highlight-end
-  };
+  }
 }
 ```
