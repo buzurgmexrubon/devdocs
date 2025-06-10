@@ -1,184 +1,170 @@
 ---
-description: Docusaurus was designed from the ground up to be easily installed and used to get your website up and running quickly.
+description: Docusaurus — bu chiroyli, tezkor va funksional dokumentatsiya saytlarini osonlik bilan yaratishga yordam beruvchi statik sayt generatori.
 sidebar_position: 1
 ---
 
-# Introduction
+# Kirish
 
-⚡️ Docusaurus will help you ship a **beautiful documentation site in no time**.
+⚡️ Docusaurus sizga **chiroyli dokumentatsiya saytlarini tezda ishga tushirishga** yordam beradi.
 
-💸 Building a custom tech stack is expensive. Instead, **focus on your content** and just write Markdown files.
+💸 Maxsus texnologik to'plam (tech stack) yaratish qimmat. Buning o'rniga, **kontentingizga e'tibor qarating** va shunchaki Markdown fayllarini yozing.
 
-💥 Ready for more? Use **advanced features** like versioning, i18n, search and theme customizations.
+💥 Ko'prog'iga tayyormisiz? Versiyalash, i18n (ko'p tillilik), qidiruv va mavzuni moslashtirish kabi **ilg'or funksiyalardan** foydalaning.
 
-💅 Check the **[best Docusaurus sites](/showcase?tags=favorite)** for inspiration.
+💅 Ilhom olish uchun **[eng yaxshi Docusaurus saytlarini](https://docusaurus.io/showcase?tags=favorite)** ko'rib chiqing.
 
-🧐 Docusaurus is a **static-site generator**. It builds a **single-page application** with fast client-side navigation, leveraging the full power of **React** to make your site interactive. It provides out-of-the-box **documentation features** but can be used to create **any kind of site** (personal website, product, blog, marketing landing pages, etc).
+🧐 Docusaurus – bu **statik-sayt generatori**. U tezkor mijoz tomon navigatsiyasiga ega **bir sahifali ilova (single-page application)** yaratadi, saytingizni interaktiv qilish uchun **React**'ning butun kuchidan foydalanadi. U **dokumentatsiyalar uchun tayyor funksiyalarni** taqdim etadi, ammo **har qanday turdagi saytni** (shaxsiy veb-sayt, mahsulot, blog, marketing sahifalari va hokazo) yaratish uchun ishlatilishi mumkin.
 
 ![](/img/slash-introducing.svg)
 
-## Fast Track ⏱️
+## Tezkor Yo'l ⏱️
 
-Understand Docusaurus in **5 minutes** by playing!
+Docusaurus'ni **5 daqiqada** o'rganing!
 
-Create a new Docusaurus site and follow the **very short** embedded tutorial.
+Yangi Docusaurus saytini yarating va ichiga o'rnatilgan **juda qisqa** qo'llanmaga amal qiling.
 
-Install [Node.js](https://nodejs.org/en/download/) and create a new Docusaurus site:
+[Node.js](https://nodejs.org/en/download/) ni o'rnating va yangi Docusaurus saytini yarating:
 
 ```bash
 npx create-docusaurus@latest my-website classic
 ```
 
-Start the site:
+Saytni ishga tushiring:
 
 ```bash
 cd my-website
 npx docusaurus start
 ```
 
-Open [`http://localhost:3000`](http://localhost:3000) and follow the tutorial.
+[`http://localhost:3000`](http://localhost:3000) ni oching va qo'llanmaga amal qiling.
 
 :::tip
 
-Use **[docusaurus.new](https://docusaurus.new)** to test Docusaurus immediately in your browser!
-
-Or read the **[5-minute tutorial](https://tutorial.docusaurus.io)** online.
+Docusaurus'ni darhol brauzeringizda sinab ko'rish uchun **[docusaurus.new](https://docusaurus.new)** dan foydalaning\!
 
 :::
 
-## Docusaurus: Documentation Made Easy
+## v1 dan migratsiya qilish
 
-In this presentation at [Algolia Community Event](https://www.algolia.com/), [Meta Open Source team](https://opensource.facebook.com/) shared a brief walk-through of Docusaurus. They covered how to get started with the project, enable plugins, and set up functionalities like documentation and blogging.
+Docusaurus v2+ butunlay modernizatsiya qilingan asboblar to'plamidan foydalangan holda Docusaurus v1 dan qayta yozilgan. v2 ning rasmiy nashridan so'ng, Docusaurus v1 eskirganligi sababli sizni Docusaurus v1 o'rniga **Docusaurus v2+ dan foydalanishga** qattiq chorlaymiz.
 
-## Migrating from v1
+**Docusaurus v2+ dan foydalaning, agar:**
 
-Docusaurus v2+ has been a total rewrite from Docusaurus v1, taking advantage of a completely modernized toolchain. After [v2's official release](https://docusaurus.io/blog/2022/08/01/announcing-docusaurus-2.0), we highly encourage you to **use Docusaurus v2+ over Docusaurus v1**, as Docusaurus v1 has been deprecated.
+- :white_check_mark: Siz zamonaviy Jamstack dokumentatsiyalar saytini xohlasangiz
+- :white_check_mark: Siz mijoz tomoni marshrutlash (client-side routing) bilan bir sahifali ilova (SPA) xohlasangiz
+- :white_check_mark: Siz React va MDX ning butun kuchidan foydalanmoqchi bo'lsangiz
+- :white_check_mark: Sizga IE11 uchun yordam kerak bo'lmasa
 
-A [lot of users](/showcase) are already using Docusaurus v2+ ([trends](https://www.npmtrends.com/docusaurus-vs-@docusaurus/core)).
+**Docusaurus v1 dan foydalaning, agar:**
 
-**Use Docusaurus v2+ if:**
+- :x: Siz bir sahifali ilova (SPA) xohlamasangiz
+- :x: Sizga IE11 uchun yordam kerak bo'lsa (IE [allaqachon xizmat muddati tugagan](https://docs.microsoft.com/en-us/lifecycle/products/internet-explorer-11) va endi rasman qo'llab-quvvatlanmaydi)
 
-- :white_check_mark: You want a modern Jamstack documentation site
-- :white_check_mark: You want a single-page application (SPA) with client-side routing
-- :white_check_mark: You want the full power of React and MDX
-- :white_check_mark: You do not need support for IE11
+V1 dan v2+ ga yangilamoqchi bo'lsangiz, [migratsiya qo'llanmalarimizga](./migration/index.mdx) amal qilishingiz mumkin.
 
-**Use [Docusaurus v1](https://v1.docusaurus.io/) if:**
+## Imkoniyatlar (Features)
 
-- :x: You don't want a single-page application (SPA)
-- :x: You need support for IE11 (...do you? IE [has already reached end-of-life](https://docs.microsoft.com/en-us/lifecycle/products/internet-explorer-11) and is no longer officially supported)
+Docusaurus dasturchi va kontributor tajribasiga katta e'tibor qaratib yaratilgan.
 
-For existing v1 users that are seeking to upgrade to v2+, you can follow our [migration guides](./migration/index.mdx).
+- ⚛️ **💚 va React bilan yaratilgan**:
+  - React yordamida kengaytirish va sozlash
+  - O'z React komponentlaringizni taqdim etish orqali saytingizning ko'rish tajribasini (browsing experience) to'liq nazorat qiling
+- 🔌 **Plaginlar bilan ishlaydi (Pluggable)**:
+  - Saytingizni asosiy shablon bilan ishga tushiring, so'ngra ilg'or funksiyalar va plaginlardan foydalaning
+  - Plaginlaringizni jamoa bilan bo'lishish uchun ochiq kodli qiling
+- ✂️ **Dasturchi tajribasi (Developer experience)**:
+  - Hujjatlaringizni hoziroq yozishni boshlang
+  - Universal konfiguratsiya kirish nuqtasi uni hissa qo'shuvchilar tomonidan yanada qulayroq qilish uchun
+  - O'zgarishlar bo'yicha yashin tezligida qayta yuklash
+  - Marshrutga asoslangan kod va ma'lumotlarni ajratish
+  - GitHub Pages, Netlify, Vercel va boshqa joylashtirish xizmatlariga osonlik bilan nashr (publish) qiling
 
-## Features
+Bizning umumiy maqsadimiz — foydalanuvchilaringizga kerakli narsani tezda topishga va mahsulotlaringizni yaxshiroq tushunishga yordam berish. Biz dokumentatsiya saytlaringizni to'g'ri va yaxshi yaratishingizga yordam berish uchun eng yaxshi amaliyotlarimizni baham ko'ramiz.
 
-Docusaurus is built with high attention to the developer and contributor experience.
+- 🎯 **SEO uchun qulay (SEO friendly)**:
+  - HTML fayllari har bir mumkin bo'lgan yo'l uchun statik ravishda yaratiladi.
+  - Foydalanuvchilaringizga ularning muammolari bilan bevosita bog'liq bo'lgan rasmiy dokumentatsiyalaringizga kirishga yordam berish uchun sahifaga xos SEO.
+- 📝 **MDX ustiga qurilgan**:
+  - Markdown ichiga joylashtirilgan JSX va React orqali interaktiv komponentlar yozing.
+  - Foydalanuvchilaringiz mahsulotlaringizni shu zahotiyoq sevishi uchun kodlaringizni jonli muharrirlarda baham ko'ring.
+- 🔍 **Qidiruv**: Sizning to'liq saytingizni qidirish mumkin.
+- 💾 **Hujjat versiyalash (Document Versioning)**: Hujjatlarni loyiha relizlari bilan sinxron saqlashga yordam beradi.
+- 🌍 **Xalqaro (i18n)**: Saytingizni bir nechta tillarga tarjima qiling.
 
-- ⚛️ **Built with 💚 and React**:
-  - Extend and customize with React
-  - Gain full control of your site's browsing experience by providing your own React components
-- 🔌 **Pluggable**:
-  - Bootstrap your site with a basic template, then use advanced features and plugins
-  - Open source your plugins to share with the community
-- ✂️ **Developer experience**:
-  - Start writing your docs right now
-  - Universal configuration entry point to make it more maintainable by contributors
-  - Hot reloading with lightning-fast incremental build on changes
-  - Route-based code and data splitting
-  - Publish to GitHub Pages, Netlify, Vercel, and other deployment services with ease
+Docusaurus v2+ barcha foydalanuvchilaringiz uchun qulay va chaqmoq tezligida foydalanish uchun yaratilgan.
 
-Our shared goal—to help your users quickly find what they need and understand your products better. We share our best practices to help you build your docs site right and well.
+- ⚡️ **Chaqmoq tezligida**. Docusaurus v2+ kontentingizning juda tez yuklanishini ta'minlaydigan [PRPL Pattern](https://developers.google.com/web/fundamentals/performance/prpl-pattern/) ga amal qiladi.
+- 🦖 **Qulay (Accessible)**. Saytingiz barcha foydalanuvchilar uchun bir xil darajada qulay bo'lishiga e'tibor qaratilgan.
 
-- 🎯 **SEO friendly**:
-  - HTML files are statically generated for every possible path.
-  - Page-specific SEO to help your users land on your official docs directly relating their problems at hand.
-- 📝 **Powered by MDX**:
-  - Write interactive components via JSX and React embedded in Markdown.
-  - Share your code in live editors to get your users to love your products on the spot.
-- 🔍 **Search**: Your full site is searchable.
-- 💾 **Document Versioning**: Helps you keep documentation in sync with project releases.
-- 🌍 **Internationalization (i18n)**: Translate your site in multiple locales.
+## Dizayn prinsiplari
 
-Docusaurus v2+ is born to be compassionately accessible to all your users, and lightning-fast.
+- **Kam o'rganish kerak**. Docusaurusni o'rganish va undan foydalanish oson bo'lishi kerak, chunki API juda kichik. Ko'pgina narsalarni foydalanuvchilar o'zlari amalga oshira oladilar, hatto buning uchun ko'proq kod va vaqt talab qilsa ham. Noto'g'ri abstraksiyalarga ega bo'lishdan ko'ra, abstraksiyalarsiz bo'lish yaxshiroq va biz foydalanuvchilarning noto'g'ri abstraksiyalar atrofida ishlashlariga to'g'ri kelishini istamaymiz. Zaruriy ma'ruza — [Minimal API Surface Area](https://www.youtube.com/watch?v=4anAwXYqLG8).
+- **Intuitiv**. Foydalanuvchilar Docusaurus loyihasining katalogini ko'rganlarida yoki yangi funksiyalarni qo'shganlarida qiynalmaydilar. Ularga tanish bo'lgan yondashuvlardan foydalangan holda, u intuitiv ko'rinishi va yaratish oson bo'lishi kerak.
+- **Qatlamli arxitektura**. Bizning stekimizning har bir qatlami (kontent/mavzu/stil) o'rtasidagi masalalar ajratilishi aniq bo'lishi kerak — yaxshi abstraksiyalangan va modulli.
+- **Oqilona standart sozlamalar**. Umumiy va mashhur ishlash optimizatsiyalari hamda konfiguratsiyalar foydalanuvchilar uchun amalga oshiriladi, ammo ularga ularni bekor qilish (o'zgartirish) imkoniyati beriladi.
+- **Yetkazib beruvchiga bog'lanib qolish yo'q (No vendor lock-in)**. Foydalanuvchilar standart plaginlar yoki CSSdan foydalanishga majbur emaslar, garchi bu qattiq tavsiya etilsada. React Loadable va React Router kabi ayrim asosiy infratuzilmalar almashtirib bo'lmaydi, chunki biz ularda standart ishlash optimizatsiyasini amalga oshiramiz, biroq yuqori darajadagilarida emas. Markdown dvigatellari, CSS freymvorklari, CSS metodologiyasi va boshqa arxitekturalarni tanlash butunlay foydalanuvchilarning ixtiyorida bo'ladi.
 
-- ⚡️ **Lightning-fast**. Docusaurus v2+ follows the [PRPL Pattern](https://developers.google.com/web/fundamentals/performance/prpl-pattern/) that makes sure your content loads blazing fast.
-- 🦖 **Accessible**. Attention to accessibility, making your site equally accessible to all users.
+Biz dasturchilar sifatida kutubxonaning qanday ishlashini bilish undan yaxshiroq foydalanishga yordam beradi deb hisoblaymiz. Shuning uchun biz Docusaurus arxitekturasi va turli komponentlarini tushuntirishga harakat qilamiz, toki uni o'qigan foydalanuvchilar vosita (tool)ni chuqurroq tushunishadi va undan yanada samaraliroq foydalana oladilar.
 
-## Design principles
+## Boshqa vositalar bilan taqqoslash
 
-- **Little to learn**. Docusaurus should be easy to learn and use as the API is quite small. Most things will still be achievable by users, even if it takes them more code and more time to write. Not having abstractions is better than having the wrong abstractions, and we don't want users to have to hack around the wrong abstractions. Mandatory talk—[Minimal API Surface Area](https://www.youtube.com/watch?v=4anAwXYqLG8).
-- **Intuitive**. Users will not feel overwhelmed when looking at the project directory of a Docusaurus project or adding new features. It should look intuitive and easy to build on top of, using approaches they are familiar with.
-- **Layered architecture**. The separations of concerns between each layer of our stack (content/theming/styling) should be clear—well-abstracted and modular.
-- **Sensible defaults**. Common and popular performance optimizations and configurations will be done for users but they are given the option to override them.
-- **No vendor lock-in**. Users are not required to use the default plugins or CSS, although they are highly encouraged to. Certain core infrastructures like React Loadable and React Router cannot be swapped because we do default performance optimization on them, but not higher-level ones. Choice of Markdown engines, CSS frameworks, CSS methodology, and other architectures will be entirely up to users.
+Barcha statik sayt generatorlari orasida Docusaurus dokumentatsiya saytlariga alohida e'tibor qaratadi va ko'plab tayyor funksiyalarga ega.
 
-We believe that, as developers, knowing how a library works helps us become better at using it. Hence we're dedicating effort to explaining the architecture and various components of Docusaurus with the hope that users reading it will gain a deeper understanding of the tool and be even more proficient in using it.
-
-## Comparison with other tools
-
-Across all static site generators, Docusaurus has a unique focus on documentation sites and has many out-of-the-box features.
-
-We've also studied other main static site generators and would like to share our insights on the comparison, hopefully helping you navigate through the prismatic choices out there.
+Biz boshqa asosiy statik sayt generatorlarini ham o'rganib chiqdik va taqqoslash bo'yicha o'z tushunchalarimizni bo'lishmoqchimiz, umid qilamizki, bu sizga mavjud bo'lgan xilma-xil tanlovlar orasida yo'l topishga yordam beradi.
 
 ### Gatsby
 
-[Gatsby](https://www.gatsbyjs.com/) is packed with a lot of features, has a rich ecosystem of plugins, and is capable of doing everything that Docusaurus does. Naturally, that comes at a cost of a higher learning curve. Gatsby does many things well and is suitable for building many types of websites. On the other hand, Docusaurus tries to do one thing super well - be the best tool for writing and publishing content.
+[Gatsby](https://www.gatsbyjs.com/) ko'plab imkoniyatlarga boy, boy plagin ekotizimiga ega va Docusaurus qiladigan barcha ishlarni qila oladi. Tabiiyki, bu yuqoriroq o'rganish "egri chizig'iga" (learning curve) olib keladi. Gatsby ko'p ishlarni yaxshi bajaradi va ko'plab turdagi veb-saytlarni yaratish uchun javob beradi. Boshqa tomondan, Docusaurus bitta ishni juda yaxshi bajarishga harakat qiladi - kontent yozish va nashr qilish uchun eng yaxshi vosita bo'lish.
 
-GraphQL is also pretty core to Gatsby, although you don't necessarily need GraphQL to build a Gatsby site. In most cases when building static websites, you won't need the flexibility that GraphQL provides.
+GraphQL ham Gatsby uchun juda muhim, garchi Gatsby saytini yaratish uchun GraphQL shart bo'lmasa ham. Statik veb-saytlarni yaratishda ko'pgina hollarda sizga GraphQL taqdim etadigan moslashuvchanlik kerak bo'lmaydi.
 
-Many aspects of Docusaurus v2+ were inspired by the best things about Gatsby and it's a great alternative.
+Docusaurus v2+ ning ko'plab jihatlari Gatsby'ning eng yaxshi tomonlaridan ilhomlangan va bu ajoyib muqobil.
 
-[Docz](https://github.com/pedronauck/docz) is a Gatsby theme to build documentation websites. It is currently less featured than Docusaurus.
+[Docz](https://github.com/pedronauck/docz) - bu dokumentatsiya saytlarini yaratish uchun Gatsby mavzusi. U hozirda Docusaurusga nisbatan kamroq xususiyatlarga ega.
 
 ### Next.js
 
-[Next.js](https://nextjs.org/) is another very popular hybrid React framework. It can help you build a good documentation website, but it is not opinionated toward the documentation use-case, and it will require a lot more work to implement what Docusaurus provides out-of-the-box.
+[Next.js](https://nextjs.org/) yana bir juda mashhur gibrid React freymvorki. U sizga yaxshi dokumentatsiya veb-saytini yaratishga yordam berishi mumkin, ammo u dokumentatsiya ishiga yo'naltirilmagan va Docusaurus tayyor holda taqdim etadigan narsalarni amalga oshirish uchun ancha ko'proq ish talab qiladi.
 
-[Nextra](https://github.com/shuding/nextra) is an opinionated static site generator built on top of Next.js. It is currently less featured than Docusaurus.
+[Nextra](https://github.com/shuding/nextra) — Next.js ustida qurilgan o'ziga xos statik sayt generatori. U hozirda Docusaurusga nisbatan kamroq xususiyatlarga ega.
 
 ### VitePress
 
-[VitePress](https://vitepress.dev/) has many similarities with Docusaurus - both focus heavily on content-centric websites and provides tailored documentation features out of the box. However, VitePress is powered by Vue, while Docusaurus is powered by React. If you want a Vue-based solution, VitePress would be a decent choice.
+[VitePress](https://vitepress.dev/) Docusaurus bilan ko'p o'xshashliklarga ega – ikkalasi ham kontentga yo'naltirilgan veb-saytlarga juda katta e'tibor qaratadi va tayyor holda maxsus dokumentatsiya funksiyalarini taqdim etadi. Biroq, VitePress Vue, Docusaurus esa React ustiga qurilgan. Agar siz Vue asosidagi yechimni istasangiz, VitePress munosib tanlov bo'ladi.
 
 ### MkDocs
 
-[MkDocs](https://www.mkdocs.org/) is a popular Python static site generator with value propositions similar to Docusaurus.
+[MkDocs](https://www.mkdocs.org/) — bu Docusaurusga o'xshash qadriyatlarga ega mashhur Python statik sayt generatori.
 
-It is a good option if you don't need a single-page application and don't plan to leverage React.
+Agar sizga bir sahifali ilova (SPA) kerak bo'lmasa va React'dan foydalanishni rejalashtirmasangiz, bu yaxshi tanlov.
 
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) is a beautiful theme.
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) — chiroyli mavzu.
 
 ### Docsify
 
-[Docsify](https://docsify.js.org/) makes it easy to create a documentation website, but is not a static-site generator and is not SEO friendly.
+[Docsify](https://docsify.js.org/) dokumentatsiya veb-saytini yaratishni osonlashtiradi, lekin u statik-sayt generatori emas va SEO uchun qulay emas.
 
 ### GitBook
 
-[GitBook](https://www.gitbook.com/) has a very clean design and has been used by many open source projects. With its focus shifting towards a commercial product rather than an open-source tool, many of its requirements no longer fit the needs of open source projects' documentation sites. As a result, many have turned to other products. You may read about Redux's switch to Docusaurus [here](https://github.com/reduxjs/redux/issues/3161).
+[GitBook](https://www.gitbook.com/) juda toza dizaynga ega bo'lib, ko'plab ochiq kodli loyihalar tomonidan ishlatilgan. Uning diqqat markazi ochiq kodli vosita bo'lishdan tijorat mahsulotiga o'tishi bilan, uning ko'plab talablari ochiq kodli loyihalarning dokumentatsiya saytlarining ehtiyojlariga mos kelmay qoldi. Natijada, ko'pchilik boshqa mahsulotlarga o'tishga majbur bo'ldi. Reduxning Docusaurusga o'tgani haqida [bu yerda](https://github.com/reduxjs/redux/issues/3161) o'qishingiz mumkin.
 
-Currently, GitBook is only free for open-source and non-profit teams. Docusaurus is free for everyone.
+Hozirda GitBook faqat ochiq kodli va notijorat jamoalar uchun bepul. Docusaurus esa barcha uchun bepul.
 
 ### Jekyll
 
-[Jekyll](https://github.com/jekyll/jekyll) is one of the most mature static site generators around and has been a great tool to use — in fact, before Docusaurus, most of Facebook's Open Source websites are/were built on Jekyll! It is extremely simple to get started. We want to bring a similar developer experience as building a static site with Jekyll.
+[Jekyll](https://github.com/jekyll/jekyll) eng yetuk statik sayt generatorlaridan biri bo‘lib, foydalanish uchun ajoyib vosita bo‘lgan — aslida, Docusaurusdan oldin Facebookning ko‘pchilik Open Source veb-saytlari Jekyllda yaratilgan! Ishni boshlash juda oddiy. Biz Jekyll bilan statik sayt yaratish kabi dasturchi bilan ishlash qulayligi tajribasini yaratmoqchimiz.
 
-In comparison with statically generated HTML and interactivity added using `<script />` tags, Docusaurus sites are React apps. Using modern JavaScript ecosystem tooling, we hope to set new standards on doc sites' performance, asset building pipeline and optimizations, and ease to set up.
+Statik yaratilgan HTML sahifalariga `<script />` teglar orqali interaktivlik qoʻshish usulidan farqli oʻlaroq, Docusaurus saytlari toʻlaqonli React ilovalari hisoblanadi. Zamonaviy JavaScript ekotizimining vositalaridan foydalanib, biz dokumentatsiya saytlarining ishlash samaradorligi, resurslarni shakllantirish jarayoni va optimallashtirish, shuningdek, sozlash qulayligi boʻyicha yangi standartlarni oʻrnatishga umid qilamiz.
 
 ### Rspress
 
-[Rspress](https://rspress.dev/) is a fast static site generator based on Rspack, a Rust-based bundler. It supports content writing with MDX (Markdown with React components), integrated text search, multilingual support (i18n), and extensibility through plugins. Designed for creating elegant documentation and static websites, Rspress produces static HTML files that are easy to deploy.
+[Rspress](https://rspress.dev/) – bu Rust tilida yozilgan Rspack bundleri asosida ishlaydigan tezkor statik sayt generatori. U MDX (ya'ni, React komponentlari bilan ishlovchi Markdown) orqali kontent yaratishni, Integratsiyalashgan matnli qidiruvni, ko'p tilli qo'llab-quvvatlashni (i18n) va plaginlar yordamida kengaytirish imkoniyatini taqdim etadi. Chiroyli dokumentatsiya va statik veb-saytlar yaratish uchun mo'ljallangan Rspress, oson deploy qilinadigan statik HTML fayllarini hosil qiladi.
 
-Rspress and Docusaurus are quite similar. They both have their pros and cons. Rspress was created more recently and benefits from a modern infrastructure that enables faster site builds. Docusaurus stands out for its maturity, comprehensive feature set, flexibility, and strong community. It is also [modernizing its infrastructure](https://github.com/facebook/docusaurus/issues/10556) regularly to remain competitive in terms of performance.
+Rspress va Docusaurus ancha o'xshash. Ularning har ikkisining ham o'ziga xos afzalliklari va kamchiliklari bor. Rspress yaqinda yaratilgan va sayt yaratilishini tezlashtiradigan zamonaviy infratuzilmadan foydalanadi. Docusaurus esa o'zining yetukligi, keng qamrovli imkoniyatlari, moslashuvchanligi va kuchli jamoasi bilan ajralib turadi. U shuningdek, ishlash samaradorligi bo'yicha raqobatbardosh bo'lib qolish uchun o'z infratuzilmasini muntazam ravishda [modernizatsiya qilib boradi](https://github.com/facebook/docusaurus/issues/10556).
 
-## Staying informed
+## Xabardor bo'lib boring
 
 - [GitHub](https://github.com/facebook/docusaurus)
 - [X](https://x.com/docusaurus)
-- [Blog](/blog)
+- [Blog](https://docusaurus.io/blog)
 - [Discord](https://discord.gg/docusaurus)
-
-## Something missing?
-
-If you find issues with the documentation or have suggestions on how to improve the documentation or the project in general, please [file an issue](https://github.com/facebook/docusaurus) for us, or send a tweet mentioning the [@docusaurus](https://x.com/docusaurus) X account.
-
-For new feature requests, you can create a post on our [feature requests board (Canny)](/feature-requests), which is a handy tool for road-mapping and allows for sorting by upvotes, which gives the core team a better indicator of what features are in high demand, as compared to GitHub issues which are harder to triage. Refrain from making a Pull Request for new features (especially large ones) as someone might already be working on it or will be part of our roadmap. Talk to us first!
