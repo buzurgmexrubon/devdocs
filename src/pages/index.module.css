@@ -1,23 +1,31 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+.features {
+  padding: 4rem 1rem;
+  background: radial-gradient(circle at 30% 20%, #1c1c1c, #121212 90%);
+}
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.featureCard {
   position: relative;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 0 0 transparent;
+  transition: transform 0.3s ease, box-shadow 0.4s ease, background 0.4s ease;
+  cursor: pointer;
   overflow: hidden;
-}
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
+  min-height: 300px;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 255, 200, 0.15),
+    0 0 30px rgba(0, 255, 200, 0.1);
+  background: linear-gradient(135deg, #1a1a1a, #222222);
+  border-color: rgba(0, 255, 200, 0.2);
 }

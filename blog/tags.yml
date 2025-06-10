@@ -1,19 +1,59 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+translated:
+  label: Tarjima qilingan
+  permalink: /tarjima
+  description: Tarjima qilingan bloglar
 
 docusaurus:
   label: Docusaurus
   permalink: /docusaurus
-  description: Docusaurus tag description
+  description: Docusaurus haqidagi maqolalar
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+html:
+  label: HTML
+  permalink: /html
+  description: HTML texnologiyasi haqida maqolalar
+
+css:
+  label: CSS
+  permalink: /css
+  description: CSS dizayn va uslublar haqida maqolalar
+
+js:
+  label: JavaScript
+  permalink: /javascript
+  description: JavaScript dasturlash tili haqida maqolalar
+
+react:
+  label: React
+  permalink: /react
+  description: React kutubxonasi bilan ishlash
+
+webdev:
+  label: Web Dasturlash
+  permalink: /web-dasturlash
+  description: Frontend va backend web dasturlash haqida
+
+tutorial:
+  label: Qo'llanma
+  permalink: /qollanma
+  description: Bosqichma-bosqich darslik va qo'llanmalar
+
+tools:
+  label: Asboblar
+  permalink: /asboblar
+  description: Dasturchilar uchun foydali asboblar va resurslar
+
+performance:
+  label: Ishlash samaradorligi
+  permalink: /ishlash
+  description: Web sahifalarni tezlashtirish, optimizatsiya va samaradorlik haqida
+
+seo:
+  label: SEO
+  permalink: /seo
+  description: Qidiruv tizimlari optimizatsiyasi haqida maqolalar
+
+git:
+  label: Git
+  permalink: /git
+  description: Versiyalarni boshqarish tizimi Git haqida

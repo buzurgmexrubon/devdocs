@@ -1,25 +1,11 @@
-yangshun:
-  name: Yangshun Tay
-  title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
-  url: https://linkedin.com/in/yangshun
-  image_url: https://github.com/yangshun.png
+buzurgmexr:
+  name: Buzurgmexr Sultonaliyev
+  title: Software Engineer
+  url: https://buzruk.uz
+  image_url: https://media.licdn.com/dms/image/v2/D4D03AQGVYAKbCnGtDQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1729738500846?e=1755129600&v=beta&t=nBynw5dbZN8ECV2K1yIjLGwd1THxNruO45UzC46jBSg
   page: true
+  email: buzurgmexrubon@gmail.com
   socials:
-    x: yangshunz
-    linkedin: yangshun
-    github: yangshun
-    newsletter: https://www.greatfrontend.com
-
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
-  socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+    x: buzurgmexrubon
+    linkedin: buzurgmexrubon
+    github: buzurgmexrubon

@@ -1,145 +1,262 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+import { themes as prismThemes } from "prism-react-renderer"
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: "Devdocs",
+  tagline: "Siz to'g'ri joydasiz!",
+  favicon: "img/favicon.ico",
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  url: "https://your-docusaurus-site.example.com",
+  baseUrl: "/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: "facebook",
+  projectName: "docusaurus",
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // i18n: {
+  //   defaultLocale: "uz",
+  //   locales: ["uz"],
+  // },
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "uz",
+    locales: ["uz"],
+    localeConfigs: {
+      uz: {
+        label: "O‘zbekcha",
+        direction: "ltr",
+        htmlLang: "uz",
+        calendar: "gregory",
+        path: "uz",
+      },
+    },
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        docs: false,
         blog: {
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           showReadingTime: true,
+          readingTime: ({ content, locale, frontMatter, defaultReadingTime }) =>
+            // usage:
+            // ---
+            // hide_reading_time: true
+            // ---
+            //
+            frontMatter.hide_reading_time
+              ? undefined
+              : defaultReadingTime({
+                  content,
+                  locale,
+                  options: { wordsPerMinute: 100 },
+                }),
+          // feedOptions: {
+          //   type: ["rss", "atom"],
+          //   xslt: true,
+          // },
           feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
+            // The feeds can be found at:
+            // https://example.com/blog/rss.xml
+            // https://example.com/blog/atom.xml
+            // https://example.com/blog/feed.json
+            type: "all",
+            copyright: `Copyright © ${new Date().getFullYear()} Buzurgmexr Sultonaliyev.`,
+            createFeedItems: async (params) => {
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 10),
+                ...rest,
+              })
+            },
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
+          //
+          blogTitle: "Docusaurus blog!",
+          blogDescription: "A Docusaurus powered blog!",
+          postsPerPage: "ALL",
+          //
+          blogSidebarTitle: "All posts",
+          blogSidebarCount: "ALL", // 0 for remove sidebar
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       }),
     ],
   ],
 
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "docusaurus",
+        path: "docs/docusaurus",
+        routeBasePath: "docs/docusaurus",
+        sidebarPath: require.resolve("./sidebars.js"),
+        editUrl: "https://github.com/...",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "html",
+    //     path: "docs/html",
+    //     routeBasePath: "docs/html",
+    //     sidebarPath: require.resolve("./sidebars.js"),
+    //     editUrl: "https://github.com/...",
+    //     showLastUpdateAuthor: true,
+    //     showLastUpdateTime: true,
+    //   },
+    // ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "css",
+    //     path: "docs/css",
+    //     routeBasePath: "docs/css",
+    //     sidebarPath: require.resolve("./sidebars.js"),
+    //     editUrl: "https://github.com/...",
+    //     showLastUpdateAuthor: true,
+    //     showLastUpdateTime: true,
+    //   },
+    // ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "js",
+    //     path: "docs/js",
+    //     routeBasePath: "docs/js",
+    //     sidebarPath: require.resolve("./sidebars.js"),
+    //     editUrl: "https://github.com/...",
+    //     showLastUpdateAuthor: true,
+    //     showLastUpdateTime: true,
+    //   },
+    // ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
-      navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+      image: "img/docusaurus-social-card.jpg",
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
         },
+      },
+      navbar: {
+        title: "Devdocs",
+        logo: {
+          alt: "Devdocs Logo",
+          src: "img/logo.svg",
+        },
+
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
+            type: "docSidebar",
+            sidebarId: "docusaurusSidebar",
+            position: "left",
+            label: "Docusaurus",
+            docsPluginId: "docusaurus",
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "htmlSidebar",
+          //   position: "left",
+          //   label: "HTML",
+          //   docsPluginId: "html",
+          // },
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "cssSidebar",
+          //   position: "left",
+          //   label: "CSS",
+          //   docsPluginId: "css",
+          // },
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "jsSidebar",
+          //   position: "left",
+          //   label: "JavaScript",
+          //   docsPluginId: "js",
+          // },
+          { to: "/blog", label: "Blog", position: "right" },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/facebook/docusaurus",
+            label: "GitHub",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: "Docusaurus",
+                to: "/docs/docusaurus",
+              },
+              // {
+              //   label: "HTML",
+              //   to: "/docs/html",
+              // },
+              // {
+              //   label: "CSS",
+              //   to: "/docs/css",
+              // },
+              // {
+              //   label: "JavaScript",
+              //   to: "/docs/js",
+              // },
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Stack Overflow",
+                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              },
+              {
+                label: "Discord",
+                href: "https://discordapp.com/invite/docusaurus",
+              },
+              {
+                label: "X",
+                href: "https://x.com/docusaurus",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "More",
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: "Blog",
+                to: "/blog",
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: "GitHub",
+                href: "https://github.com/facebook/docusaurus",
               },
             ],
           },
@@ -147,10 +264,10 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.gruvboxMaterialLight,
+        darkTheme: prismThemes.gruvboxMaterialDark,
       },
     }),
-};
+}
 
-export default config;
+export default config
