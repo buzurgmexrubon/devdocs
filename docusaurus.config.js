@@ -20,10 +20,6 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  // i18n: {
-  //   defaultLocale: "uz",
-  //   locales: ["uz"],
-  // },
   i18n: {
     defaultLocale: "uz",
     locales: ["uz"],
@@ -72,11 +68,11 @@ const config = {
             // https://example.com/blog/feed.json
             type: "all",
             copyright: `Copyright © ${new Date().getFullYear()} Buzurgmexr Sultonaliyev.`,
-            createFeedItems: async (params) => {
+            createFeedItems: (params) => {
               const { blogPosts, defaultCreateFeedItems, ...rest } = params
               return defaultCreateFeedItems({
                 // keep only the 10 most recent blog posts in the feed
-                blogPosts: blogPosts.filter((item, index) => index < 10),
+                blogPosts: blogPosts.filter((_, index) => index < 10),
                 ...rest,
               })
             },
@@ -91,7 +87,7 @@ const config = {
           blogDescription: "A Docusaurus powered blog!",
           postsPerPage: "ALL",
           //
-          blogSidebarTitle: "All posts",
+          blogSidebarTitle: "Hamma bloglar",
           blogSidebarCount: "ALL", // 0 for remove sidebar
         },
         theme: {
@@ -108,6 +104,18 @@ const config = {
         id: "docusaurus",
         path: "docs/docusaurus",
         routeBasePath: "docs/docusaurus",
+        sidebarPath: require.resolve("./sidebars.js"),
+        editUrl: "https://github.com/...",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "algoliaDocsearch",
+        path: "docs/algolia-docsearch",
+        routeBasePath: "docs/algoliaDocsearch",
         sidebarPath: require.resolve("./sidebars.js"),
         editUrl: "https://github.com/...",
         showLastUpdateAuthor: true,
@@ -177,6 +185,13 @@ const config = {
             label: "Docusaurus",
             docsPluginId: "docusaurus",
           },
+          {
+            type: "docSidebar",
+            sidebarId: "algoliaDocsearchSidebar",
+            position: "left",
+            label: "AlgoliaDocsearch",
+            docsPluginId: "algoliaDocsearch",
+          },
           // {
           //   type: "docSidebar",
           //   sidebarId: "htmlSidebar",
@@ -215,6 +230,10 @@ const config = {
               {
                 label: "Docusaurus",
                 to: "/docs/docusaurus",
+              },
+              {
+                label: "algoliaDocsearch",
+                to: "/docs/algolia-docsearch",
               },
               // {
               //   label: "HTML",
@@ -264,8 +283,13 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.gruvboxMaterialLight,
-        darkTheme: prismThemes.gruvboxMaterialDark,
+        theme: prismThemes.vsLight,
+        darkTheme: prismThemes.vsDark,
+      },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
     }),
 }

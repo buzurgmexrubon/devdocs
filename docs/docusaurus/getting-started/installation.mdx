@@ -7,22 +7,20 @@ import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 import UpgradeGuide from "@site/src/components/UpgradeGuide"
 
-# Installation
+# O'rnatish
 
-Docusaurus consists of a set of npm [packages](https://github.com/facebook/docusaurus/tree/main/packages).
+Docusaurus bir qator npm [paketlaridan](https://github.com/facebook/docusaurus/tree/main/packages) iborat.
 
 :::tip
 
-Use the **[Fast Track](introduction.mdx#fast-track)** to understand Docusaurus in **5 minutes ⏱**!
-
-Use **[docusaurus.new](https://docusaurus.new)** to test Docusaurus immediately in your browser!
+Docusaurus'ni darhol brauzeringizda sinab ko'rish uchun **[docusaurus.new](https://docusaurus.new)** dan foydalaning!
 
 :::
 
-## Requirements
+## Talablar
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above (which can be checked by running `node -v`). You can use [nvm](https://github.com/nvm-sh/nvm) to manage multiple Node.js versions on a single machine.
-  - When installing Node.js, it is recommended to check all checkboxes related to dependencies.
+- [Node.js](https://nodejs.org/en/download/) 18.0 yoki undan yuqori versiyasi (`node -v` buyrug'ini ishga tushirish orqali tekshirish mumkin). Bitta mashinada bir nechta Node.js versiyalarini boshqarish uchun [nvm](https://github.com/nvm-sh/nvm) dan foydalanishingiz mumkin.
+  - Node.js'ni o'rnatayotganda, barcha bog'liqliklarga (dependencies) oid katakchalarni belgilash tavsiya etiladi.
 
 ## Scaffold project website
 
@@ -63,68 +61,165 @@ npm init docusaurus
 
 Run `npx create-docusaurus@latest --help`, or check out its [API docs](./api/misc/create-docusaurus.mdx) for more information about all available flags.
 
-## Project structure
+## Loyiha veb-saytining asosini yaratish (Scaffold project website)
 
-Assuming you chose the classic template and named your site `my-website`, you will see the following files generated under a new directory `my-website/`:
+Docusaurusni o'rnatishning eng oson yo'li bu [`create-docusaurus`](./api/misc/create-docusaurus.mdx) buyruq qatori (command line) vositasidan foydalanishdir, u sizga Docusaurus veb-saytining skeletini yaratishga yordam beradi. Siz bu buyruqni yangi bo'sh repozitoriyda yoki mavjud repozitoriy ichida istalgan joyda ishga tushirishingiz mumkin, u yaratilgan fayllarni o'z ichiga olgan yangi papka hosil qiladi.
+
+```bash
+npx create-docusaurus@latest my-website classic
+```
+
+Tezroq ishga kirishishingiz uchun biz `classic` shablonini tavsiya etamiz. Chunki u Docusaurus 1 dagi mavjud funksiyalarni o'z ichiga oladi. "Classic" shabloni `@docusaurus/preset-classic` ni o'zida mujassam etgan bo'lib, unga standart dokumentatsiya, blog, shaxsiy sahifalar va CSS freymvorki (qorong'u rejimni qo'llab-quvvatlaydi) kiradi. "Classic" shabloni yordamida loyihangizni juda tez ishga tushirishingiz va Docusaurus bilan yaxshiroq tanishganingizdan so'ng uni keyinchalik o'zgartirishingiz mumkin bo'ladi.
+
+Shablonning TypeScript variantini `--typescript` flagini berish orqali ham ishlatishingiz mumkin. Qo'shimcha ma'lumot uchun [TypeScript-ni qo'llab-quvvatlash](./typescript-support.mdx) bo'limiga qarang.
+
+```bash
+npx create-docusaurus@latest my-website classic --typescript
+```
+
+:::info Faqat Meta-uchun
+
+Agar siz Meta ochiq kodli loyihasi uchun yangi Docusaurus veb-saytini o'rnatayotgan bo'lsangiz, ushbu buyruqni ichki (internal) repozitoriyda ishga tushiring. Bu buyruq Meta'ga xos ba'zi foydali standart sozlamalar bilan birga keladi.
+
+```bash
+scarf static-docs-bootstrap
+```
+
+:::
+
+<details>
+<summary>Muqobil o'rnatish buyruqlari</summary>
+
+Siz yangi loyihani o'zingizning afzal ko'rgan loyiha menejeri yordamida ham ishga tushirishingiz mumkin:
+
+<Tabs groupId="package-installation">
+  <TabItem value="npm" label="npm">
+    ```bash
+    npm init docusaurus
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="Yarn">
+    ```bash
+    yarn create docusaurus
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    pnpm create docusaurus
+    ```
+  </TabItem>
+  <TabItem value="bun" label="Bun">
+    ```bash
+    bunx create-docusaurus
+    ```
+  </TabItem>
+
+</Tabs>
+
+</details>
+
+`npx create-docusaurus@latest --help` buyrug'ini ishga tushiring yoki barcha mavjud flaglar haqida ko'proq ma'lumot olish uchun uning [API dokumentatsiyasiga](../api/misc/create-docusaurus.mdx) qarang.
+
+## Loyiha tuzilishi
+
+Agar siz classic shablonini tanlagan bo'lsangiz va saytingizga `my-website` deb nom bergan bo'lsangiz, `my-website/` nomli yangi papkada quyidagi fayllar yaratilganini ko'rishingiz mumkin:
 
 ```bash
 my-website
 ├── blog
-│   ├── 2019-05-28-hola.md
-│   ├── 2019-05-29-hello-world.md
-│   └── 2020-05-30-welcome.md
+│   ├── 2019-05-28-first-blog-post.md
+│   ├── 2019-05-29-long-blog-post.md
+│   ├── 2021-08-01-mdx-blog-post.mdx
+│   ├── 2021-08-26-welcome
+│   │   ├── docusaurus-plushie-banner.jpeg
+│   │   └── index.md
+│   ├── authors.yml
+│   └── tags.yml
 ├── docs
-│   ├── doc1.md
-│   ├── doc2.md
-│   ├── doc3.md
-│   └── mdx.md
-├── src
-│   ├── css
-│   │   └── custom.css
-│   └── pages
-│       ├── styles.module.css
-│       └── index.js
-├── static
-│   └── img
+│   ├── intro.md
+│   ├── tutorial-basics
+│   │   ├── _category_.json
+│   │   ├── congratulations.md
+│   │   ├── create-a-blog-post.md
+│   │   ├── create-a-document.md
+│   │   ├── create-a-page.md
+│   │   ├── deploy-your-site.md
+│   │   └── markdown-features.mdx
+│   └── tutorial-extras
+│       ├── _category_.json
+│       ├── img
+│       │   ├── docsVersionDropdown.png
+│       │   └── localeDropdown.png
+│       ├── manage-docs-versions.md
+│       └── translate-your-site.md
 ├── docusaurus.config.js
+├── package-lock.json
 ├── package.json
 ├── README.md
 ├── sidebars.js
-└── yarn.lock
+├── src
+│   ├── components
+│   │   └── HomepageFeatures
+│   │       ├── index.js
+│   │       └── styles.module.css
+│   ├── css
+│   │   └── custom.css
+│   └── pages
+│       ├── index.js
+│       ├── index.module.css
+│       └── markdown-page.md
+└── static
+    └── img
+        ├── docusaurus-social-card.jpg
+        ├── docusaurus.png
+        ├── favicon.ico
+        ├── logo.svg
+        ├── undraw_docusaurus_mountain.svg
+        ├── undraw_docusaurus_react.svg
+        └── undraw_docusaurus_tree.svg
 ```
 
-### Project structure rundown
+### Loyiha Tuzilmasiga Qisqacha Sharh
 
-- `/blog/` - Contains the blog Markdown files. You can delete the directory if you've disabled the blog plugin, or you can change its name after setting the `path` option. More details can be found in the [blog guide](blog.mdx)
-- `/docs/` - Contains the Markdown files for the docs. Customize the order of the docs sidebar in `sidebars.js`. You can delete the directory if you've disabled the docs plugin, or you can change its name after setting the `path` option. More details can be found in the [docs guide](./guides/docs/docs-introduction.mdx)
-- `/src/` - Non-documentation files like pages or custom React components. You don't have to strictly put your non-documentation files here, but putting them under a centralized directory makes it easier to specify in case you need to do some sort of linting/processing
-  - `/src/pages` - Any JSX/TSX/MDX file within this directory will be converted into a website page. More details can be found in the [pages guide](guides/creating-pages.mdx)
-- `/static/` - Static directory. Any contents inside here will be copied into the root of the final `build` directory
-- `/docusaurus.config.js` - A config file containing the site configuration. This is the equivalent of `siteConfig.js` in Docusaurus v1
-- `/package.json` - A Docusaurus website is a React app. You can install and use any npm packages you like in them
-- `/sidebars.js` - Used by the documentation to specify the order of documents in the sidebar
+- **`/blog/`** - Bu papkada **blog yozuvlari uchun Markdown fayllari** joylashadi. Agar blog plaginini oʻchirib qoʻygan boʻlsangiz, bu papkani oʻchirib tashlashingiz yoki `path` parametrini oʻzgartirishingiz mumkin. Batafsil maʼlumotni [blog qoʻllanmasida](../guides/blog.mdx) topishingiz mumkin.
+  - **`authors.yml`**: Blog yozuvlari mualliflari haqidagi ma'lumotlarni saqlaydi.
+  - **`tags.yml`**: Blog postlarining teglarini (kalit so'zlarini) belgilaydi.
+- **`/docs/`** - Dokumentatsiya uchun **Markdown fayllari** shu yerda joylashgan. `sidebars.js` faylida dokumentatsiya yon panelining tartibini moslashtirishingiz mumkin. Agar docs plaginini oʻchirib qoʻygan boʻlsangiz, bu papkani oʻchirib tashlashingiz yoki `path` parametrini oʻzgartirishingiz mumkin. Batafsil maʼlumotni [docs qoʻllanmasida](../guides/docs/) topishingiz mumkin.
+  - **`tutorial-basics/` va `tutorial-extras/`**: Tutorial (qo'llanma) bo'limlari uchun alohida papkalar.
+  - **`_category_.json`**: Docs yon panelidagi kategoriyalarning nomini va tartibini sozlash uchun ishlatiladi.
+  - **`img/`**: Dokumentatsiya ichida ishlatiladigan rasmlar uchun.
+- **`/src/`** - Sahifalar yoki maxsus React komponentlari kabi **dokumentatsiyaga kirmaydigan fayllar** joylashadigan joy. Bu fayllarni qat'iy shu yerga joylashtirishingiz shart emas, ammo ularni bir markazlashgan papkaga qo'yish, agar sizga qandaydir **linting/processing (ishlov berish)** kerak bo'lsa, uni osonlashtiradi.
+  - **`/src/components`**: Maxsus React komponentlaringizni joylashtirish uchun.
+  - **`/src/css`**: Saytingizning umumiy CSS fayllari, masalan, `custom.css` joylashadi.
+  - **`/src/pages`**: Bu papka ichidagi har qanday **JSX/TSX/MDX fayli** veb-sayt sahifasiga aylanadi. Batafsil maʼlumotni [sahifalar qoʻllanmasida](../guides//creating-pages.mdx) topishingiz mumkin.
+- **`/static/`** - Bu papka ichidagi barcha fayllar va papkalar yakuniy build papkasining ildiziga nusxalanadi. Bu yerda sizning rasmlaringiz, favikoningiz va boshqa statik resurslaringiz saqlanadi.
+- **`docusaurus.config.js`** - Sayt konfiguratsiyasini oʻz ichiga olgan konfiguratsiya fayli. Bu Docusaurus v1 dagi `siteConfig.js` fayliga teng.
+- **`package.json`** - **Docusaurus veb-sayti React ilovasi hisoblanadi.** Siz unda istalgan npm paketlarini oʻrnatishingiz va ishlatishingiz mumkin.
+- **`package-lock.json`** - npm paket bog'liqliklarining aniq versiyalarini qulflash uchun `package.json` bilan birga ishlatiladi.
+- **`README.md`** - Loyihangiz haqida umumiy ma'lumot beruvchi fayl.
+- **`sidebars.js`** - Dokumentatsiyaning yon panelidagi sahifalar tartibini belgilash uchun ishlatiladi.
 
-### Monorepos
+### Monorepolar
 
-If you are using Docusaurus for documentation of an existing project, a monorepo may be the solution for you. Monorepos allow you to share dependencies between similar projects. For example, your website may use your local packages to showcase latest features instead of depending on a released version. Then, your contributors can update the docs as they implement features. An example monorepo folder structure is below:
+Agar siz mavjud loyihaning dokumentatsiyasi uchun Docusaurusdan foydalanayotgan bo'lsangiz, monorepo siz uchun yechim bo'lishi mumkin. Monorepolar o'xshash loyihalar o'rtasida bog'liqliklarni (dependencies) almashish imkonini beradi. Misol uchun, veb-saytingiz yangi funksiyalarni ko'rsatish uchun chiqarilgan versiyaga bog'liq bo'lmasdan, mahalliy paketlaringizdan foydalanishi mumkin. Keyin, kontributorlar funksiyalarni amalga oshirayotganda hujjatlarni yangilashlari mumkin. Quyida monorepo papka tuzilishi misoli keltirilgan:
 
 ```bash
 my-monorepo
-├── package-a # Another package, your actual project
-│   ├── src
-│   └── package.json # Package A's dependencies
-├── website   # Docusaurus root
-│   ├── docs
-│   ├── src
-│   └── package.json # Docusaurus' dependencies
-├── package.json # Monorepo's shared dependencies
+├── package-a # Boshqa paket, sizning haqiqiy loyihangiz
+│   ├── src
+│   └── package.json # A paketi bog'liqliklari
+├── website   # Docusaurus ildizi
+│   ├── docs
+│   ├── src
+│   └── package.json # Docusaurus bog'liqliklari
+├── package.json # Monorepo umumiy bog'liqliklari
 ```
 
-In this case, you should run `npx create-docusaurus` within the `./my-monorepo` folder.
+Bu holda, siz `npx create-docusaurus` buyrug'ini `./my-monorepo` papkasida ishga tushirishingiz kerak.
 
-If you're using a hosting provider such as Netlify or Vercel, you will need to change the `Base directory` of the site to where your Docusaurus root is. In this case, that would be `./website`. Read more about configuring ignore commands in the [deployment docs](./deployment.mdx#deploying-to-netlify).
+Agar siz Netlify yoki Vercel kabi hosting provayderidan foydalanayotgan bo'lsangiz, saytning `Base directory` (asosiy papka) sini Docusaurus loyihangiz joylashgan ildiz papkasiga o'zgartirishingiz kerak bo'ladi. Bu holatda, u ./website bo'ladi. Konfiguratsiyalar haqida batafsil ma'lumotni [joylashtirish (deployment) dokumentatsiyasida](../guides/deployment.mdx#netlify-ga-joylashtirish-deploy) o'qishingiz mumkin.
 
-Read more about monorepos in the [Yarn documentation](https://yarnpkg.com/features/workspaces) (Yarn is not the only way to set up a monorepo, but it's a common solution), or checkout [Docusaurus](https://github.com/facebook/docusaurus) and [Jest](https://github.com/facebook/jest) for some real-world examples.
+Monorepolar haqida ko'proq ma'lumotni [Yarn dokumentatsiyasida](https://yarnpkg.com/features/workspaces) o'qing (Yarn monorepo o'rnatishning yagona yo'li emas, lekin u keng tarqalgan yechim) yoki real hayotiy misollar uchun [Docusaurus](https://github.com/facebook/docusaurus) va [Jest](https://github.com/facebook/jest) ni ko'rib chiqing.
 
 ## Running the development server
 
@@ -162,9 +257,47 @@ By default, a browser window will open at [`http://localhost:3000`](http://local
 
 Congratulations! You have just created your first Docusaurus site! Browse around the site to see what's available.
 
-## Build
+---
 
-Docusaurus is a modern static website generator so we need to build the website into a directory of static contents and put it on a web server so that it can be viewed. To build the website:
+## Ishlab chiqish (development) serverini ishga tushirish
+
+Fayllarni tahrirlash jarayonida kiritgan o'zgarishlaringizni oldindan ko'rish uchun, veb-saytingizni taqdim etadigan, so'nggi o'zgarishlarni darhol aks ettiruvchi mahalliy (local) ishlab chiqish serverini ishga tushirishingiz mumkin.
+
+<Tabs groupId="package-installation">
+  <TabItem value="npm" label="npm">
+    ```bash
+    cd my-website
+    npm run start
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="Yarn">
+    ```bash
+    cd my-website
+    yarn run start
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    cd my-website
+    pnpm run start
+    ```
+  </TabItem>
+  <TabItem value="bun" label="Bun">
+    ```bash
+    cd my-website
+    bun run start
+    ```
+  </TabItem>
+
+</Tabs>
+
+Sukut bo'yicha, brauzer oynasi [`http://localhost:3000`](http://localhost:3000) manzilida ochiladi.
+
+Tabriklaymiz! Siz o'zingizning birinchi Docusaurus saytingizni yaratdingiz! Saytni ko'zdan kechirib, unda nimalar borligini bilib oling.
+
+## Qurish (Build)
+
+Docusaurus zamonaviy statik veb-sayt generatori bo'lgani sababli, biz veb-saytni statik fayllardan iborat katalogga generatsiya qilishimiz va uning ko'rinishi uchun veb-serverga joylashtirishimiz kerak bo'ladi. Veb-saytni generatsiya qilish uchun:
 
 <Tabs groupId="package-installation">
   <TabItem value="npm" label="npm">
@@ -190,7 +323,7 @@ Docusaurus is a modern static website generator so we need to build the website 
 
 </Tabs>
 
-and contents will be generated within the `/build` directory, which can be copied to any static file hosting service like [GitHub pages](https://pages.github.com/), [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/). Check out the docs on [deployment](deployment.mdx) for more details.
+va hosil qilingan kontentlar `/build` katalogida joylashadi. Bu kontentlarni [GitHub Pages](https://pages.github.com/), [Vercel](https://vercel.com/) yoki [Netlify](https://www.netlify.com/) kabi istalgan statik fayl hosting xizmatiga nusxalash mumkin. Qoʻshimcha maʼlumot uchun [joylashtirish (deployment)](../guides/deployment.mdx) boʻlimidagi dokumentatsiyani koʻrib chiqing.
 
 ## Updating your Docusaurus version
 
@@ -247,6 +380,64 @@ yarn add @docusaurus/core @docusaurus/preset-classic
 :::tip
 
 Use new unreleased features of Docusaurus with the [`@canary` npm dist tag](/community/canary)
+
+:::
+
+## Docusaurus versiyasini yangilash
+
+Docusaurus versiyasini yangilashning ko'plab usullari mavjud. Kafolatlangan usullardan biri `package.json` faylidagi versiya raqamini qo'lda kerakli versiyaga o'zgartirishdir. Shuni esda tutingki, barcha `@docusaurus/`-nomli paketlar bir xil versiyadan foydalanishi kerak.
+
+<UpgradeGuide />
+
+Keyin, `package.json` joylashgan katalogda, paket menejeringizning o'rnatish buyrug'ini ishga tushiring:
+
+<Tabs groupId="package-installation">
+  <TabItem value="npm" label="npm">
+    ```bash
+    npm install
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="Yarn">
+    ```bash
+    yarn install
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash
+    pnpm install
+    ```
+  </TabItem>
+  <TabItem value="bun" label="Bun">
+    ```bash
+    bun install
+    ```
+  </TabItem>
+
+</Tabs>
+
+:::tip
+
+`npm install` bir nechta zaifliklarni xabar qilishi va ularni bartaraf etish uchun `npm audit`ni ishga tushirishni tavsiya qilishi mumkin. Odatda, bu xabar qilingan zaifliklar, masalan, RegExp DOS zaifliklari, zararsizdir va ularni xavfsiz tarzda e'tiborsiz qoldirish mumkin. Shuningdek, bizning fikrimizni aks ettiruvchi ushbu maqolani o'qing: [npm audit: Broken by Design](https://overreacted.io/npm-audit-broken-by-design/).
+
+:::
+
+Yangilanish muvaffaqiyatli amalga oshirilganligini tekshirish uchun quyidagilarni ishga tushiring:
+
+```bash
+npx docusaurus --version
+```
+
+Siz to'g'ri versiyani chiqish sifatida ko'rishingiz kerak.
+
+Muqobil ravishda, agar siz Yarn dan foydalanayotgan bo'lsangiz, quyidagilarni qilishingiz mumkin:
+
+```bash
+yarn add @docusaurus/core @docusaurus/preset-classic
+```
+
+:::tip
+
+Docusaurusning yangi chiqarilmagan xususiyatlaridan [`@canary` npm dist tagi](https://www.google.com/search?q=/community/canary) bilan foydalaning
 
 :::
 

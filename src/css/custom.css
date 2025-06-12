@@ -1,5 +1,4 @@
-/* You can override the default Infima variables here. */
-:root {
+/* :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -9,10 +8,9 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
+} */
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+/* [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -21,4 +19,21 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+} */
+
+
+html[data-theme='dark'] {
+  --ifm-background-color: #0d1117;
+  --ifm-font-color-base: #c9d1d9;
+  --ifm-color-primary: #58a6ff;
+  --ifm-navbar-background-color: #161b22;
+  --ifm-footer-background-color: #161b22;
+  --ifm-card-background-color: #161b22;
+  --ifm-code-background: #161b22;
+  --ifm-code-color: #c9d1d9;
+}
+
+html[data-theme='light'] {
+  --ifm-background-color: #ffffff;
+  --ifm-font-color-base: #24292f;
 }

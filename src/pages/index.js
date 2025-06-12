@@ -61,6 +61,11 @@ function HomepageFeatures() {
             link="/docs/docusaurus"
           />
           <Feature
+            title="algoliaDocsearch"
+            description="Endi dokumentatsiya haqida o'ylashga hojat yo'q"
+            link="/docs/algolia-docsearch"
+          />
+          <Feature
             title="HTML"
             description="Veb sahifalarni yaratish uchun asosiy belgilash tili. Strukturani yaratishni o‘rganing."
             link="/docs/html"
