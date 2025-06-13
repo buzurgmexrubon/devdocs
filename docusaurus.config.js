@@ -99,6 +99,26 @@ const config = {
 
   plugins: [
     [
+      "./plugins/docusaurus-plugin-ionic-component-api",
+      {
+        // Yangi qo'shiladigan optionslar
+        ionicDocsId: "ionic", // Sizning "ionic" docs instansingizning ID'si
+        // Plugin ichida ishlatiladigan versiyalar
+        versions: [
+          {
+            label: "v8",
+            path: "v8",
+            npmTag: "latest",
+            isCurrent: true,
+            banner: "none",
+          }, // Hozirgi (current) versiya
+          { label: "v7", path: "v7", npmTag: "7" },
+          { label: "v6", path: "v6", npmTag: "6" },
+          // ...kelajakdagi boshqa versiyalar
+        ],
+      },
+    ],
+    [
       "@docusaurus/plugin-content-docs",
       {
         id: "docusaurus",
@@ -116,6 +136,18 @@ const config = {
         id: "algoliaDocsearch",
         path: "docs/algolia-docsearch",
         routeBasePath: "docs/algoliaDocsearch",
+        sidebarPath: require.resolve("./sidebars.js"),
+        editUrl: "https://github.com/...",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "ionic",
+        path: "docs/ionic",
+        routeBasePath: "docs/ionic",
         sidebarPath: require.resolve("./sidebars.js"),
         editUrl: "https://github.com/...",
         showLastUpdateAuthor: true,
@@ -192,6 +224,13 @@ const config = {
             label: "AlgoliaDocsearch",
             docsPluginId: "algoliaDocsearch",
           },
+          {
+            type: "docSidebar",
+            sidebarId: "ionicSidebar",
+            position: "left",
+            label: "ionic",
+            docsPluginId: "ionic",
+          },
           // {
           //   type: "docSidebar",
           //   sidebarId: "htmlSidebar",
@@ -234,6 +273,10 @@ const config = {
               {
                 label: "algoliaDocsearch",
                 to: "/docs/algolia-docsearch",
+              },
+              {
+                label: "ionic",
+                to: "/docs/ionic",
               },
               // {
               //   label: "HTML",
