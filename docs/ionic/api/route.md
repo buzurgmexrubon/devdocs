@@ -5,13 +5,6 @@ title: "ion-route"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/route/props.md';
-import Events from '@ionic-internal/component-api/v8/route/events.md';
-import Methods from '@ionic-internal/component-api/v8/route/methods.md';
-import Parts from '@ionic-internal/component-api/v8/route/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/route/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/route/slots.md';
-
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>
   <meta name="description" content="The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps." />
@@ -263,24 +256,69 @@ const confirmDiscardChanges = async () => {
 
 ## Properties
 
-<Props />
+### beforeEnter
+
+|                 |                                                                                                                                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A navigation hook that is fired when the route tries to enter. Returning `true` allows the navigation to proceed, while returning `false` causes it to be cancelled. Returning a `NavigationHookOptions` object causes the router to redirect to the path specified. |
+| **Attribute**   | `before-enter`                                                                                                                                                                                                                                                       |
+| **Type**        | `(() => NavigationHookResult ｜ Promise<NavigationHookResult>) ｜ undefined`                                                                                                                                                                                         |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                          |
+
+### beforeLeave
+
+|                 |                                                                                                                                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A navigation hook that is fired when the route tries to leave. Returning `true` allows the navigation to proceed, while returning `false` causes it to be cancelled. Returning a `NavigationHookOptions` object causes the router to redirect to the path specified. |
+| **Attribute**   | `before-leave`                                                                                                                                                                                                                                                       |
+| **Type**        | `(() => NavigationHookResult ｜ Promise<NavigationHookResult>) ｜ undefined`                                                                                                                                                                                         |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                          |
+
+### component
+
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`) when the route matches.<br /><br />The value of this property is not always the tagname of the component to load, in `ion-tabs` it actually refers to the name of the `ion-tab` to select. |
+| **Attribute**   | `component`                                                                                                                                                                                                                                                                      |
+| **Type**        | `string`                                                                                                                                                                                                                                                                         |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+
+### componentProps
+
+|                 |                                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed to the defined component when rendered. |
+| **Attribute**   | `component-props`                                                                                                            |
+| **Type**        | `undefined ｜ { [key: string]: any; }`                                                                                       |
+| **Default**     | `undefined`                                                                                                                  |
+
+### url
+
+|                 |                                                                                                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Relative path that needs to match in order for this route to apply.<br /><br />Accepts paths similar to expressjs so that you can define parameters in the url /foo/:bar where bar would be available in incoming props. |
+| **Attribute**   | `url`                                                                                                                                                                                                                    |
+| **Type**        | `string`                                                                                                                                                                                                                 |
+| **Default**     | `''`                                                                                                                                                                                                                     |
 
 ## Events
 
-<Events />
+| Name                  | Description                                                         | Bubbles |
+| --------------------- | ------------------------------------------------------------------- | ------- |
+| `ionRouteDataChanged` | Used internally by `ion-router` to know when this route did change. | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

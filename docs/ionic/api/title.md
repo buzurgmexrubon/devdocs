@@ -2,13 +2,6 @@
 title: "ion-title"
 ---
 
-import Props from '@ionic-internal/component-api/v8/title/props.md';
-import Events from '@ionic-internal/component-api/v8/title/events.md';
-import Methods from '@ionic-internal/component-api/v8/title/methods.md';
-import Parts from '@ionic-internal/component-api/v8/title/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/title/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/title/slots.md';
-
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
   <meta name="description" content="ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps." />
@@ -78,24 +71,74 @@ import CSSCustomProperties from '@site/static/ionic/usage/v8/title/theming/css-p
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### size
+
+|                 |                                   |
+| --------------- | --------------------------------- |
+| **Description** | The size of the toolbar title.    |
+| **Attribute**   | `size`                            |
+| **Type**        | `"large" ｜ "small" ｜ undefined` |
+| **Default**     | `undefined`                       |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--color` | Text color of the title |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--color` | Text color of the title |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

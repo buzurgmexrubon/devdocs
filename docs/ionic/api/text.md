@@ -2,13 +2,6 @@
 title: "ion-text"
 ---
 
-import Props from '@ionic-internal/component-api/v8/text/props.md';
-import Events from '@ionic-internal/component-api/v8/text/events.md';
-import Methods from '@ionic-internal/component-api/v8/text/methods.md';
-import Parts from '@ionic-internal/component-api/v8/text/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/text/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/text/slots.md';
-
 <head>
   <title>ion-text: Ionic App Component to Style or Change Text Color</title>
   <meta name="description" content="ion-text is a simple app component that can be used to style the text color of any element. Learn how ion-text wraps elements in order to change the text color." />
@@ -32,24 +25,40 @@ The text component can be customized by changing any of the default [colors](../
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

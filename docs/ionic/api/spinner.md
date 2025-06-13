@@ -2,13 +2,6 @@
 title: "ion-spinner"
 ---
 
-import Props from '@ionic-internal/component-api/v8/spinner/props.md';
-import Events from '@ionic-internal/component-api/v8/spinner/events.md';
-import Methods from '@ionic-internal/component-api/v8/spinner/methods.md';
-import Parts from '@ionic-internal/component-api/v8/spinner/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/spinner/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/spinner/slots.md';
-
 <head>
   <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
   <meta name="description" content="The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on." />
@@ -52,24 +45,61 @@ import CSSProps from '@site/static/ionic/usage/v8/spinner/theming/css-properties
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### duration
+
+|                 |                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------- |
+| **Description** | Duration of the spinner animation in milliseconds. The default varies based on the spinner. |
+| **Attribute**   | `duration`                                                                                  |
+| **Type**        | `number ｜ undefined`                                                                       |
+| **Default**     | `undefined`                                                                                 |
+
+### name
+
+|                 |                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The name of the SVG spinner to use. If a name is not provided, the platform's default spinner will be used.                                     |
+| **Attribute**   | `name`                                                                                                                                          |
+| **Type**        | `"bubbles" ｜ "circles" ｜ "circular" ｜ "crescent" ｜ "dots" ｜ "lines" ｜ "lines-sharp" ｜ "lines-sharp-small" ｜ "lines-small" ｜ undefined` |
+| **Default**     | `undefined`                                                                                                                                     |
+
+### paused
+
+|                 |                                                    |
+| --------------- | -------------------------------------------------- |
+| **Description** | If `true`, the spinner's animation will be paused. |
+| **Attribute**   | `paused`                                           |
+| **Type**        | `boolean`                                          |
+| **Default**     | `false`                                            |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+    | Name | Description |
+
+| --- | --- |
+| `--color` | Color of the spinner |
 
 ## Slots
 
-<Slots />
+No slots available for this component.

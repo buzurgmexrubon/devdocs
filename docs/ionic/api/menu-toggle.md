@@ -2,13 +2,6 @@
 title: "ion-menu-toggle"
 ---
 
-import Props from '@ionic-internal/component-api/v8/menu-toggle/props.md';
-import Events from '@ionic-internal/component-api/v8/menu-toggle/events.md';
-import Methods from '@ionic-internal/component-api/v8/menu-toggle/methods.md';
-import Parts from '@ionic-internal/component-api/v8/menu-toggle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/menu-toggle/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/menu-toggle/slots.md';
-
 <head>
   <title>ion-menu-toggle: MenuToggle Component to Open/Close Menus</title>
   <meta name="description" content="The MenuToggle component can be used to toggle a menu open or closed—by default, it's only visible when the selected menu is active. Read more about usage." />
@@ -26,24 +19,42 @@ See the [menu](./menu#menu-toggle) documentation for more information.
 
 ## Properties
 
-<Props />
+### autoHide
+
+|                 |                                                                                                                                                                                                                         |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Automatically hides the content when the corresponding menu is not active.<br /><br />By default, it's `true`. Change it to `false` in order to keep `ion-menu-toggle` always visible regardless the state of the menu. |
+| **Attribute**   | `auto-hide`                                                                                                                                                                                                             |
+| **Type**        | `boolean`                                                                                                                                                                                                               |
+| **Default**     | `true`                                                                                                                                                                                                                  |
+
+### menu
+
+|                 |                                                                                                                                                                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Optional property that maps to a Menu's `menuId` prop. Can also be `start` or `end` for the menu side. This is used to find the correct menu to toggle.<br /><br />If this property is not used, `ion-menu-toggle` will toggle the first menu that is active. |
+| **Attribute**   | `menu`                                                                                                                                                                                                                                                        |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                                                                                         |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                   |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+| Name | Description                                                     |
+| ---- | --------------------------------------------------------------- |
+| ``   | Content is placed inside the toggle to act as the click target. |

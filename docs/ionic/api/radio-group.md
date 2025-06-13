@@ -2,13 +2,6 @@
 title: "ion-radio-group"
 ---
 
-import Props from '@ionic-internal/component-api/v8/radio-group/props.md';
-import Events from '@ionic-internal/component-api/v8/radio-group/events.md';
-import Methods from '@ionic-internal/component-api/v8/radio-group/methods.md';
-import Parts from '@ionic-internal/component-api/v8/radio-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/radio-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
-
 <head>
   <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
   <meta name="description" content="A radio group is a group of radio buttons. Radio groups allow a user to select at most one radio button from a set. Learn more about ion-radio-group usage." />
@@ -41,24 +34,78 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
 
 ## Properties
 
-<Props />
+### allowEmptySelection
+
+|                 |                                          |
+| --------------- | ---------------------------------------- |
+| **Description** | If `true`, the radios can be deselected. |
+| **Attribute**   | `allow-empty-selection`                  |
+| **Type**        | `boolean`                                |
+| **Default**     | `false`                                  |
+
+### compareWith
+
+|                 |                                                                                                                                                                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | This property allows developers to specify a custom function or property name for comparing objects when determining the selected option in the ion-radio-group. When not specified, the default behavior will use strict equality (===) for comparison. |
+| **Attribute**   | `compare-with`                                                                                                                                                                                                                                           |
+| **Type**        | `((currentValue: any, compareValue: any) => boolean) ｜ null ｜ string ｜ undefined`                                                                                                                                                                     |
+| **Default**     | `undefined`                                                                                                                                                                                                                                              |
+
+### errorText
+
+|                 |                                                          |
+| --------------- | -------------------------------------------------------- |
+| **Description** | The error text to display at the top of the radio group. |
+| **Attribute**   | `error-text`                                             |
+| **Type**        | `string ｜ undefined`                                    |
+| **Default**     | `undefined`                                              |
+
+### helperText
+
+|                 |                                                           |
+| --------------- | --------------------------------------------------------- |
+| **Description** | The helper text to display at the top of the radio group. |
+| **Attribute**   | `helper-text`                                             |
+| **Type**        | `string ｜ undefined`                                     |
+| **Default**     | `undefined`                                               |
+
+### name
+
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
+| **Description** | The name of the control, which is submitted with the form data. |
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.inputId`                                                  |
+
+### value
+
+|                 |                               |
+| --------------- | ----------------------------- |
+| **Description** | the value of the radio group. |
+| **Attribute**   | `value`                       |
+| **Type**        | `any`                         |
+| **Default**     | `undefined`                   |
 
 ## Events
 
-<Events />
+| Name        | Description                                                                                                                 | Bubbles |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionChange` | Emitted when the value has changed.<br /><br />This event will not emit when programmatically setting the `value` property. | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

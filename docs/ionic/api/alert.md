@@ -5,13 +5,6 @@ title: "ion-alert"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/alert/props.md';
-import Events from '@ionic-internal/component-api/v8/alert/events.md';
-import Methods from '@ionic-internal/component-api/v8/alert/methods.md';
-import Parts from '@ionic-internal/component-api/v8/alert/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/alert/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/alert/slots.md';
-
 <head>
   <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
   <meta name="description" content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed." />
@@ -332,24 +325,246 @@ interface AlertOptions {
 
 ## Properties
 
-<Props />
+### animated
+
+|                 |                                    |
+| --------------- | ---------------------------------- |
+| **Description** | If `true`, the alert will animate. |
+| **Attribute**   | `animated`                         |
+| **Type**        | `boolean`                          |
+| **Default**     | `true`                             |
+
+### backdropDismiss
+
+|                 |                                                                      |
+| --------------- | -------------------------------------------------------------------- |
+| **Description** | If `true`, the alert will be dismissed when the backdrop is clicked. |
+| **Attribute**   | `backdrop-dismiss`                                                   |
+| **Type**        | `boolean`                                                            |
+| **Default**     | `true`                                                               |
+
+### buttons
+
+|                 |                                            |
+| --------------- | ------------------------------------------ |
+| **Description** | Array of buttons to be added to the alert. |
+| **Attribute**   | `buttons`                                  |
+| **Type**        | `(string ｜ AlertButton)[]`                |
+| **Default**     | `[]`                                       |
+
+### cssClass
+
+|                 |                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Description** | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces. |
+| **Attribute**   | `css-class`                                                                                                      |
+| **Type**        | `string ｜ string[] ｜ undefined`                                                                                |
+| **Default**     | `undefined`                                                                                                      |
+
+### enterAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the alert is presented.           |
+| **Attribute**   | `enter-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### header
+
+|                 |                                             |
+| --------------- | ------------------------------------------- |
+| **Description** | The main title in the heading of the alert. |
+| **Attribute**   | `header`                                    |
+| **Type**        | `string ｜ undefined`                       |
+| **Default**     | `undefined`                                 |
+
+### htmlAttributes
+
+|                 |                                             |
+| --------------- | ------------------------------------------- |
+| **Description** | Additional attributes to pass to the alert. |
+| **Attribute**   | `html-attributes`                           |
+| **Type**        | `undefined ｜ { [key: string]: any; }`      |
+| **Default**     | `undefined`                                 |
+
+### inputs
+
+|                 |                                      |
+| --------------- | ------------------------------------ |
+| **Description** | Array of input to show in the alert. |
+| **Attribute**   | `inputs`                             |
+| **Type**        | `AlertInput[]`                       |
+| **Default**     | `[]`                                 |
+
+### isOpen
+
+|                 |                                                                                                                                                                                                                                                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the alert will open. If `false`, the alert will close. Use this if you need finer grained control over presentation, otherwise just use the alertController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the alert dismisses. You will need to do that in your code. |
+| **Attribute**   | `is-open`                                                                                                                                                                                                                                                                                                                       |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                       |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                         |
+
+### keyboardClose
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the keyboard will be automatically dismissed when the overlay is presented. |
+| **Attribute**   | `keyboard-close`                                                                       |
+| **Type**        | `boolean`                                                                              |
+| **Default**     | `true`                                                                                 |
+
+### leaveAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the alert is dismissed.           |
+| **Attribute**   | `leave-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### message
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The main message to be displayed in the alert. `message` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`<br /><br />For more information: [Security Documentation](https://ionicframework.com/docs/faq/security)<br /><br />This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used. |
+| **Attribute**   | `message`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Type**        | `IonicSafeString ｜ string ｜ undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### subHeader
+
+|                 |                                                                      |
+| --------------- | -------------------------------------------------------------------- |
+| **Description** | The subtitle in the heading of the alert. Displayed under the title. |
+| **Attribute**   | `sub-header`                                                         |
+| **Type**        | `string ｜ undefined`                                                |
+| **Default**     | `undefined`                                                          |
+
+### translucent
+
+|                 |                                                                                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the alert will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). |
+| **Attribute**   | `translucent`                                                                                                                                                                                                        |
+| **Type**        | `boolean`                                                                                                                                                                                                            |
+| **Default**     | `false`                                                                                                                                                                                                              |
+
+### trigger
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | An ID corresponding to the trigger element that causes the alert to open when clicked. |
+| **Attribute**   | `trigger`                                                                              |
+| **Type**        | `string ｜ undefined`                                                                  |
+| **Default**     | `undefined`                                                                            |
 
 ## Events
 
-<Events />
+| Name                  | Description                                                                | Bubbles |
+| --------------------- | -------------------------------------------------------------------------- | ------- |
+| `didDismiss`          | Emitted after the alert has dismissed. Shorthand for ionAlertDidDismiss.   | `true`  |
+| `didPresent`          | Emitted after the alert has presented. Shorthand for ionAlertWillDismiss.  | `true`  |
+| `ionAlertDidDismiss`  | Emitted after the alert has dismissed.                                     | `true`  |
+| `ionAlertDidPresent`  | Emitted after the alert has presented.                                     | `true`  |
+| `ionAlertWillDismiss` | Emitted before the alert has dismissed.                                    | `true`  |
+| `ionAlertWillPresent` | Emitted before the alert has presented.                                    | `true`  |
+| `willDismiss`         | Emitted before the alert has dismissed. Shorthand for ionAlertWillDismiss. | `true`  |
+| `willPresent`         | Emitted before the alert has presented. Shorthand for ionAlertWillPresent. | `true`  |
 
 ## Methods
 
-<Methods />
+### dismiss
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Dismiss the alert overlay after it has been presented.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Signature**   | `dismiss(data?: any, role?: string) => Promise<boolean>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Parameters**  | **data**: Any data to emit in the dismiss events.<br/>**role**: The role of the element that is dismissing the alert. This can be useful in a button handler for determining which button was clicked to dismiss the alert. Some examples include: ``"cancel"`, `"destructive"`, "selected"`, and `"backdrop"`.<br /><br />This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method. |
+
+### onDidDismiss
+
+|                 |                                                             |
+| --------------- | ----------------------------------------------------------- |
+| **Description** | Returns a promise that resolves when the alert did dismiss. |
+| **Signature**   | `onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+### onWillDismiss
+
+|                 |                                                              |
+| --------------- | ------------------------------------------------------------ |
+| **Description** | Returns a promise that resolves when the alert will dismiss. |
+| **Signature**   | `onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+### present
+
+|                 |                                                      |
+| --------------- | ---------------------------------------------------- |
+| **Description** | Present the alert overlay after it has been created. |
+| **Signature**   | `present() => Promise<void>`                         |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--backdrop-opacity` | Opacity of the backdrop |
+| `--background` | Background of the alert |
+| `--height` | Height of the alert |
+| `--max-height` | Maximum height of the alert |
+| `--max-width` | Maximum width of the alert |
+| `--min-height` | Minimum height of the alert |
+| `--min-width` | Minimum width of the alert |
+| `--width` | Width of the alert |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--backdrop-opacity` | Opacity of the backdrop |
+| `--background` | Background of the alert |
+| `--height` | Height of the alert |
+| `--max-height` | Maximum height of the alert |
+| `--max-width` | Maximum width of the alert |
+| `--min-height` | Minimum height of the alert |
+| `--min-width` | Minimum width of the alert |
+| `--width` | Width of the alert |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

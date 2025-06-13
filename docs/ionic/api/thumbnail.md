@@ -2,13 +2,6 @@
 title: "ion-thumbnail"
 ---
 
-import Props from '@ionic-internal/component-api/v8/thumbnail/props.md';
-import Events from '@ionic-internal/component-api/v8/thumbnail/events.md';
-import Methods from '@ionic-internal/component-api/v8/thumbnail/methods.md';
-import Parts from '@ionic-internal/component-api/v8/thumbnail/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/thumbnail/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/thumbnail/slots.md';
-
 <head>
   <title>ion-thumbnail: Thumbnail App Component for Images or Icons</title>
   <meta name="description" content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images." />
@@ -44,24 +37,28 @@ import CSSProps from '@site/static/ionic/usage/v8/thumbnail/theming/css-properti
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+    | Name | Description |
+
+| --- | --- |
+| `--border-radius` | Border radius of the thumbnail |
+| `--size` | Size of the thumbnail |
 
 ## Slots
 
-<Slots />
+No slots available for this component.

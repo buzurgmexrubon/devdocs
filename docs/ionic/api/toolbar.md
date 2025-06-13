@@ -2,13 +2,6 @@
 title: "ion-toolbar"
 ---
 
-import Props from '@ionic-internal/component-api/v8/toolbar/props.md';
-import Events from '@ionic-internal/component-api/v8/toolbar/events.md';
-import Methods from '@ionic-internal/component-api/v8/toolbar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/toolbar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toolbar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/toolbar/slots.md';
-
 <head>
   <title>ion-toolbar: Customize App Menu Toolbar Buttons and Icons</title>
   <meta name="description" content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content." />
@@ -84,24 +77,104 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name         | Description                                                                                      |
+| ------------ | ------------------------------------------------------------------------------------------------ |
+| `background` | The background of the toolbar, covering the entire area behind the toolbar content.              |
+| `container`  | The container that wraps all toolbar content, including the default slot and named slot content. |
+| `content`    | The container for the default slot, wrapping content provided without a named slot.              |
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the toolbar |
+| `--border-color` | Color of the toolbar border |
+| `--border-style` | Style of the toolbar border |
+| `--border-width` | Width of the toolbar border |
+| `--color` | Color of the toolbar text |
+| `--min-height` | Minimum height of the toolbar |
+| `--opacity` | Opacity of the toolbar background |
+| `--padding-bottom` | Bottom padding of the toolbar |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar |
+| `--padding-top` | Top padding of the toolbar |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the toolbar |
+| `--border-color` | Color of the toolbar border |
+| `--border-style` | Style of the toolbar border |
+| `--border-width` | Width of the toolbar border |
+| `--color` | Color of the toolbar text |
+| `--min-height` | Minimum height of the toolbar |
+| `--opacity` | Opacity of the toolbar background |
+| `--padding-bottom` | Bottom padding of the toolbar |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar |
+| `--padding-top` | Top padding of the toolbar |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+| Name        | Description                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| ``          | Content is placed between the named slots if provided without a slot.                                    |
+| `end`       | Content is placed to the right of the toolbar text in LTR, and to the left in RTL.                       |
+| `primary`   | Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode.     |
+| `secondary` | Content is placed to the left of the toolbar text in `ios` mode, and directly to the right in `md` mode. |
+| `start`     | Content is placed to the left of the toolbar text in LTR, and to the right in RTL.                       |

@@ -5,13 +5,6 @@ title: "ion-toast"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/toast/props.md';
-import Events from '@ionic-internal/component-api/v8/toast/events.md';
-import Methods from '@ionic-internal/component-api/v8/toast/methods.md';
-import Parts from '@ionic-internal/component-api/v8/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/toast/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/toast/slots.md';
-
 <head>
   <title>ion-toast: A Dismissible App Notification Alert Component</title>
   <meta name="description" content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction." />
@@ -255,24 +248,307 @@ interface ToastOptions {
 
 ## Properties
 
-<Props />
+### animated
+
+|                 |                                    |
+| --------------- | ---------------------------------- |
+| **Description** | If `true`, the toast will animate. |
+| **Attribute**   | `animated`                         |
+| **Type**        | `boolean`                          |
+| **Default**     | `true`                             |
+
+### buttons
+
+|                 |                                          |
+| --------------- | ---------------------------------------- |
+| **Description** | An array of buttons for the toast.       |
+| **Attribute**   | `buttons`                                |
+| **Type**        | `(string ｜ ToastButton)[] ｜ undefined` |
+| **Default**     | `undefined`                              |
+
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### cssClass
+
+|                 |                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Description** | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces. |
+| **Attribute**   | `css-class`                                                                                                      |
+| **Type**        | `string ｜ string[] ｜ undefined`                                                                                |
+| **Default**     | `undefined`                                                                                                      |
+
+### duration
+
+|                 |                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Description** | How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called. |
+| **Attribute**   | `duration`                                                                                                   |
+| **Type**        | `number`                                                                                                     |
+| **Default**     | `config.getNumber('toastDuration', 0)`                                                                       |
+
+### enterAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the toast is presented.           |
+| **Attribute**   | `enter-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### header
+
+|                 |                                  |
+| --------------- | -------------------------------- |
+| **Description** | Header to be shown in the toast. |
+| **Attribute**   | `header`                         |
+| **Type**        | `string ｜ undefined`            |
+| **Default**     | `undefined`                      |
+
+### htmlAttributes
+
+|                 |                                             |
+| --------------- | ------------------------------------------- |
+| **Description** | Additional attributes to pass to the toast. |
+| **Attribute**   | `html-attributes`                           |
+| **Type**        | `undefined ｜ { [key: string]: any; }`      |
+| **Default**     | `undefined`                                 |
+
+### icon
+
+|                 |                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Description** | The name of the icon to display, or the path to a valid SVG file. See `ion-icon`. https://ionic.io/ionicons |
+| **Attribute**   | `icon`                                                                                                      |
+| **Type**        | `string ｜ undefined`                                                                                       |
+| **Default**     | `undefined`                                                                                                 |
+
+### isOpen
+
+|                 |                                                                                                                                                                                                                                                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the toast will open. If `false`, the toast will close. Use this if you need finer grained control over presentation, otherwise just use the toastController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the toast dismisses. You will need to do that in your code. |
+| **Attribute**   | `is-open`                                                                                                                                                                                                                                                                                                                       |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                       |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                         |
+
+### keyboardClose
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the keyboard will be automatically dismissed when the overlay is presented. |
+| **Attribute**   | `keyboard-close`                                                                       |
+| **Type**        | `boolean`                                                                              |
+| **Default**     | `false`                                                                                |
+
+### layout
+
+|                 |                                                                                                                                                                                                                                                                                                                         |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Defines how the message and buttons are laid out in the toast. 'baseline': The message and the buttons will appear on the same line. Message text may wrap within the message container. 'stacked': The buttons containers and message will stack on top of each other. Use this if you have long text in your buttons. |
+| **Attribute**   | `layout`                                                                                                                                                                                                                                                                                                                |
+| **Type**        | `"baseline" ｜ "stacked"`                                                                                                                                                                                                                                                                                               |
+| **Default**     | `'baseline'`                                                                                                                                                                                                                                                                                                            |
+
+### leaveAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the toast is dismissed.           |
+| **Attribute**   | `leave-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### message
+
+|                 |                                                                                                                                                                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Message to be shown in the toast. This property accepts custom HTML as a string. Content is parsed as plaintext by default. `innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config before custom HTML can be used. |
+| **Attribute**   | `message`                                                                                                                                                                                                                         |
+| **Type**        | `IonicSafeString ｜ string ｜ undefined`                                                                                                                                                                                          |
+| **Default**     | `undefined`                                                                                                                                                                                                                       |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### position
+
+|                 |                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Description** | The starting position of the toast on the screen. Can be tweaked further using the `positionAnchor` property. |
+| **Attribute**   | `position`                                                                                                    |
+| **Type**        | `"bottom" ｜ "middle" ｜ "top"`                                                                               |
+| **Default**     | `'bottom'`                                                                                                    |
+
+### positionAnchor
+
+|                 |                                                                                                                                                                                                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | The element to anchor the toast's position to. Can be set as a direct reference or the ID of the element. With `position="bottom"`, the toast will sit above the chosen element. With `position="top"`, the toast will sit below the chosen element. With `position="middle"`, the value of `positionAnchor` is ignored. |
+| **Attribute**   | `position-anchor`                                                                                                                                                                                                                                                                                                        |
+| **Type**        | `HTMLElement ｜ string ｜ undefined`                                                                                                                                                                                                                                                                                     |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                              |
+
+### swipeGesture
+
+|                 |                                                                                                                                                                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If set to 'vertical', the Toast can be dismissed with a swipe gesture. The swipe direction is determined by the value of the `position` property: `top`: The Toast can be swiped up to dismiss. `bottom`: The Toast can be swiped down to dismiss. `middle`: The Toast can be swiped up or down to dismiss. |
+| **Attribute**   | `swipe-gesture`                                                                                                                                                                                                                                                                                             |
+| **Type**        | `"vertical" ｜ undefined`                                                                                                                                                                                                                                                                                   |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                 |
+
+### translucent
+
+|                 |                                                                                                                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the toast will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). |
+| **Attribute**   | `translucent`                                                                                                                                                                                                        |
+| **Type**        | `boolean`                                                                                                                                                                                                            |
+| **Default**     | `false`                                                                                                                                                                                                              |
+
+### trigger
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | An ID corresponding to the trigger element that causes the toast to open when clicked. |
+| **Attribute**   | `trigger`                                                                              |
+| **Type**        | `string ｜ undefined`                                                                  |
+| **Default**     | `undefined`                                                                            |
 
 ## Events
 
-<Events />
+| Name                  | Description                                                                | Bubbles |
+| --------------------- | -------------------------------------------------------------------------- | ------- |
+| `didDismiss`          | Emitted after the toast has dismissed. Shorthand for ionToastDidDismiss.   | `true`  |
+| `didPresent`          | Emitted after the toast has presented. Shorthand for ionToastWillDismiss.  | `true`  |
+| `ionToastDidDismiss`  | Emitted after the toast has dismissed.                                     | `true`  |
+| `ionToastDidPresent`  | Emitted after the toast has presented.                                     | `true`  |
+| `ionToastWillDismiss` | Emitted before the toast has dismissed.                                    | `true`  |
+| `ionToastWillPresent` | Emitted before the toast has presented.                                    | `true`  |
+| `willDismiss`         | Emitted before the toast has dismissed. Shorthand for ionToastWillDismiss. | `true`  |
+| `willPresent`         | Emitted before the toast has presented. Shorthand for ionToastWillPresent. | `true`  |
 
 ## Methods
 
-<Methods />
+### dismiss
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Dismiss the toast overlay after it has been presented.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Signature**   | `dismiss(data?: any, role?: string) => Promise<boolean>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Parameters**  | **data**: Any data to emit in the dismiss events.<br/>**role**: The role of the element that is dismissing the toast. This can be useful in a button handler for determining which button was clicked to dismiss the toast. Some examples include: ``"cancel"`, `"destructive"`, "selected"`, and `"backdrop"`.<br /><br />This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method. |
+
+### onDidDismiss
+
+|                 |                                                             |
+| --------------- | ----------------------------------------------------------- |
+| **Description** | Returns a promise that resolves when the toast did dismiss. |
+| **Signature**   | `onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+### onWillDismiss
+
+|                 |                                                              |
+| --------------- | ------------------------------------------------------------ |
+| **Description** | Returns a promise that resolves when the toast will dismiss. |
+| **Signature**   | `onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+### present
+
+|                 |                                                      |
+| --------------- | ---------------------------------------------------- |
+| **Description** | Present the toast overlay after it has been created. |
+| **Signature**   | `present() => Promise<void>`                         |
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name            | Description                                                                  |
+| --------------- | ---------------------------------------------------------------------------- |
+| `button`        | Any button element that is displayed inside of the toast.                    |
+| `button cancel` | Any button element with role "cancel" that is displayed inside of the toast. |
+| `container`     | The element that wraps all child elements.                                   |
+| `header`        | The header text of the toast.                                                |
+| `icon`          | The icon that appears next to the toast content.                             |
+| `message`       | The body text of the toast.                                                  |
 
 ## CSS Custom Properties
 
-<CustomProps />
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the toast |
+| `--border-color` | Border color of the toast |
+| `--border-radius` | Border radius of the toast |
+| `--border-style` | Border style of the toast |
+| `--border-width` | Border width of the toast |
+| `--box-shadow` | Box shadow of the toast |
+| `--button-color` | Color of the button text |
+| `--color` | Color of the toast text |
+| `--end` | Position from the right if direction is left-to-right, and from the left if direction is right-to-left |
+| `--height` | Height of the toast |
+| `--max-height` | Maximum height of the toast |
+| `--max-width` | Maximum width of the toast |
+| `--min-height` | Minimum height of the toast |
+| `--min-width` | Minimum width of the toast |
+| `--start` | Position from the left if direction is left-to-right, and from the right if direction is right-to-left |
+| `--white-space` | White space of the toast message |
+| `--width` | Width of the toast |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the toast |
+| `--border-color` | Border color of the toast |
+| `--border-radius` | Border radius of the toast |
+| `--border-style` | Border style of the toast |
+| `--border-width` | Border width of the toast |
+| `--box-shadow` | Box shadow of the toast |
+| `--button-color` | Color of the button text |
+| `--color` | Color of the toast text |
+| `--end` | Position from the right if direction is left-to-right, and from the left if direction is right-to-left |
+| `--height` | Height of the toast |
+| `--max-height` | Maximum height of the toast |
+| `--max-width` | Maximum width of the toast |
+| `--min-height` | Minimum height of the toast |
+| `--min-width` | Minimum width of the toast |
+| `--start` | Position from the left if direction is left-to-right, and from the right if direction is right-to-left |
+| `--white-space` | White space of the toast message |
+| `--width` | Width of the toast |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

@@ -5,13 +5,6 @@ title: "ion-tab-button"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/tab-button/props.md';
-import Events from '@ionic-internal/component-api/v8/tab-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/tab-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/tab-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/tab-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/tab-button/slots.md';
-
 import EncapsulationPill from '@site/src/components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
@@ -216,24 +209,155 @@ export const TabButtonExample: React.FC = () => (
 
 ## Properties
 
-<Props />
+### disabled
+
+|                 |                                                          |
+| --------------- | -------------------------------------------------------- |
+| **Description** | If `true`, the user cannot interact with the tab button. |
+| **Attribute**   | `disabled`                                               |
+| **Type**        | `boolean`                                                |
+| **Default**     | `false`                                                  |
+
+### download
+
+|                 |                                                                                                                                                                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want). |
+| **Attribute**   | `download`                                                                                                                                                                                                                                                                                |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                                                                                                                     |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                               |
+
+### href
+
+|                 |                                                                                                                         |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered. |
+| **Attribute**   | `href`                                                                                                                  |
+| **Type**        | `string ｜ undefined`                                                                                                   |
+| **Default**     | `undefined`                                                                                                             |
+
+### layout
+
+|                 |                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------- |
+| **Description** | Set the layout of the text and icon in the tab bar. It defaults to `"icon-top"`.                        |
+| **Attribute**   | `layout`                                                                                                |
+| **Type**        | `"icon-bottom" ｜ "icon-end" ｜ "icon-hide" ｜ "icon-start" ｜ "icon-top" ｜ "label-hide" ｜ undefined` |
+| **Default**     | `undefined`                                                                                             |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### rel
+
+|                 |                                                                                                                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types). |
+| **Attribute**   | `rel`                                                                                                                                                                                  |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                  |
+| **Default**     | `undefined`                                                                                                                                                                            |
+
+### selected
+
+|                 |                            |
+| --------------- | -------------------------- |
+| **Description** | The selected tab component |
+| **Attribute**   | `selected`                 |
+| **Type**        | `boolean`                  |
+| **Default**     | `false`                    |
+
+### tab
+
+|                 |                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A tab id must be provided for each `ion-tab`. It's used internally to reference the selected tab or by the router to switch between them. |
+| **Attribute**   | `tab`                                                                                                                                     |
+| **Type**        | `string ｜ undefined`                                                                                                                     |
+| **Default**     | `undefined`                                                                                                                               |
+
+### target
+
+|                 |                                                                                                                                                     |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`. |
+| **Attribute**   | `target`                                                                                                                                            |
+| **Type**        | `string ｜ undefined`                                                                                                                               |
+| **Default**     | `undefined`                                                                                                                                         |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name     | Description                                                   |
+| -------- | ------------------------------------------------------------- |
+| `native` | The native HTML anchor element that wraps all child elements. |
 
 ## CSS Custom Properties
 
-<CustomProps />
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the tab button |
+| `--background-focused` | Background of the tab button when focused with the tab key |
+| `--background-focused-opacity` | Opacity of the tab button background when focused with the tab key |
+| `--color` | Color of the tab button |
+| `--color-focused` | Color of the tab button when focused with the tab key |
+| `--color-selected` | Color of the selected tab button |
+| `--padding-bottom` | Bottom padding of the tab button |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button |
+| `--padding-top` | Top padding of the tab button |
+| `--ripple-color` | Color of the button ripple effect |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the tab button |
+| `--background-focused` | Background of the tab button when focused with the tab key |
+| `--background-focused-opacity` | Opacity of the tab button background when focused with the tab key |
+| `--color` | Color of the tab button |
+| `--color-focused` | Color of the tab button when focused with the tab key |
+| `--color-selected` | Color of the selected tab button |
+| `--padding-bottom` | Bottom padding of the tab button |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button |
+| `--padding-top` | Top padding of the tab button |
+| `--ripple-color` | Color of the button ripple effect |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

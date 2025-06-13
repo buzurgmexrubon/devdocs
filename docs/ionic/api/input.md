@@ -2,13 +2,6 @@
 title: "ion-input"
 ---
 
-import Props from '@ionic-internal/component-api/v8/input/props.md';
-import Events from '@ionic-internal/component-api/v8/input/events.md';
-import Methods from '@ionic-internal/component-api/v8/input/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/input/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input/slots.md';
-
 <head>
   <title>ion-input: Custom Input With Styling and CSS Properties</title>
   <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It integrates with the keyboard on mobile devices." />
@@ -229,24 +222,426 @@ interface InputCustomEvent extends CustomEvent {
 
 ## Properties
 
-<Props />
+### autocapitalize
+
+|                 |                                                                                                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`. |
+| **Attribute**   | `autocapitalize`                                                                                                                                                                                          |
+| **Type**        | `string`                                                                                                                                                                                                  |
+| **Default**     | `'off'`                                                                                                                                                                                                   |
+
+### autocomplete
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Indicates whether the value of the control can be automatically completed by the browser.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Attribute**   | `autocomplete`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Type**        | `"name" ｜ "email" ｜ "tel" ｜ "url" ｜ "on" ｜ "off" ｜ "honorific-prefix" ｜ "given-name" ｜ "additional-name" ｜ "family-name" ｜ "honorific-suffix" ｜ "nickname" ｜ "username" ｜ "new-password" ｜ "current-password" ｜ "one-time-code" ｜ "organization-title" ｜ "organization" ｜ "street-address" ｜ "address-line1" ｜ "address-line2" ｜ "address-line3" ｜ "address-level4" ｜ "address-level3" ｜ "address-level2" ｜ "address-level1" ｜ "country" ｜ "country-name" ｜ "postal-code" ｜ "cc-name" ｜ "cc-given-name" ｜ "cc-additional-name" ｜ "cc-family-name" ｜ "cc-number" ｜ "cc-exp" ｜ "cc-exp-month" ｜ "cc-exp-year" ｜ "cc-csc" ｜ "cc-type" ｜ "transaction-currency" ｜ "transaction-amount" ｜ "language" ｜ "bday" ｜ "bday-day" ｜ "bday-month" ｜ "bday-year" ｜ "sex" ｜ "tel-country-code" ｜ "tel-national" ｜ "tel-area-code" ｜ "tel-local" ｜ "tel-extension" ｜ "impp" ｜ "photo"` |
+| **Default**     | `'off'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+
+### autocorrect
+
+|                 |                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------- |
+| **Description** | Whether auto correction should be enabled when the user is entering/editing the text value. |
+| **Attribute**   | `autocorrect`                                                                               |
+| **Type**        | `"off" ｜ "on"`                                                                             |
+| **Default**     | `'off'`                                                                                     |
+
+### autofocus
+
+|                 |                                                                                                                                                                                                                                                                                                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Sets the [`autofocus` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus) on the native input element.<br /><br />This may not be sufficient for the element to be focused on page load. See [managing focus](/docs/developing/managing-focus) for more information. |
+| **Attribute**   | `autofocus`                                                                                                                                                                                                                                                                                                |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                  |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                    |
+
+### clearInput
+
+|                 |                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input. |
+| **Attribute**   | `clear-input`                                                                                         |
+| **Type**        | `boolean`                                                                                             |
+| **Default**     | `false`                                                                                               |
+
+### clearInputIcon
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | The icon to use for the clear button. Only applies when `clearInput` is set to `true`. |
+| **Attribute**   | `clear-input-icon`                                                                     |
+| **Type**        | `string ｜ undefined`                                                                  |
+| **Default**     | `undefined`                                                                            |
+
+### clearOnEdit
+
+|                 |                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types. |
+| **Attribute**   | `clear-on-edit`                                                                                                                          |
+| **Type**        | `boolean ｜ undefined`                                                                                                                   |
+| **Default**     | `undefined`                                                                                                                              |
+
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### counter
+
+|                 |                                                                                                                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly. |
+| **Attribute**   | `counter`                                                                                                                                                                                             |
+| **Type**        | `boolean`                                                                                                                                                                                             |
+| **Default**     | `false`                                                                                                                                                                                               |
+
+### counterFormatter
+
+|                 |                                                                                                                                                                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A callback used to format the counter text. By default the counter text is set to "itemLength / maxLength".<br /><br />See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback. |
+| **Attribute**   | `counter-formatter`                                                                                                                                                                                                                                      |
+| **Type**        | `((inputLength: number, maxLength: number) => string) ｜ undefined`                                                                                                                                                                                      |
+| **Default**     | `undefined`                                                                                                                                                                                                                                              |
+
+### debounce
+
+|                 |                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| **Description** | Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke. |
+| **Attribute**   | `debounce`                                                                                             |
+| **Type**        | `number ｜ undefined`                                                                                  |
+| **Default**     | `undefined`                                                                                            |
+
+### disabled
+
+|                 |                                                     |
+| --------------- | --------------------------------------------------- |
+| **Description** | If `true`, the user cannot interact with the input. |
+| **Attribute**   | `disabled`                                          |
+| **Type**        | `boolean`                                           |
+| **Default**     | `false`                                             |
+
+### enterkeyhint
+
+|                 |                                                                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`. |
+| **Attribute**   | `enterkeyhint`                                                                                                                                        |
+| **Type**        | `"done" ｜ "enter" ｜ "go" ｜ "next" ｜ "previous" ｜ "search" ｜ "send" ｜ undefined`                                                                |
+| **Default**     | `undefined`                                                                                                                                           |
+
+### errorText
+
+|                 |                                                                              |
+| --------------- | ---------------------------------------------------------------------------- |
+| **Description** | Text that is placed under the input and displayed when an error is detected. |
+| **Attribute**   | `error-text`                                                                 |
+| **Type**        | `string ｜ undefined`                                                        |
+| **Default**     | `undefined`                                                                  |
+
+### fill
+
+|                 |                                                                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | The fill for the item. If `"solid"` the item will have a background. If `"outline"` the item will be transparent with a border. Only available in `md` mode. |
+| **Attribute**   | `fill`                                                                                                                                                       |
+| **Type**        | `"outline" ｜ "solid" ｜ undefined`                                                                                                                          |
+| **Default**     | `undefined`                                                                                                                                                  |
+
+### helperText
+
+|                 |                                                                              |
+| --------------- | ---------------------------------------------------------------------------- |
+| **Description** | Text that is placed under the input and displayed when no error is detected. |
+| **Attribute**   | `helper-text`                                                                |
+| **Type**        | `string ｜ undefined`                                                        |
+| **Default**     | `undefined`                                                                  |
+
+### inputmode
+
+|                 |                                                                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`. |
+| **Attribute**   | `inputmode`                                                                                                                                                      |
+| **Type**        | `"decimal" ｜ "email" ｜ "none" ｜ "numeric" ｜ "search" ｜ "tel" ｜ "text" ｜ "url" ｜ undefined`                                                               |
+| **Default**     | `undefined`                                                                                                                                                      |
+
+### label
+
+|                 |                                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The visible label associated with the input.<br /><br />Use this if you need to render a plaintext label.<br /><br />The `label` property will take priority over the `label` slot if both are used. |
+| **Attribute**   | `label`                                                                                                                                                                                              |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                                |
+| **Default**     | `undefined`                                                                                                                                                                                          |
+
+### labelPlacement
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Where to place the label relative to the input. `"start"`: The label will appear to the left of the input in LTR and to the right in RTL. `"end"`: The label will appear to the right of the input in LTR and to the left in RTL. `"floating"`: The label will appear smaller and above the input when the input is focused or it has a value. Otherwise it will appear on top of the input. `"stacked"`: The label will appear smaller and above the input regardless even when the input is blurred or has no value. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). |
+| **Attribute**   | `label-placement`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Type**        | `"end" ｜ "fixed" ｜ "floating" ｜ "stacked" ｜ "start"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Default**     | `'start'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+### max
+
+|                 |                                                                                   |
+| --------------- | --------------------------------------------------------------------------------- |
+| **Description** | The maximum value, which must not be less than its minimum (min attribute) value. |
+| **Attribute**   | `max`                                                                             |
+| **Type**        | `number ｜ string ｜ undefined`                                                   |
+| **Default**     | `undefined`                                                                       |
+
+### maxlength
+
+|                 |                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter. |
+| **Attribute**   | `maxlength`                                                                                                                                                                      |
+| **Type**        | `number ｜ undefined`                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                      |
+
+### min
+
+|                 |                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------ |
+| **Description** | The minimum value, which must not be greater than its maximum (max attribute) value. |
+| **Attribute**   | `min`                                                                                |
+| **Type**        | `number ｜ string ｜ undefined`                                                      |
+| **Default**     | `undefined`                                                                          |
+
+### minlength
+
+|                 |                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter. |
+| **Attribute**   | `minlength`                                                                                                                                                                      |
+| **Type**        | `number ｜ undefined`                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                      |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### multiple
+
+|                 |                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `"email"`, otherwise it is ignored. |
+| **Attribute**   | `multiple`                                                                                                                                      |
+| **Type**        | `boolean ｜ undefined`                                                                                                                          |
+| **Default**     | `undefined`                                                                                                                                     |
+
+### name
+
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
+| **Description** | The name of the control, which is submitted with the form data. |
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.inputId`                                                  |
+
+### pattern
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | A regular expression that the value is checked against. The pattern must match the entire value, not just some subset. Use the title attribute to describe the pattern to help the user. This attribute applies when the value of the type attribute is `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, `"date"`, or `"password"`, otherwise it is ignored. When the type attribute is `"date"`, `pattern` will only be used in browsers that do not support the `"date"` input type natively. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date for more information. |
+| **Attribute**   | `pattern`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+### placeholder
+
+|                 |                                                                                                                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Instructional text that shows before the input has a value. This property applies only when the `type` property is set to `"email"`, `"number"`, `"password"`, `"search"`, `"tel"`, `"text"`, or `"url"`, otherwise it is ignored. |
+| **Attribute**   | `placeholder`                                                                                                                                                                                                                      |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                                                              |
+| **Default**     | `undefined`                                                                                                                                                                                                                        |
+
+### readonly
+
+|                 |                                              |
+| --------------- | -------------------------------------------- |
+| **Description** | If `true`, the user cannot modify the value. |
+| **Attribute**   | `readonly`                                   |
+| **Type**        | `boolean`                                    |
+| **Default**     | `false`                                      |
+
+### required
+
+|                 |                                                                    |
+| --------------- | ------------------------------------------------------------------ |
+| **Description** | If `true`, the user must fill in a value before submitting a form. |
+| **Attribute**   | `required`                                                         |
+| **Type**        | `boolean`                                                          |
+| **Default**     | `false`                                                            |
+
+### shape
+
+|                 |                                                                             |
+| --------------- | --------------------------------------------------------------------------- |
+| **Description** | The shape of the input. If "round" it will have an increased border radius. |
+| **Attribute**   | `shape`                                                                     |
+| **Type**        | `"round" ｜ undefined`                                                      |
+| **Default**     | `undefined`                                                                 |
+
+### spellcheck
+
+|                 |                                                                    |
+| --------------- | ------------------------------------------------------------------ |
+| **Description** | If `true`, the element will have its spelling and grammar checked. |
+| **Attribute**   | `spellcheck`                                                       |
+| **Type**        | `boolean`                                                          |
+| **Default**     | `false`                                                            |
+
+### step
+
+|                 |                                                                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Works with the min and max attributes to limit the increments at which a value can be set. Possible values are: `"any"` or a positive floating point number. |
+| **Attribute**   | `step`                                                                                                                                                       |
+| **Type**        | `string ｜ undefined`                                                                                                                                        |
+| **Default**     | `undefined`                                                                                                                                                  |
+
+### type
+
+|                 |                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The type of control to display. The default type is text.                                                                                |
+| **Attribute**   | `type`                                                                                                                                   |
+| **Type**        | `"date" ｜ "datetime-local" ｜ "email" ｜ "month" ｜ "number" ｜ "password" ｜ "search" ｜ "tel" ｜ "text" ｜ "time" ｜ "url" ｜ "week"` |
+| **Default**     | `'text'`                                                                                                                                 |
+
+### value
+
+|                 |                                         |
+| --------------- | --------------------------------------- |
+| **Description** | The value of the input.                 |
+| **Attribute**   | `value`                                 |
+| **Type**        | `null ｜ number ｜ string ｜ undefined` |
+| **Default**     | `''`                                    |
 
 ## Events
 
-<Events />
+| Name        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Bubbles |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionBlur`   | Emitted when the input loses focus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `true`  |
+| `ionChange` | The `ionChange` event is fired when the user modifies the input's value. Unlike the `ionInput` event, the `ionChange` event is only fired when changes are committed, not as the user types.<br /><br />Depending on the way the users interacts with the element, the `ionChange` event fires at a different moment: - When the user commits the change explicitly (e.g. by selecting a date from a date picker for `<ion-input type="date">`, pressing the "Enter" key, etc.). - When the element loses focus after its value has changed: for elements where the user's interaction is typing.<br /><br />This event will not emit when programmatically setting the `value` property. | `true`  |
+| `ionFocus`  | Emitted when the input has focus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `true`  |
+| `ionInput`  | The `ionInput` event is fired each time the user modifies the input's value. Unlike the `ionChange` event, the `ionInput` event is fired for each alteration to the input's value. This typically happens for each keystroke as the user types.<br /><br />For elements that accept text input (`type=text`, `type=tel`, etc.), the interface is [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others, the interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If the input is cleared on edit, the type is `null`.                                                                                                        | `true`  |
 
 ## Methods
 
-<Methods />
+### getInputElement
+
+|                 |                                                           |
+| --------------- | --------------------------------------------------------- |
+| **Description** | Returns the native `<input>` element used under the hood. |
+| **Signature**   | `getInputElement() => Promise<HTMLInputElement>`          |
+
+### setFocus
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Sets focus on the native `input` in `ion-input`. Use this method instead of the global `input.focus()`.<br /><br />Developers who wish to focus an input when a page enters should call `setFocus()` in the `ionViewDidEnter()` lifecycle method.<br /><br />Developers who wish to focus an input when an overlay is presented should call `setFocus` after `didPresent` has resolved.<br /><br />See [managing focus](/docs/developing/managing-focus) for more information. |
+| **Signature**   | `setFocus() => Promise<void>`                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the input |
+| `--border-color` | Color of the border below the input when using helper text, error text, or counter |
+| `--border-radius` | Radius of the input. A large radius may display unevenly when using fill="outline"; if needed, use shape="round" instead or increase --padding-start. |
+| `--border-style` | Style of the border below the input when using helper text, error text, or counter |
+| `--border-width` | Width of the border below the input when using helper text, error text, or counter |
+| `--color` | Color of the input text |
+| `--highlight-color-focused` | The color of the highlight on the input when focused |
+| `--highlight-color-invalid` | The color of the highlight on the input when invalid |
+| `--highlight-color-valid` | The color of the highlight on the input when valid |
+| `--highlight-height` | The height of the highlight on the input. Only applies to md mode. |
+| `--padding-bottom` | Bottom padding of the input |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input |
+| `--padding-top` | Top padding of the input |
+| `--placeholder-color` | Color of the input placeholder text |
+| `--placeholder-font-style` | Font style of the input placeholder text |
+| `--placeholder-font-weight` | Font weight of the input placeholder text |
+| `--placeholder-opacity` | Opacity of the input placeholder text |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the input |
+| `--border-color` | Color of the border below the input when using helper text, error text, or counter |
+| `--border-radius` | Radius of the input. A large radius may display unevenly when using fill="outline"; if needed, use shape="round" instead or increase --padding-start. |
+| `--border-style` | Style of the border below the input when using helper text, error text, or counter |
+| `--border-width` | Width of the border below the input when using helper text, error text, or counter |
+| `--color` | Color of the input text |
+| `--highlight-color-focused` | The color of the highlight on the input when focused |
+| `--highlight-color-invalid` | The color of the highlight on the input when invalid |
+| `--highlight-color-valid` | The color of the highlight on the input when valid |
+| `--highlight-height` | The height of the highlight on the input. Only applies to md mode. |
+| `--padding-bottom` | Bottom padding of the input |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input |
+| `--padding-top` | Top padding of the input |
+| `--placeholder-color` | Color of the input placeholder text |
+| `--placeholder-font-style` | Font style of the input placeholder text |
+| `--placeholder-font-weight` | Font weight of the input placeholder text |
+| `--placeholder-opacity` | Opacity of the input placeholder text |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+| Name    | Description                                                                                                                                                                                                       |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `end`   | Content to display at the trailing edge of the input. (EXPERIMENTAL)                                                                                                                                              |
+| `label` | The label text to associate with the input. Use the `labelPlacement` property to control where the label is placed relative to the input. Use this if you need to render a label with custom HTML. (EXPERIMENTAL) |
+| `start` | Content to display at the leading edge of the input. (EXPERIMENTAL)                                                                                                                                               |

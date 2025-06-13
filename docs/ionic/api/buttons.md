@@ -2,13 +2,6 @@
 title: "ion-buttons"
 ---
 
-import Props from '@ionic-internal/component-api/v8/buttons/props.md';
-import Events from '@ionic-internal/component-api/v8/buttons/events.md';
-import Methods from '@ionic-internal/component-api/v8/buttons/methods.md';
-import Parts from '@ionic-internal/component-api/v8/buttons/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/buttons/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/buttons/slots.md';
-
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
   <meta name="description" content="The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots." />
@@ -67,24 +60,31 @@ import CollapsibleLargeTitleButtons from '@site/static/ionic/usage/v8/title/coll
 
 ## Properties
 
-<Props />
+### collapse
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If true, buttons will disappear when its parent toolbar has fully collapsed if the toolbar is not the first toolbar. If the toolbar is the first toolbar, the buttons will be hidden and will only be shown once all toolbars have fully collapsed.<br /><br />Only applies in `ios` mode with `collapse` set to `true` on `ion-header`.<br /><br />Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) |
+| **Attribute**   | `collapse`                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

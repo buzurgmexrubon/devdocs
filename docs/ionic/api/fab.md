@@ -2,13 +2,6 @@
 title: "ion-fab"
 ---
 
-import Props from '@ionic-internal/component-api/v8/fab/props.md';
-import Events from '@ionic-internal/component-api/v8/fab/events.md';
-import Methods from '@ionic-internal/component-api/v8/fab/methods.md';
-import Parts from '@ionic-internal/component-api/v8/fab/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/fab/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/fab/slots.md';
-
 <head>
   <title>ion-fab: Ionic Floating Action Button for Android and iOS</title>
   <meta name="description" content="Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework." />
@@ -114,24 +107,63 @@ Since FABs are allowed to contain only icons, developers must provide an `aria-l
 
 ## Properties
 
-<Props />
+### activated
+
+|                 |                                                                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active. That means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible. |
+| **Attribute**   | `activated`                                                                                                                                                                                     |
+| **Type**        | `boolean`                                                                                                                                                                                       |
+| **Default**     | `false`                                                                                                                                                                                         |
+
+### edge
+
+|                 |                                                                                                                                                                            |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the fab will display on the edge of the header if `vertical` is `"top"`, and on the edge of the footer if it is `"bottom"`. Should be used with a `fixed` slot. |
+| **Attribute**   | `edge`                                                                                                                                                                     |
+| **Type**        | `boolean`                                                                                                                                                                  |
+| **Default**     | `false`                                                                                                                                                                    |
+
+### horizontal
+
+|                 |                                                      |
+| --------------- | ---------------------------------------------------- |
+| **Description** | Where to align the fab horizontally in the viewport. |
+| **Attribute**   | `horizontal`                                         |
+| **Type**        | `"center" ｜ "end" ｜ "start" ｜ undefined`          |
+| **Default**     | `undefined`                                          |
+
+### vertical
+
+|                 |                                                    |
+| --------------- | -------------------------------------------------- |
+| **Description** | Where to align the fab vertically in the viewport. |
+| **Attribute**   | `vertical`                                         |
+| **Type**        | `"bottom" ｜ "center" ｜ "top" ｜ undefined`       |
+| **Default**     | `undefined`                                        |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+### close
+
+|                 |                                     |
+| --------------- | ----------------------------------- |
+| **Description** | Close an active FAB list container. |
+| **Signature**   | `close() => Promise<void>`          |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

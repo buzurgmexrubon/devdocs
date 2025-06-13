@@ -2,13 +2,6 @@
 title: "ion-reorder-group"
 ---
 
-import Props from '@ionic-internal/component-api/v8/reorder-group/props.md';
-import Events from '@ionic-internal/component-api/v8/reorder-group/events.md';
-import Methods from '@ionic-internal/component-api/v8/reorder-group/methods.md';
-import Parts from '@ionic-internal/component-api/v8/reorder-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/reorder-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/reorder-group/slots.md';
-
 <head>
   <title>ion-reorder-group: Wrapper Component for Reorder Items</title>
   <meta name="description" content="ion-reorder-group is a wrapper component for items using the ion-reorder component on Ionic apps. Read to learn more about ion-reorder-group usage." />
@@ -45,24 +38,39 @@ interface ItemReorderCustomEvent extends CustomEvent {
 
 ## Properties
 
-<Props />
+### disabled
+
+|                 |                                        |
+| --------------- | -------------------------------------- |
+| **Description** | If `true`, the reorder will be hidden. |
+| **Attribute**   | `disabled`                             |
+| **Type**        | `boolean`                              |
+| **Default**     | `true`                                 |
 
 ## Events
 
-<Events />
+| Name             | Description                                                                                                                                                                                           | Bubbles |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionItemReorder` | Event that needs to be listened to in order to complete the reorder action. Once the event has been emitted, the `complete()` method then needs to be called in order to finalize the reorder action. | `true`  |
 
 ## Methods
 
-<Methods />
+### complete
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Completes the reorder operation. Must be called by the `ionItemReorder` event.<br /><br />If a list of items is passed, the list will be reordered and returned in the proper order.<br /><br />If no parameters are passed or if `true` is passed in, the reorder will complete and the item will remain in the position it was dragged to. If `false` is passed, the reorder will complete and the item will bounce back to its original position. |
+| **Signature**   | `complete(listOrReorder?: boolean ｜ any[]) => Promise<any>`                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Parameters**  | **listOrReorder**: A list of items to be sorted and returned in the new order or a boolean of whether or not the reorder should reposition the item.                                                                                                                                                                                                                                                                                                 |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

@@ -2,13 +2,6 @@
 title: "ion-nav-link"
 ---
 
-import Props from '@ionic-internal/component-api/v8/nav-link/props.md';
-import Events from '@ionic-internal/component-api/v8/nav-link/events.md';
-import Methods from '@ionic-internal/component-api/v8/nav-link/methods.md';
-import Parts from '@ionic-internal/component-api/v8/nav-link/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/nav-link/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/nav-link/slots.md';
-
 <head>
   <title>ion-nav-link: Navigation Links to a Specified Component</title>
   <meta name="description" content="Navigation links navigate to specified components. It is the element form of calling the push(), pop(), and setRoot() methods. Read for more on ion-nav-link." />
@@ -24,24 +17,58 @@ See the [nav](./nav#using-navlink) documentation for more information.
 
 ## Properties
 
-<Props />
+### component
+
+|                 |                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------- |
+| **Description** | Component to navigate to. Only used if the `routerDirection` is `"forward"` or `"root"`. |
+| **Attribute**   | `component`                                                                              |
+| **Type**        | `Function ｜ HTMLElement ｜ ViewController ｜ null ｜ string ｜ undefined`               |
+| **Default**     | `undefined`                                                                              |
+
+### componentProps
+
+|                 |                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Description** | Data you want to pass to the component as props. Only used if the `"routerDirection"` is `"forward"` or `"root"`. |
+| **Attribute**   | `component-props`                                                                                                 |
+| **Type**        | `undefined ｜ { [key: string]: any; }`                                                                            |
+| **Default**     | `undefined`                                                                                                       |
+
+### routerAnimation
+
+|                 |                                                           |
+| --------------- | --------------------------------------------------------- |
+| **Description** | The transition animation when navigating to another page. |
+| **Attribute**   | `router-animation`                                        |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined`   |
+| **Default**     | `undefined`                                               |
+
+### routerDirection
+
+|                 |                                                           |
+| --------------- | --------------------------------------------------------- |
+| **Description** | The transition direction when navigating to another page. |
+| **Attribute**   | `router-direction`                                        |
+| **Type**        | `"back" ｜ "forward" ｜ "root"`                           |
+| **Default**     | `'forward'`                                               |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

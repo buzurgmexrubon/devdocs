@@ -2,13 +2,6 @@
 title: "ion-breadcrumbs"
 ---
 
-import Props from '@ionic-internal/component-api/v8/breadcrumbs/props.md';
-import Events from '@ionic-internal/component-api/v8/breadcrumbs/events.md';
-import Methods from '@ionic-internal/component-api/v8/breadcrumbs/methods.md';
-import Parts from '@ionic-internal/component-api/v8/breadcrumbs/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/breadcrumbs/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/breadcrumbs/slots.md';
-
 import EncapsulationPill from '@site/src/components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
@@ -85,24 +78,69 @@ import CSSProps from '@site/static/ionic/usage/v8/breadcrumbs/theming/css-proper
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### itemsAfterCollapse
+
+|                 |                                                                                                                                                                                     |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The number of breadcrumbs to show after the collapsed indicator. If `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`, the breadcrumbs will not be collapsed. |
+| **Attribute**   | `items-after-collapse`                                                                                                                                                              |
+| **Type**        | `number`                                                                                                                                                                            |
+| **Default**     | `1`                                                                                                                                                                                 |
+
+### itemsBeforeCollapse
+
+|                 |                                                                                                                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | The number of breadcrumbs to show before the collapsed indicator. If `itemsBeforeCollapse` + `itemsAfterCollapse` is greater than `maxItems`, the breadcrumbs will not be collapsed. |
+| **Attribute**   | `items-before-collapse`                                                                                                                                                              |
+| **Type**        | `number`                                                                                                                                                                             |
+| **Default**     | `1`                                                                                                                                                                                  |
+
+### maxItems
+
+|                 |                                                              |
+| --------------- | ------------------------------------------------------------ |
+| **Description** | The maximum number of breadcrumbs to show before collapsing. |
+| **Attribute**   | `max-items`                                                  |
+| **Type**        | `number ｜ undefined`                                        |
+| **Default**     | `undefined`                                                  |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Events
 
-<Events />
+| Name                | Description                                         | Bubbles |
+| ------------------- | --------------------------------------------------- | ------- |
+| `ionCollapsedClick` | Emitted when the collapsed indicator is clicked on. | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

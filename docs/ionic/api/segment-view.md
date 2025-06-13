@@ -2,13 +2,6 @@
 title: "ion-segment-view"
 ---
 
-import Props from '@ionic-internal/component-api/v8/segment-view/props.md';
-import Events from '@ionic-internal/component-api/v8/segment-view/events.md';
-import Methods from '@ionic-internal/component-api/v8/segment-view/methods.md';
-import Parts from '@ionic-internal/component-api/v8/segment-view/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/segment-view/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/segment-view/slots.md';
-
 <head>
   <title>ion-segment-view: Controller element for swipeable segments</title>
   <meta name="description" content="ion-segment-views are wrapper elements that link a group of segment contents to a segment" />
@@ -23,24 +16,33 @@ See our [swipeable segments](./segment.md#swipeable-segments) documentation for 
 
 ## Properties
 
-<Props />
+### disabled
+
+|                 |                                                        |
+| --------------- | ------------------------------------------------------ |
+| **Description** | If `true`, the segment view cannot be interacted with. |
+| **Attribute**   | `disabled`                                             |
+| **Type**        | `boolean`                                              |
+| **Default**     | `false`                                                |
 
 ## Events
 
-<Events />
+| Name                   | Description                                | Bubbles |
+| ---------------------- | ------------------------------------------ | ------- |
+| `ionSegmentViewScroll` | Emitted when the segment view is scrolled. | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

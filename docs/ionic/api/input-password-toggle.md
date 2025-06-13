@@ -2,13 +2,6 @@
 title: "ion-input-password-toggle"
 ---
 
-import Props from '@ionic-internal/component-api/v8/input-password-toggle/props.md';
-import Events from '@ionic-internal/component-api/v8/input-password-toggle/events.md';
-import Methods from '@ionic-internal/component-api/v8/input-password-toggle/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input-password-toggle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/input-password-toggle/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input-password-toggle/slots.md';
-
 <head>
   <title>ion-input-password-toggle: Toggle the visibility of a password in Input</title>
   <meta name="description" content="ion-input-password-toggle is a companion component to ion-input. It allows users to toggle the visibility of text in a password input." />
@@ -34,24 +27,58 @@ import Basic from '@site/static/ionic/usage/v8/input-password-toggle/basic/index
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### hideIcon
+
+|                 |                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| **Description** | The icon that can be used to represent hiding a password. If not set, the "eyeOff" Ionicon will be used. |
+| **Attribute**   | `hide-icon`                                                                                              |
+| **Type**        | `string ｜ undefined`                                                                                    |
+| **Default**     | `undefined`                                                                                              |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### showIcon
+
+|                 |                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| **Description** | The icon that can be used to represent showing a password. If not set, the "eye" Ionicon will be used. |
+| **Attribute**   | `show-icon`                                                                                            |
+| **Type**        | `string ｜ undefined`                                                                                  |
+| **Default**     | `undefined`                                                                                            |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

@@ -2,13 +2,6 @@
 title: "ion-avatar"
 ---
 
-import Props from '@ionic-internal/component-api/v8/avatar/props.md';
-import Events from '@ionic-internal/component-api/v8/avatar/events.md';
-import Methods from '@ionic-internal/component-api/v8/avatar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/avatar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/avatar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/avatar/slots.md';
-
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>
   <meta name="description" content="Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element." />
@@ -50,24 +43,58 @@ import CSSProps from '@site/static/ionic/usage/v8/avatar/theming/css-properties/
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--border-radius` | Border radius of the avatar and inner image |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--border-radius` | Border radius of the avatar and inner image |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

@@ -2,13 +2,6 @@
 title: "ion-label"
 ---
 
-import Props from '@ionic-internal/component-api/v8/label/props.md';
-import Events from '@ionic-internal/component-api/v8/label/events.md';
-import Methods from '@ionic-internal/component-api/v8/label/methods.md';
-import Parts from '@ionic-internal/component-api/v8/label/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/label/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/label/slots.md';
-
 <head>
   <title>ion-label: Item Label Color and Properties for Applications</title>
   <meta name="description" content="Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label." />
@@ -44,24 +37,83 @@ import Colors from '@site/static/ionic/usage/v8/label/theming/colors/index.md';
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### position
+
+|                 |                                                                         |
+| --------------- | ----------------------------------------------------------------------- |
+| **Description** | The position determines where and how the label behaves inside an item. |
+| **Attribute**   | `position`                                                              |
+| **Type**        | `"fixed" ｜ "floating" ｜ "stacked" ｜ undefined`                       |
+| **Default**     | `undefined`                                                             |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--color` | Color of the label. This property is only available when using `ion-label` inside of an `ion-item`. |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--color` | Color of the label. This property is only available when using `ion-label` inside of an `ion-item`. |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

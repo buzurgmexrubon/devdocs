@@ -2,13 +2,6 @@
 title: "ion-segment-content"
 ---
 
-import Props from '@ionic-internal/component-api/v8/segment-content/props.md';
-import Events from '@ionic-internal/component-api/v8/segment-content/events.md';
-import Methods from '@ionic-internal/component-api/v8/segment-content/methods.md';
-import Parts from '@ionic-internal/component-api/v8/segment-content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/segment-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/segment-content/slots.md';
-
 <head>
   <title>ion-segment-content: Display control element for swipeable segments</title>
   <meta name="description" content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments." />
@@ -35,24 +28,24 @@ import Swipeable from '@site/static/ionic/usage/v8/segment/swipeable/index.md';
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

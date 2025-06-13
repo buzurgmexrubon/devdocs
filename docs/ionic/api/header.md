@@ -2,13 +2,6 @@
 title: "ion-header"
 ---
 
-import Props from '@ionic-internal/component-api/v8/header/props.md';
-import Events from '@ionic-internal/component-api/v8/header/events.md';
-import Methods from '@ionic-internal/component-api/v8/header/methods.md';
-import Parts from '@ionic-internal/component-api/v8/header/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/header/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/header/slots.md';
-
 <head>
   <title>ion-header: Header Parent Component for Ionic Framework Apps</title>
   <meta name="description" content="Ion-header is a parent component that holds the toolbar. It's important to note that ion-header needs to be the one of the three root elements of a page." />
@@ -68,24 +61,49 @@ import NoBorder from '@site/static/ionic/usage/v8/header/no-border/index.md';
 
 ## Properties
 
-<Props />
+### collapse
+
+|                 |                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Describes the scroll effect that will be applied to the header. Only applies in iOS mode.<br /><br />Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) |
+| **Attribute**   | `collapse`                                                                                                                                                                                                             |
+| **Type**        | `"condense" ｜ "fade" ｜ undefined`                                                                                                                                                                                    |
+| **Default**     | `undefined`                                                                                                                                                                                                            |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### translucent
+
+|                 |                                                                                                                                                                                                                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the header will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).<br /><br />Note: In order to scroll content behind the header, the `fullscreen` attribute needs to be set on the content. |
+| **Attribute**   | `translucent`                                                                                                                                                                                                                                                                                                                                   |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                       |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                         |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

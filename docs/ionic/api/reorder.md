@@ -2,13 +2,6 @@
 title: "ion-reorder"
 ---
 
-import Props from '@ionic-internal/component-api/v8/reorder/props.md';
-import Events from '@ionic-internal/component-api/v8/reorder/events.md';
-import Methods from '@ionic-internal/component-api/v8/reorder/methods.md';
-import Parts from '@ionic-internal/component-api/v8/reorder/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/reorder/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/reorder/slots.md';
-
 <head>
   <title>ion-reorder: Drag and Drop Icon to Reorder Items</title>
   <meta name="description" content="Ion-reorder is the anchor used to drag and drop the items inside of the ion-reorder-group. Read to learn more about custom reorder icons and items." />
@@ -78,24 +71,26 @@ import CustomScrollTarget from '@site/static/ionic/usage/v8/reorder/custom-scrol
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name   | Description                                     |
+| ------ | ----------------------------------------------- |
+| `icon` | The icon of the reorder handle (uses ion-icon). |
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

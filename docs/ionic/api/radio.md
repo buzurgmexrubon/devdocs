@@ -2,13 +2,6 @@
 title: "ion-radio"
 ---
 
-import Props from '@ionic-internal/component-api/v8/radio/props.md';
-import Events from '@ionic-internal/component-api/v8/radio/events.md';
-import Methods from '@ionic-internal/component-api/v8/radio/methods.md';
-import Parts from '@ionic-internal/component-api/v8/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/radio/slots.md';
-
 <head>
   <title>ion-radio: Radio Component for iOS and Android</title>
   <meta name="description" content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation." />
@@ -130,24 +123,143 @@ Ionic uses heuristics to detect if an app is using the modern radio syntax. In s
 
 ## Properties
 
-<Props />
+### alignment
+
+|                 |                                                                                                                                                                                                                                                                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | How to control the alignment of the radio and label on the cross axis. `"start"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL. `"center"`: The label and control will appear at the center of the cross axis in both LTR and RTL. Setting this property will change the radio `display` to `block`. |
+| **Attribute**   | `alignment`                                                                                                                                                                                                                                                                                                                                                  |
+| **Type**        | `"center" ｜ "start" ｜ undefined`                                                                                                                                                                                                                                                                                                                           |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                  |
+
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### disabled
+
+|                 |                                                     |
+| --------------- | --------------------------------------------------- |
+| **Description** | If `true`, the user cannot interact with the radio. |
+| **Attribute**   | `disabled`                                          |
+| **Type**        | `boolean`                                           |
+| **Default**     | `false`                                             |
+
+### justify
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | How to pack the label and radio within a line. `"start"`: The label and radio will appear on the left in LTR and on the right in RTL. `"end"`: The label and radio will appear on the right in LTR and on the left in RTL. `"space-between"`: The label and radio will appear on opposite ends of the line with space between the two elements. Setting this property will change the radio `display` to `block`. |
+| **Attribute**   | `justify`                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Type**        | `"end" ｜ "space-between" ｜ "start" ｜ undefined`                                                                                                                                                                                                                                                                                                                                                                |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                       |
+
+### labelPlacement
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Where to place the label relative to the radio. `"start"`: The label will appear to the left of the radio in LTR and to the right in RTL. `"end"`: The label will appear to the right of the radio in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the radio regardless of the direction. The alignment of the label can be controlled with the `alignment` property. |
+| **Attribute**   | `label-placement`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Type**        | `"end" ｜ "fixed" ｜ "stacked" ｜ "start"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Default**     | `'start'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### name
+
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
+| **Description** | The name of the control, which is submitted with the form data. |
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.inputId`                                                  |
+
+### value
+
+|                 |                         |
+| --------------- | ----------------------- |
+| **Description** | the value of the radio. |
+| **Attribute**   | `value`                 |
+| **Type**        | `any`                   |
+| **Default**     | `undefined`             |
 
 ## Events
 
-<Events />
+| Name       | Description                                | Bubbles |
+| ---------- | ------------------------------------------ | ------- |
+| `ionBlur`  | Emitted when the radio button loses focus. | `true`  |
+| `ionFocus` | Emitted when the radio button has focus.   | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name        | Description                                              |
+| ----------- | -------------------------------------------------------- |
+| `container` | The container for the radio mark.                        |
+| `label`     | The label text describing the radio.                     |
+| `mark`      | The checkmark or dot used to indicate the checked state. |
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--border-radius` | Border radius of the radio |
+| `--color` | Color of the radio |
+| `--color-checked` | Color of the checked radio |
+| `--inner-border-radius` | Border radius of the inner checked radio |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--border-radius` | Border radius of the radio |
+| `--color` | Color of the radio |
+| `--color-checked` | Color of the checked radio |
+| `--inner-border-radius` | Border radius of the inner checked radio |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+| Name | Description                                                                                                                               |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| ``   | The label text to associate with the radio. Use the "labelPlacement" property to control where the label is placed relative to the radio. |

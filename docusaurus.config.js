@@ -99,26 +99,6 @@ const config = {
 
   plugins: [
     [
-      "./plugins/docusaurus-plugin-ionic-component-api",
-      {
-        // Yangi qo'shiladigan optionslar
-        ionicDocsId: "ionic", // Sizning "ionic" docs instansingizning ID'si
-        // Plugin ichida ishlatiladigan versiyalar
-        versions: [
-          {
-            label: "v8",
-            path: "v8",
-            npmTag: "latest",
-            isCurrent: true,
-            banner: "none",
-          }, // Hozirgi (current) versiya
-          { label: "v7", path: "v7", npmTag: "7" },
-          { label: "v6", path: "v6", npmTag: "6" },
-          // ...kelajakdagi boshqa versiyalar
-        ],
-      },
-    ],
-    [
       "@docusaurus/plugin-content-docs",
       {
         id: "docusaurus",

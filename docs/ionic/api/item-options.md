@@ -2,13 +2,6 @@
 title: "ion-item-options"
 ---
 
-import Props from '@ionic-internal/component-api/v8/item-options/props.md';
-import Events from '@ionic-internal/component-api/v8/item-options/events.md';
-import Methods from '@ionic-internal/component-api/v8/item-options/methods.md';
-import Parts from '@ionic-internal/component-api/v8/item-options/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/item-options/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/item-options/slots.md';
-
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
   <meta name="description" content="ion-item-options are for ion-item-sliding. These option buttons can be placed either on the start or end side. Read to learn more about use on Ionic apps." />
@@ -29,24 +22,33 @@ See the [item sliding](./item-sliding) documentation for more information.
 
 ## Properties
 
-<Props />
+### side
+
+|                 |                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The side the option button should be on. Possible values: `"start"` and `"end"`. If you have multiple `ion-item-options`, a side must be provided for each. |
+| **Attribute**   | `side`                                                                                                                                                      |
+| **Type**        | `"end" ｜ "start"`                                                                                                                                          |
+| **Default**     | `'end'`                                                                                                                                                     |
 
 ## Events
 
-<Events />
+| Name       | Description                                  | Bubbles |
+| ---------- | -------------------------------------------- | ------- |
+| `ionSwipe` | Emitted when the item has been fully swiped. | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

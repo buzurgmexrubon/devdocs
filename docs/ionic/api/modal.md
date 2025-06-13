@@ -2,13 +2,6 @@
 title: "ion-modal"
 ---
 
-import Props from '@ionic-internal/component-api/v8/modal/props.md';
-import Events from '@ionic-internal/component-api/v8/modal/events.md';
-import Methods from '@ionic-internal/component-api/v8/modal/methods.md';
-import Parts from '@ionic-internal/component-api/v8/modal/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/modal/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/modal/slots.md';
-
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
   <meta name="description" content="ion-modal is a dialog that appears on top of mobile app content, and must be dismissed before interaction resumes. Learn more about custom modal components." />
@@ -306,24 +299,315 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 ## Properties
 
-<Props />
+### animated
+
+|                 |                                    |
+| --------------- | ---------------------------------- |
+| **Description** | If `true`, the modal will animate. |
+| **Attribute**   | `animated`                         |
+| **Type**        | `boolean`                          |
+| **Default**     | `true`                             |
+
+### backdropBreakpoint
+
+|                 |                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | A decimal value between 0 and 1 that indicates the point after which the backdrop will begin to fade in when using a sheet modal. Prior to this point, the backdrop will be hidden and the content underneath the sheet can be interacted with. This value is exclusive meaning the backdrop will become active after the value specified. |
+| **Attribute**   | `backdrop-breakpoint`                                                                                                                                                                                                                                                                                                                      |
+| **Type**        | `number`                                                                                                                                                                                                                                                                                                                                   |
+| **Default**     | `0`                                                                                                                                                                                                                                                                                                                                        |
+
+### backdropDismiss
+
+|                 |                                                                      |
+| --------------- | -------------------------------------------------------------------- |
+| **Description** | If `true`, the modal will be dismissed when the backdrop is clicked. |
+| **Attribute**   | `backdrop-dismiss`                                                   |
+| **Type**        | `boolean`                                                            |
+| **Default**     | `true`                                                               |
+
+### breakpoints
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The breakpoints to use when creating a sheet modal. Each value in the array must be a decimal between 0 and 1 where 0 indicates the modal is fully closed and 1 indicates the modal is fully open. Values are relative to the height of the modal, not the height of the screen. One of the values in this array must be the value of the `initialBreakpoint` property. For example: [0, .25, .5, 1] |
+| **Attribute**   | `breakpoints`                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Type**        | `number[] ｜ undefined`                                                                                                                                                                                                                                                                                                                                                                              |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                          |
+
+### canDismiss
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Determines whether or not a modal can dismiss when calling the `dismiss` method.<br /><br />If the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss. If the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.<br /><br />See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback. |
+| **Attribute**   | `can-dismiss`                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Type**        | `((data?: any, role?: string ｜ undefined) => Promise<boolean>) ｜ boolean`                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Default**     | `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+
+### enterAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the modal is presented.           |
+| **Attribute**   | `enter-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### expandToScroll
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Controls whether scrolling or dragging within the sheet modal expands it to a larger breakpoint. This only takes effect when `breakpoints` and `initialBreakpoint` are set.<br /><br />If `true`, scrolling or dragging anywhere in the modal will first expand it to the next breakpoint. Once fully expanded, scrolling will affect the content. If `false`, scrolling will always affect the content. The modal will only expand when dragging the header or handle. The modal will close when dragging the header or handle. It can also be closed when dragging the content, but only if the content is scrolled to the top. |
+| **Attribute**   | `expand-to-scroll`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Default**     | `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+
+### focusTrap
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, focus will not be allowed to move outside of this overlay. If `false`, focus will be allowed to move outside of the overlay.<br /><br />In most scenarios this property should remain set to `true`. Setting this property to `false` can cause severe accessibility issues as users relying on assistive technologies may be able to move focus into a confusing state. We recommend only setting this to `false` when absolutely necessary.<br /><br />Developers may want to consider disabling focus trapping if this overlay presents a non-Ionic overlay from a 3rd party library. Developers would disable focus trapping on the Ionic overlay when presenting the 3rd party overlay and then re-enable focus trapping when dismissing the 3rd party overlay and moving focus back to the Ionic overlay. |
+| **Attribute**   | `focus-trap`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Default**     | `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+
+### handle
+
+|                 |                                                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The horizontal line that displays at the top of a sheet modal. It is `true` by default when setting the `breakpoints` and `initialBreakpoint` properties. |
+| **Attribute**   | `handle`                                                                                                                                                  |
+| **Type**        | `boolean ｜ undefined`                                                                                                                                    |
+| **Default**     | `undefined`                                                                                                                                               |
+
+### handleBehavior
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The interaction behavior for the sheet modal when the handle is pressed.<br /><br />Defaults to `"none"`, which means the modal will not change size or position when the handle is pressed. Set to `"cycle"` to let the modal cycle between available breakpoints when pressed.<br /><br />Handle behavior is unavailable when the `handle` property is set to `false` or when the `breakpoints` property is not set (using a fullscreen or card modal). |
+| **Attribute**   | `handle-behavior`                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Type**        | `"cycle" ｜ "none" ｜ undefined`                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Default**     | `'none'`                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+### htmlAttributes
+
+|                 |                                             |
+| --------------- | ------------------------------------------- |
+| **Description** | Additional attributes to pass to the modal. |
+| **Attribute**   | `html-attributes`                           |
+| **Type**        | `undefined ｜ { [key: string]: any; }`      |
+| **Default**     | `undefined`                                 |
+
+### initialBreakpoint
+
+|                 |                                                                                                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A decimal value between 0 and 1 that indicates the initial point the modal will open at when creating a sheet modal. This value must also be listed in the `breakpoints` array. |
+| **Attribute**   | `initial-breakpoint`                                                                                                                                                            |
+| **Type**        | `number ｜ undefined`                                                                                                                                                           |
+| **Default**     | `undefined`                                                                                                                                                                     |
+
+### isOpen
+
+|                 |                                                                                                                                                                                                                                                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the modal will open. If `false`, the modal will close. Use this if you need finer grained control over presentation, otherwise just use the modalController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the modal dismisses. You will need to do that in your code. |
+| **Attribute**   | `is-open`                                                                                                                                                                                                                                                                                                                       |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                       |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                         |
+
+### keepContentsMounted
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the component passed into `ion-modal` will automatically be mounted when the modal is created. The component will remain mounted even when the modal is dismissed. However, the component will be destroyed when the modal is destroyed. This property is not reactive and should only be used when initially creating a modal.<br /><br />Note: This feature only applies to inline modals in JavaScript frameworks such as Angular, React, and Vue. |
+| **Attribute**   | `keep-contents-mounted`                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+
+### keyboardClose
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the keyboard will be automatically dismissed when the overlay is presented. |
+| **Attribute**   | `keyboard-close`                                                                       |
+| **Type**        | `boolean`                                                                              |
+| **Default**     | `true`                                                                                 |
+
+### leaveAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the modal is dismissed.           |
+| **Attribute**   | `leave-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### presentingElement
+
+|                 |                                                                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The element that presented the modal. This is used for card presentation effects and for stacking multiple modals on top of each other. Only applies in iOS mode. |
+| **Attribute**   | `presenting-element`                                                                                                                                              |
+| **Type**        | `HTMLElement ｜ undefined`                                                                                                                                        |
+| **Default**     | `undefined`                                                                                                                                                       |
+
+### showBackdrop
+
+|                 |                                                                                                                                                                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, a backdrop will be displayed behind the modal. This property controls whether or not the backdrop darkens the screen when the modal is presented. It does not control whether or not the backdrop is active or present in the DOM. |
+| **Attribute**   | `show-backdrop`                                                                                                                                                                                                                               |
+| **Type**        | `boolean`                                                                                                                                                                                                                                     |
+| **Default**     | `true`                                                                                                                                                                                                                                        |
+
+### trigger
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | An ID corresponding to the trigger element that causes the modal to open when clicked. |
+| **Attribute**   | `trigger`                                                                              |
+| **Type**        | `string ｜ undefined`                                                                  |
+| **Default**     | `undefined`                                                                            |
 
 ## Events
 
-<Events />
+| Name                     | Description                                                                | Bubbles |
+| ------------------------ | -------------------------------------------------------------------------- | ------- |
+| `didDismiss`             | Emitted after the modal has dismissed. Shorthand for ionModalDidDismiss.   | `true`  |
+| `didPresent`             | Emitted after the modal has presented. Shorthand for ionModalDidPresent.   | `true`  |
+| `ionBreakpointDidChange` | Emitted after the modal breakpoint has changed.                            | `true`  |
+| `ionModalDidDismiss`     | Emitted after the modal has dismissed.                                     | `true`  |
+| `ionModalDidPresent`     | Emitted after the modal has presented.                                     | `true`  |
+| `ionModalWillDismiss`    | Emitted before the modal has dismissed.                                    | `true`  |
+| `ionModalWillPresent`    | Emitted before the modal has presented.                                    | `true`  |
+| `willDismiss`            | Emitted before the modal has dismissed. Shorthand for ionModalWillDismiss. | `true`  |
+| `willPresent`            | Emitted before the modal has presented. Shorthand for ionModalWillPresent. | `true`  |
 
 ## Methods
 
-<Methods />
+### dismiss
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Dismiss the modal overlay after it has been presented.                                                                                                                                                                                                                                                                                                                                             |
+| **Signature**   | `dismiss(data?: any, role?: string) => Promise<boolean>`                                                                                                                                                                                                                                                                                                                                           |
+| **Parameters**  | **data**: Any data to emit in the dismiss events.<br/>**role**: The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'.<br /><br />This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method. |
+
+### getCurrentBreakpoint
+
+|                 |                                                          |
+| --------------- | -------------------------------------------------------- |
+| **Description** | Returns the current breakpoint of a sheet style modal    |
+| **Signature**   | `getCurrentBreakpoint() => Promise<number ｜ undefined>` |
+
+### onDidDismiss
+
+|                 |                                                             |
+| --------------- | ----------------------------------------------------------- |
+| **Description** | Returns a promise that resolves when the modal did dismiss. |
+| **Signature**   | `onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+### onWillDismiss
+
+|                 |                                                              |
+| --------------- | ------------------------------------------------------------ |
+| **Description** | Returns a promise that resolves when the modal will dismiss. |
+| **Signature**   | `onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
+
+### present
+
+|                 |                                                      |
+| --------------- | ---------------------------------------------------- |
+| **Description** | Present the modal overlay after it has been created. |
+| **Signature**   | `present() => Promise<void>`                         |
+
+### setCurrentBreakpoint
+
+|                 |                                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Move a sheet style modal to a specific breakpoint. The breakpoint value must be a value defined in your `breakpoints` array. |
+| **Signature**   | `setCurrentBreakpoint(breakpoint: number) => Promise<void>`                                                                  |
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name       | Description                                                                      |
+| ---------- | -------------------------------------------------------------------------------- |
+| `backdrop` | The `ion-backdrop` element.                                                      |
+| `content`  | The wrapper element for the default slot.                                        |
+| `handle`   | The handle that is displayed at the top of the sheet modal when `handle="true"`. |
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--backdrop-opacity` | Opacity of the backdrop |
+| `--background` | Background of the modal content |
+| `--border-color` | Border color of the modal content |
+| `--border-radius` | Border radius of the modal content |
+| `--border-style` | Border style of the modal content |
+| `--border-width` | Border width of the modal content |
+| `--height` | Height of the modal |
+| `--max-height` | Maximum height of the modal |
+| `--max-width` | Maximum width of the modal |
+| `--min-height` | Minimum height of the modal |
+| `--min-width` | Minimum width of the modal |
+| `--width` | Width of the modal |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--backdrop-opacity` | Opacity of the backdrop |
+| `--background` | Background of the modal content |
+| `--border-color` | Border color of the modal content |
+| `--border-radius` | Border radius of the modal content |
+| `--border-style` | Border style of the modal content |
+| `--border-width` | Border width of the modal content |
+| `--height` | Height of the modal |
+| `--max-height` | Maximum height of the modal |
+| `--max-width` | Maximum width of the modal |
+| `--min-height` | Minimum height of the modal |
+| `--min-width` | Minimum width of the modal |
+| `--width` | Width of the modal |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+| Name | Description                                               |
+| ---- | --------------------------------------------------------- |
+| ``   | Content is placed inside of the `.modal-content` element. |

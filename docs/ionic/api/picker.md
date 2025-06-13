@@ -2,13 +2,6 @@
 title: "ion-picker"
 ---
 
-import Props from '@ionic-internal/component-api/v8/picker/props.md';
-import Events from '@ionic-internal/component-api/v8/picker/events.md';
-import Methods from '@ionic-internal/component-api/v8/picker/methods.md';
-import Parts from '@ionic-internal/component-api/v8/picker/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/picker/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/picker/slots.md';
-
 <head>
   <title>ion-picker: Display a list of options in columns</title>
   <meta name="description" content="A Picker displays one or more columns with options for users to choose from." />
@@ -83,24 +76,69 @@ Each [Picker Column](./picker-column) can be navigated using the keyboard when f
 
 ## Properties
 
-<Props />
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--fade-background-rgb` | Background of the gradient covering non-selected items in rgb format |
+| `--highlight-background` | Background of the picker highlight for the selected item |
+| `--highlight-border-radius` | Border radius of the picker highlight for the selected item |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--fade-background-rgb` | Background of the gradient covering non-selected items in rgb format |
+| `--highlight-background` | Background of the picker highlight for the selected item |
+| `--highlight-border-radius` | Border radius of the picker highlight for the selected item |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

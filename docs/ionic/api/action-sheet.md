@@ -5,13 +5,6 @@ title: "ion-action-sheet"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/action-sheet/props.md';
-import Events from '@ionic-internal/component-api/v8/action-sheet/events.md';
-import Methods from '@ionic-internal/component-api/v8/action-sheet/methods.md';
-import Parts from '@ionic-internal/component-api/v8/action-sheet/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/action-sheet/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/action-sheet/slots.md';
-
 <head>
   <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>
   <meta name="description" content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices." />
@@ -281,24 +274,260 @@ interface ActionSheetOptions {
 
 ## Properties
 
-<Props />
+### animated
+
+|                 |                                           |
+| --------------- | ----------------------------------------- |
+| **Description** | If `true`, the action sheet will animate. |
+| **Attribute**   | `animated`                                |
+| **Type**        | `boolean`                                 |
+| **Default**     | `true`                                    |
+
+### backdropDismiss
+
+|                 |                                                                             |
+| --------------- | --------------------------------------------------------------------------- |
+| **Description** | If `true`, the action sheet will be dismissed when the backdrop is clicked. |
+| **Attribute**   | `backdrop-dismiss`                                                          |
+| **Type**        | `boolean`                                                                   |
+| **Default**     | `true`                                                                      |
+
+### buttons
+
+|                 |                                           |
+| --------------- | ----------------------------------------- |
+| **Description** | An array of buttons for the action sheet. |
+| **Attribute**   | `buttons`                                 |
+| **Type**        | `(string ｜ ActionSheetButton<any>)[]`    |
+| **Default**     | `[]`                                      |
+
+### cssClass
+
+|                 |                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Description** | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces. |
+| **Attribute**   | `css-class`                                                                                                      |
+| **Type**        | `string ｜ string[] ｜ undefined`                                                                                |
+| **Default**     | `undefined`                                                                                                      |
+
+### enterAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the action sheet is presented.    |
+| **Attribute**   | `enter-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### header
+
+|                 |                             |
+| --------------- | --------------------------- |
+| **Description** | Title for the action sheet. |
+| **Attribute**   | `header`                    |
+| **Type**        | `string ｜ undefined`       |
+| **Default**     | `undefined`                 |
+
+### htmlAttributes
+
+|                 |                                                    |
+| --------------- | -------------------------------------------------- |
+| **Description** | Additional attributes to pass to the action sheet. |
+| **Attribute**   | `html-attributes`                                  |
+| **Type**        | `undefined ｜ { [key: string]: any; }`             |
+| **Default**     | `undefined`                                        |
+
+### isOpen
+
+|                 |                                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the action sheet will open. If `false`, the action sheet will close. Use this if you need finer grained control over presentation, otherwise just use the actionSheetController or the `trigger` property. Note: `isOpen` will not automatically be set back to `false` when the action sheet dismisses. You will need to do that in your code. |
+| **Attribute**   | `is-open`                                                                                                                                                                                                                                                                                                                                                  |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                  |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                                    |
+
+### keyboardClose
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the keyboard will be automatically dismissed when the overlay is presented. |
+| **Attribute**   | `keyboard-close`                                                                       |
+| **Type**        | `boolean`                                                                              |
+| **Default**     | `true`                                                                                 |
+
+### leaveAnimation
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the action sheet is dismissed.    |
+| **Attribute**   | `leave-animation`                                       |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined` |
+| **Default**     | `undefined`                                             |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### subHeader
+
+|                 |                                |
+| --------------- | ------------------------------ |
+| **Description** | Subtitle for the action sheet. |
+| **Attribute**   | `sub-header`                   |
+| **Type**        | `string ｜ undefined`          |
+| **Default**     | `undefined`                    |
+
+### translucent
+
+|                 |                                                                                                                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the action sheet will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). |
+| **Attribute**   | `translucent`                                                                                                                                                                                                               |
+| **Type**        | `boolean`                                                                                                                                                                                                                   |
+| **Default**     | `false`                                                                                                                                                                                                                     |
+
+### trigger
+
+|                 |                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------- |
+| **Description** | An ID corresponding to the trigger element that causes the action sheet to open when clicked. |
+| **Attribute**   | `trigger`                                                                                     |
+| **Type**        | `string ｜ undefined`                                                                         |
+| **Default**     | `undefined`                                                                                   |
 
 ## Events
 
-<Events />
+| Name                        | Description                                                                             | Bubbles |
+| --------------------------- | --------------------------------------------------------------------------------------- | ------- |
+| `didDismiss`                | Emitted after the action sheet has dismissed. Shorthand for ionActionSheetDidDismiss.   | `true`  |
+| `didPresent`                | Emitted after the action sheet has presented. Shorthand for ionActionSheetWillDismiss.  | `true`  |
+| `ionActionSheetDidDismiss`  | Emitted after the action sheet has dismissed.                                           | `true`  |
+| `ionActionSheetDidPresent`  | Emitted after the action sheet has presented.                                           | `true`  |
+| `ionActionSheetWillDismiss` | Emitted before the action sheet has dismissed.                                          | `true`  |
+| `ionActionSheetWillPresent` | Emitted before the action sheet has presented.                                          | `true`  |
+| `willDismiss`               | Emitted before the action sheet has dismissed. Shorthand for ionActionSheetWillDismiss. | `true`  |
+| `willPresent`               | Emitted before the action sheet has presented. Shorthand for ionActionSheetWillPresent. | `true`  |
 
 ## Methods
 
-<Methods />
+### dismiss
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Dismiss the action sheet overlay after it has been presented.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Signature**   | `dismiss(data?: any, role?: string) => Promise<boolean>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Parameters**  | **data**: Any data to emit in the dismiss events.<br/>**role**: The role of the element that is dismissing the action sheet. This can be useful in a button handler for determining which button was clicked to dismiss the action sheet. Some examples include: ``"cancel"`, `"destructive"`, "selected"`, and `"backdrop"`.<br /><br />This is a no-op if the overlay has not been presented yet. If you want to remove an overlay from the DOM that was never presented, use the [remove](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) method. |
+
+### onDidDismiss
+
+|                 |                                                                    |
+| --------------- | ------------------------------------------------------------------ |
+| **Description** | Returns a promise that resolves when the action sheet did dismiss. |
+| **Signature**   | `onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>`        |
+
+### onWillDismiss
+
+|                 |                                                                     |
+| --------------- | ------------------------------------------------------------------- |
+| **Description** | Returns a promise that resolves when the action sheet will dismiss. |
+| **Signature**   | `onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>`        |
+
+### present
+
+|                 |                                                             |
+| --------------- | ----------------------------------------------------------- |
+| **Description** | Present the action sheet overlay after it has been created. |
+| **Signature**   | `present() => Promise<void>`                                |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--backdrop-opacity` | Opacity of the backdrop |
+| `--background` | Background of the action sheet group |
+| `--button-background` | Background of the action sheet button |
+| `--button-background-activated` | Background of the action sheet button when pressed. Note: setting this will interfere with the Material Design ripple. |
+| `--button-background-activated-opacity` | Opacity of the action sheet button background when pressed |
+| `--button-background-focused` | Background of the action sheet button when tabbed to |
+| `--button-background-focused-opacity` | Opacity of the action sheet button background when tabbed to |
+| `--button-background-hover` | Background of the action sheet button on hover |
+| `--button-background-hover-opacity` | Opacity of the action sheet button background on hover |
+| `--button-background-selected` | Background of the selected action sheet button |
+| `--button-background-selected-opacity` | Opacity of the selected action sheet button background |
+| `--button-color` | Color of the action sheet button |
+| `--button-color-activated` | Color of the action sheet button when pressed |
+| `--button-color-disabled` | Color of the selected action sheet button when disabled |
+| `--button-color-focused` | Color of the action sheet button when tabbed to |
+| `--button-color-hover` | Color of the action sheet button on hover |
+| `--button-color-selected` | Color of the selected action sheet button |
+| `--color` | Color of the action sheet text |
+| `--height` | height of the action sheet |
+| `--max-height` | Maximum height of the action sheet |
+| `--max-width` | Maximum width of the action sheet |
+| `--min-height` | Minimum height of the action sheet |
+| `--min-width` | Minimum width of the action sheet |
+| `--width` | Width of the action sheet |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--backdrop-opacity` | Opacity of the backdrop |
+| `--background` | Background of the action sheet group |
+| `--button-background` | Background of the action sheet button |
+| `--button-background-activated` | Background of the action sheet button when pressed. Note: setting this will interfere with the Material Design ripple. |
+| `--button-background-activated-opacity` | Opacity of the action sheet button background when pressed |
+| `--button-background-focused` | Background of the action sheet button when tabbed to |
+| `--button-background-focused-opacity` | Opacity of the action sheet button background when tabbed to |
+| `--button-background-hover` | Background of the action sheet button on hover |
+| `--button-background-hover-opacity` | Opacity of the action sheet button background on hover |
+| `--button-background-selected` | Background of the selected action sheet button |
+| `--button-background-selected-opacity` | Opacity of the selected action sheet button background |
+| `--button-color` | Color of the action sheet button |
+| `--button-color-activated` | Color of the action sheet button when pressed |
+| `--button-color-disabled` | Color of the selected action sheet button when disabled |
+| `--button-color-focused` | Color of the action sheet button when tabbed to |
+| `--button-color-hover` | Color of the action sheet button on hover |
+| `--button-color-selected` | Color of the selected action sheet button |
+| `--color` | Color of the action sheet text |
+| `--height` | height of the action sheet |
+| `--max-height` | Maximum height of the action sheet |
+| `--max-width` | Maximum width of the action sheet |
+| `--min-height` | Minimum height of the action sheet |
+| `--min-width` | Minimum width of the action sheet |
+| `--width` | Width of the action sheet |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

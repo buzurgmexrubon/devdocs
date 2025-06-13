@@ -2,13 +2,6 @@
 title: "ion-row"
 ---
 
-import Props from '@ionic-internal/component-api/v8/row/props.md';
-import Events from '@ionic-internal/component-api/v8/row/events.md';
-import Methods from '@ionic-internal/component-api/v8/row/methods.md';
-import Parts from '@ionic-internal/component-api/v8/row/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/row/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/row/slots.md';
-
 <head>
   <title>ion-row: Horizontal Row Components of the Grid System</title>
   <meta name="description" content="Rows are horizontal components of the grid system and contain varying numbers of columns. Read our ion-row API Docs for more information on alignment and usage." />
@@ -29,24 +22,24 @@ By default, columns will stretch to fill the entire height of the row and wrap w
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

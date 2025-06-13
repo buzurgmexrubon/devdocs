@@ -2,13 +2,6 @@
 title: "ion-ripple-effect"
 ---
 
-import Props from '@ionic-internal/component-api/v8/ripple-effect/props.md';
-import Events from '@ionic-internal/component-api/v8/ripple-effect/events.md';
-import Methods from '@ionic-internal/component-api/v8/ripple-effect/methods.md';
-import Parts from '@ionic-internal/component-api/v8/ripple-effect/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/ripple-effect/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/ripple-effect/slots.md';
-
 import EncapsulationPill from '@site/src/components/page/api/EncapsulationPill';
 
 <head>
@@ -46,24 +39,37 @@ import Customizing from '@site/static/ionic/usage/v8/ripple-effect/customizing/i
 
 ## Properties
 
-<Props />
+### type
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Sets the type of ripple-effect:<br /><br />- `bounded`: the ripple effect expands from the user's click position - `unbounded`: the ripple effect expands from the center of the button and overflows the container.<br /><br />NOTE: Surfaces for bounded ripples should have the overflow property set to hidden, while surfaces for unbounded ripples should have it set to visible. |
+| **Attribute**   | `type`                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Type**        | `"bounded" ｜ "unbounded"`                                                                                                                                                                                                                                                                                                                                                              |
+| **Default**     | `'bounded'`                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+### addRipple
+
+|                 |                                                                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Adds the ripple effect to the parent element.                                                                                           |
+| **Signature**   | `addRipple(x: number, y: number) => Promise<() => void>`                                                                                |
+| **Parameters**  | **x**: The horizontal coordinate of where the ripple should start.<br/>**y**: The vertical coordinate of where the ripple should start. |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

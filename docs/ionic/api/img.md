@@ -2,13 +2,6 @@
 title: "ion-img"
 ---
 
-import Props from '@ionic-internal/component-api/v8/img/props.md';
-import Events from '@ionic-internal/component-api/v8/img/events.md';
-import Methods from '@ionic-internal/component-api/v8/img/methods.md';
-import Parts from '@ionic-internal/component-api/v8/img/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/img/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/img/slots.md';
-
 <head>
   <title>ion-img: Img Tag to Lazy Load Images in Viewport</title>
   <meta name="description" content="Img tag lazy loads images whenever the tag is in the viewport. Utilize this component when generating large lists—as images are only loaded when visible." />
@@ -28,24 +21,46 @@ import Basic from '@site/static/ionic/usage/v8/img/basic/index.md';
 
 ## Properties
 
-<Props />
+### alt
+
+|                 |                                                                                                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | This attribute defines the alternative text describing the image. Users will see this text displayed if the image URL is wrong, the image is not in one of the supported formats, or if the image is not yet downloaded. |
+| **Attribute**   | `alt`                                                                                                                                                                                                                    |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                                                    |
+| **Default**     | `undefined`                                                                                                                                                                                                              |
+
+### src
+
+|                 |                                                                     |
+| --------------- | ------------------------------------------------------------------- |
+| **Description** | The image URL. This attribute is mandatory for the `<img>` element. |
+| **Attribute**   | `src`                                                               |
+| **Type**        | `string ｜ undefined`                                               |
+| **Default**     | `undefined`                                                         |
 
 ## Events
 
-<Events />
+| Name             | Description                                 | Bubbles |
+| ---------------- | ------------------------------------------- | ------- |
+| `ionError`       | Emitted when the img fails to load          | `true`  |
+| `ionImgDidLoad`  | Emitted when the image has finished loading | `true`  |
+| `ionImgWillLoad` | Emitted when the img src has been set       | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name    | Description              |
+| ------- | ------------------------ |
+| `image` | The inner `img` element. |
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

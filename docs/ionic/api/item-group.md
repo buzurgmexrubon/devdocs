@@ -2,13 +2,6 @@
 title: "ion-item-group"
 ---
 
-import Props from '@ionic-internal/component-api/v8/item-group/props.md';
-import Events from '@ionic-internal/component-api/v8/item-group/events.md';
-import Methods from '@ionic-internal/component-api/v8/item-group/methods.md';
-import Parts from '@ionic-internal/component-api/v8/item-group/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/item-group/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/item-group/slots.md';
-
 <head>
   <title>ion-item-group: Group Items to Divide into Multiple Sections</title>
   <meta name="description" content="Item groups are containers that organize similar items together. ion-item-groups can contain item dividers to divide the items into multiple sections. " />
@@ -32,24 +25,24 @@ import SlidingItems from '@site/static/ionic/usage/v8/item-group/sliding-items/i
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

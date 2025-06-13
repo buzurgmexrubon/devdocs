@@ -2,13 +2,6 @@
 title: "ion-router-outlet"
 ---
 
-import Props from '@ionic-internal/component-api/v8/router-outlet/props.md';
-import Events from '@ionic-internal/component-api/v8/router-outlet/events.md';
-import Methods from '@ionic-internal/component-api/v8/router-outlet/methods.md';
-import Parts from '@ionic-internal/component-api/v8/router-outlet/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/router-outlet/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/router-outlet/slots.md';
-
 import EncapsulationPill from '@site/src/components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
@@ -34,24 +27,49 @@ For handling Router Guards, the older `ionViewCanEnter` and `ionViewCanLeave` ha
 
 ## Properties
 
-<Props />
+### animated
+
+|                 |                                                                           |
+| --------------- | ------------------------------------------------------------------------- |
+| **Description** | If `true`, the router-outlet should animate the transition of components. |
+| **Attribute**   | `animated`                                                                |
+| **Type**        | `boolean`                                                                 |
+| **Default**     | `true`                                                                    |
+
+### animation
+
+|                 |                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------- |
+| **Description** | This property allows to create custom transition using AnimationBuilder functions. |
+| **Attribute**   | `animation`                                                                        |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) ｜ undefined`                            |
+| **Default**     | `undefined`                                                                        |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `getIonMode(this)`                                |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

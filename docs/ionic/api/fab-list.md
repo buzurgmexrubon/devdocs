@@ -2,13 +2,6 @@
 title: "ion-fab-list"
 ---
 
-import Props from '@ionic-internal/component-api/v8/fab-list/props.md';
-import Events from '@ionic-internal/component-api/v8/fab-list/events.md';
-import Methods from '@ionic-internal/component-api/v8/fab-list/methods.md';
-import Parts from '@ionic-internal/component-api/v8/fab-list/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/fab-list/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/fab-list/slots.md';
-
 import EncapsulationPill from '@site/src/components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
@@ -19,24 +12,40 @@ For usage examples, see the [fab documentation](./fab).
 
 ## Properties
 
-<Props />
+### activated
+
+|                 |                                                                |
+| --------------- | -------------------------------------------------------------- |
+| **Description** | If `true`, the fab list will show all fab buttons in the list. |
+| **Attribute**   | `activated`                                                    |
+| **Type**        | `boolean`                                                      |
+| **Default**     | `false`                                                        |
+
+### side
+
+|                 |                                                                     |
+| --------------- | ------------------------------------------------------------------- |
+| **Description** | The side the fab list will show on relative to the main fab button. |
+| **Attribute**   | `side`                                                              |
+| **Type**        | `"bottom" ｜ "end" ｜ "start" ｜ "top"`                             |
+| **Default**     | `'bottom'`                                                          |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

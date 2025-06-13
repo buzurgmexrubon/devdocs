@@ -2,13 +2,6 @@
 title: "ion-searchbar"
 ---
 
-import Props from '@ionic-internal/component-api/v8/searchbar/props.md';
-import Events from '@ionic-internal/component-api/v8/searchbar/events.md';
-import Methods from '@ionic-internal/component-api/v8/searchbar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/searchbar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/searchbar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/searchbar/slots.md';
-
 <head>
   <title>ion-searchbar: Search Bar for Searching a Collection</title>
   <meta name="description" content="Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays." />
@@ -117,24 +110,302 @@ interface SearchbarCustomEvent extends CustomEvent {
 
 ## Properties
 
-<Props />
+### animated
+
+|                 |                                        |
+| --------------- | -------------------------------------- |
+| **Description** | If `true`, enable searchbar animation. |
+| **Attribute**   | `animated`                             |
+| **Type**        | `boolean`                              |
+| **Default**     | `false`                                |
+
+### autocapitalize
+
+|                 |                                                                                                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`. |
+| **Attribute**   | `autocapitalize`                                                                                                                                                                                          |
+| **Type**        | `string`                                                                                                                                                                                                  |
+| **Default**     | `'off'`                                                                                                                                                                                                   |
+
+### autocomplete
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Set the input's autocomplete property.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Attribute**   | `autocomplete`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Type**        | `"name" ｜ "email" ｜ "tel" ｜ "url" ｜ "on" ｜ "off" ｜ "honorific-prefix" ｜ "given-name" ｜ "additional-name" ｜ "family-name" ｜ "honorific-suffix" ｜ "nickname" ｜ "username" ｜ "new-password" ｜ "current-password" ｜ "one-time-code" ｜ "organization-title" ｜ "organization" ｜ "street-address" ｜ "address-line1" ｜ "address-line2" ｜ "address-line3" ｜ "address-level4" ｜ "address-level3" ｜ "address-level2" ｜ "address-level1" ｜ "country" ｜ "country-name" ｜ "postal-code" ｜ "cc-name" ｜ "cc-given-name" ｜ "cc-additional-name" ｜ "cc-family-name" ｜ "cc-number" ｜ "cc-exp" ｜ "cc-exp-month" ｜ "cc-exp-year" ｜ "cc-csc" ｜ "cc-type" ｜ "transaction-currency" ｜ "transaction-amount" ｜ "language" ｜ "bday" ｜ "bday-day" ｜ "bday-month" ｜ "bday-year" ｜ "sex" ｜ "tel-country-code" ｜ "tel-national" ｜ "tel-area-code" ｜ "tel-local" ｜ "tel-extension" ｜ "impp" ｜ "photo"` |
+| **Default**     | `'off'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+
+### autocorrect
+
+|                 |                                       |
+| --------------- | ------------------------------------- |
+| **Description** | Set the input's autocorrect property. |
+| **Attribute**   | `autocorrect`                         |
+| **Type**        | `"off" ｜ "on"`                       |
+| **Default**     | `'off'`                               |
+
+### cancelButtonIcon
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | Set the cancel button icon. Only applies to `md` mode. Defaults to `arrow-back-sharp`. |
+| **Attribute**   | `cancel-button-icon`                                                                   |
+| **Type**        | `string`                                                                               |
+| **Default**     | `config.get('backButtonIcon', arrowBackSharp) as string`                               |
+
+### cancelButtonText
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Set the cancel button text. Only applies to `ios` mode. |
+| **Attribute**   | `cancel-button-text`                                    |
+| **Type**        | `string`                                                |
+| **Default**     | `'Cancel'`                                              |
+
+### clearIcon
+
+|                 |                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------ |
+| **Description** | Set the clear icon. Defaults to `close-circle` for `ios` and `close-sharp` for `md`. |
+| **Attribute**   | `clear-icon`                                                                         |
+| **Type**        | `string ｜ undefined`                                                                |
+| **Default**     | `undefined`                                                                          |
+
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### debounce
+
+|                 |                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| **Description** | Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke. |
+| **Attribute**   | `debounce`                                                                                             |
+| **Type**        | `number ｜ undefined`                                                                                  |
+| **Default**     | `undefined`                                                                                            |
+
+### disabled
+
+|                 |                                                     |
+| --------------- | --------------------------------------------------- |
+| **Description** | If `true`, the user cannot interact with the input. |
+| **Attribute**   | `disabled`                                          |
+| **Type**        | `boolean`                                           |
+| **Default**     | `false`                                             |
+
+### enterkeyhint
+
+|                 |                                                                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`. |
+| **Attribute**   | `enterkeyhint`                                                                                                                                        |
+| **Type**        | `"done" ｜ "enter" ｜ "go" ｜ "next" ｜ "previous" ｜ "search" ｜ "send" ｜ undefined`                                                                |
+| **Default**     | `undefined`                                                                                                                                           |
+
+### inputmode
+
+|                 |                                                                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`. |
+| **Attribute**   | `inputmode`                                                                                                                                                      |
+| **Type**        | `"decimal" ｜ "email" ｜ "none" ｜ "numeric" ｜ "search" ｜ "tel" ｜ "text" ｜ "url" ｜ undefined`                                                               |
+| **Default**     | `undefined`                                                                                                                                                      |
+
+### maxlength
+
+|                 |                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------- |
+| **Description** | This attribute specifies the maximum number of characters that the user can enter. |
+| **Attribute**   | `maxlength`                                                                        |
+| **Type**        | `number ｜ undefined`                                                              |
+| **Default**     | `undefined`                                                                        |
+
+### minlength
+
+|                 |                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------- |
+| **Description** | This attribute specifies the minimum number of characters that the user can enter. |
+| **Attribute**   | `minlength`                                                                        |
+| **Type**        | `number ｜ undefined`                                                              |
+| **Default**     | `undefined`                                                                        |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### name
+
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
+| **Description** | If used in a form, set the name of the control, which is submitted with the form data. |
+| **Attribute**   | `name`                                                                                 |
+| **Type**        | `string`                                                                               |
+| **Default**     | `this.inputId`                                                                         |
+
+### placeholder
+
+|                 |                                                                                                                                                                                                                                                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Set the input's placeholder. `placeholder` can accept either plaintext or HTML as a string. To display characters normally reserved for HTML, they must be escaped. For example `<Ionic>` would become `&lt;Ionic&gt;`<br /><br />For more information: [Security Documentation](https://ionicframework.com/docs/faq/security) |
+| **Attribute**   | `placeholder`                                                                                                                                                                                                                                                                                                                  |
+| **Type**        | `string`                                                                                                                                                                                                                                                                                                                       |
+| **Default**     | `'Search'`                                                                                                                                                                                                                                                                                                                     |
+
+### searchIcon
+
+|                 |                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Description** | The icon to use as the search icon. Defaults to `search-outline` in `ios` mode and `search-sharp` in `md` mode. |
+| **Attribute**   | `search-icon`                                                                                                   |
+| **Type**        | `string ｜ undefined`                                                                                           |
+| **Default**     | `undefined`                                                                                                     |
+
+### showCancelButton
+
+|                 |                                                                                                                                                                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Sets the behavior for the cancel button. Defaults to `"never"`. Setting to `"focus"` shows the cancel button on focus. Setting to `"never"` hides the cancel button. Setting to `"always"` shows the cancel button regardless of focus state. |
+| **Attribute**   | `show-cancel-button`                                                                                                                                                                                                                          |
+| **Type**        | `"always" ｜ "focus" ｜ "never"`                                                                                                                                                                                                              |
+| **Default**     | `'never'`                                                                                                                                                                                                                                     |
+
+### showClearButton
+
+|                 |                                                                                                                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Sets the behavior for the clear button. Defaults to `"focus"`. Setting to `"focus"` shows the clear button on focus if the input is not empty. Setting to `"never"` hides the clear button. Setting to `"always"` shows the clear button regardless of focus state, but only if the input is not empty. |
+| **Attribute**   | `show-clear-button`                                                                                                                                                                                                                                                                                     |
+| **Type**        | `"always" ｜ "focus" ｜ "never"`                                                                                                                                                                                                                                                                        |
+| **Default**     | `'always'`                                                                                                                                                                                                                                                                                              |
+
+### spellcheck
+
+|                 |                                            |
+| --------------- | ------------------------------------------ |
+| **Description** | If `true`, enable spellcheck on the input. |
+| **Attribute**   | `spellcheck`                               |
+| **Type**        | `boolean`                                  |
+| **Default**     | `false`                                    |
+
+### type
+
+|                 |                                                                             |
+| --------------- | --------------------------------------------------------------------------- |
+| **Description** | Set the type of the input.                                                  |
+| **Attribute**   | `type`                                                                      |
+| **Type**        | `"email" ｜ "number" ｜ "password" ｜ "search" ｜ "tel" ｜ "text" ｜ "url"` |
+| **Default**     | `'search'`                                                                  |
+
+### value
+
+|                 |                               |
+| --------------- | ----------------------------- |
+| **Description** | the value of the searchbar.   |
+| **Attribute**   | `value`                       |
+| **Type**        | `null ｜ string ｜ undefined` |
+| **Default**     | `''`                          |
 
 ## Events
 
-<Events />
+| Name        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Bubbles |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionBlur`   | Emitted when the input loses focus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `true`  |
+| `ionCancel` | Emitted when the cancel button is clicked.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `true`  |
+| `ionChange` | The `ionChange` event is fired for `<ion-searchbar>` elements when the user modifies the element's value. Unlike the `ionInput` event, the `ionChange` event is not necessarily fired for each alteration to an element's value.<br /><br />The `ionChange` event is fired when the value has been committed by the user. This can happen when the element loses focus or when the "Enter" key is pressed. `ionChange` can also fire when clicking the clear or cancel buttons.<br /><br />This event will not emit when programmatically setting the `value` property. | `true`  |
+| `ionClear`  | Emitted when the clear input button is clicked.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `true`  |
+| `ionFocus`  | Emitted when the input has focus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `true`  |
+| `ionInput`  | Emitted when the `value` of the `ion-searchbar` element has changed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `true`  |
 
 ## Methods
 
-<Methods />
+### getInputElement
+
+|                 |                                                           |
+| --------------- | --------------------------------------------------------- |
+| **Description** | Returns the native `<input>` element used under the hood. |
+| **Signature**   | `getInputElement() => Promise<HTMLInputElement>`          |
+
+### setFocus
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global `input.focus()`.<br /><br />Developers who wish to focus an input when a page enters should call `setFocus()` in the `ionViewDidEnter()` lifecycle method.<br /><br />Developers who wish to focus an input when an overlay is presented should call `setFocus` after `didPresent` has resolved.<br /><br />See [managing focus](/docs/developing/managing-focus) for more information. |
+| **Signature**   | `setFocus() => Promise<void>`                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the searchbar input |
+| `--border-radius` | Border radius of the searchbar input |
+| `--box-shadow` | Box shadow of the searchbar input |
+| `--cancel-button-color` | Color of the searchbar cancel button |
+| `--clear-button-color` | Color of the searchbar clear button |
+| `--color` | Color of the searchbar text |
+| `--icon-color` | Color of the searchbar icon |
+| `--placeholder-color` | Color of the searchbar placeholder |
+| `--placeholder-font-style` | Font style of the searchbar placeholder |
+| `--placeholder-font-weight` | Font weight of the searchbar placeholder |
+| `--placeholder-opacity` | Opacity of the searchbar placeholder |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the searchbar input |
+| `--border-radius` | Border radius of the searchbar input |
+| `--box-shadow` | Box shadow of the searchbar input |
+| `--cancel-button-color` | Color of the searchbar cancel button |
+| `--clear-button-color` | Color of the searchbar clear button |
+| `--color` | Color of the searchbar text |
+| `--icon-color` | Color of the searchbar icon |
+| `--placeholder-color` | Color of the searchbar placeholder |
+| `--placeholder-font-style` | Font style of the searchbar placeholder |
+| `--placeholder-font-weight` | Font weight of the searchbar placeholder |
+| `--placeholder-opacity` | Opacity of the searchbar placeholder |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

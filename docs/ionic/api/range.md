@@ -2,13 +2,6 @@
 title: "ion-range"
 ---
 
-import Props from '@ionic-internal/component-api/v8/range/props.md';
-import Events from '@ionic-internal/component-api/v8/range/events.md';
-import Methods from '@ionic-internal/component-api/v8/range/methods.md';
-import Parts from '@ionic-internal/component-api/v8/range/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/range/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/range/slots.md';
-
 <head>
   <title>ion-range: Range Slider Knob Controls with Labels</title>
   <meta name="description" content="ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side." />
@@ -199,24 +192,248 @@ type RangeValue = number | { lower: number; upper: number }
 
 ## Properties
 
-<Props />
+### activeBarStart
+
+|                 |                                                                                                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The start position of the range active bar. This feature is only available with a single knob (dualKnobs="false"). Valid values are greater than or equal to the min value and less than or equal to the max value. |
+| **Attribute**   | `active-bar-start`                                                                                                                                                                                                  |
+| **Type**        | `number ｜ undefined`                                                                                                                                                                                               |
+| **Default**     | `undefined`                                                                                                                                                                                                         |
+
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### debounce
+
+|                 |                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| **Description** | How long, in milliseconds, to wait to trigger the `ionInput` event after each change in the range value. |
+| **Attribute**   | `debounce`                                                                                               |
+| **Type**        | `number ｜ undefined`                                                                                    |
+| **Default**     | `undefined`                                                                                              |
+
+### disabled
+
+|                 |                                                     |
+| --------------- | --------------------------------------------------- |
+| **Description** | If `true`, the user cannot interact with the range. |
+| **Attribute**   | `disabled`                                          |
+| **Type**        | `boolean`                                           |
+| **Default**     | `false`                                             |
+
+### dualKnobs
+
+|                 |                 |
+| --------------- | --------------- |
+| **Description** | Show two knobs. |
+| **Attribute**   | `dual-knobs`    |
+| **Type**        | `boolean`       |
+| **Default**     | `false`         |
+
+### label
+
+|                 |                                                                                                                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The text to display as the control's label. Use this over the `label` slot if you only need plain text. The `label` property will take priority over the `label` slot if both are used. |
+| **Attribute**   | `label`                                                                                                                                                                                 |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                   |
+| **Default**     | `undefined`                                                                                                                                                                             |
+
+### labelPlacement
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Where to place the label relative to the range. `"start"`: The label will appear to the left of the range in LTR and to the right in RTL. `"end"`: The label will appear to the right of the range in LTR and to the left in RTL. `"fixed"`: The label has the same behavior as `"start"` except it also has a fixed width. Long text will be truncated with ellipses ("..."). `"stacked"`: The label will appear above the range regardless of the direction. |
+| **Attribute**   | `label-placement`                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Type**        | `"end" ｜ "fixed" ｜ "stacked" ｜ "start"`                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Default**     | `'start'`                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+### max
+
+|                 |                                     |
+| --------------- | ----------------------------------- |
+| **Description** | Maximum integer value of the range. |
+| **Attribute**   | `max`                               |
+| **Type**        | `number`                            |
+| **Default**     | `100`                               |
+
+### min
+
+|                 |                                     |
+| --------------- | ----------------------------------- |
+| **Description** | Minimum integer value of the range. |
+| **Attribute**   | `min`                               |
+| **Type**        | `number`                            |
+| **Default**     | `0`                                 |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### name
+
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
+| **Description** | The name of the control, which is submitted with the form data. |
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.rangeId`                                                  |
+
+### pin
+
+|                 |                                                                        |
+| --------------- | ---------------------------------------------------------------------- |
+| **Description** | If `true`, a pin with integer value is shown when the knob is pressed. |
+| **Attribute**   | `pin`                                                                  |
+| **Type**        | `boolean`                                                              |
+| **Default**     | `false`                                                                |
+
+### pinFormatter
+
+|                 |                                                                                                                                                                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A callback used to format the pin text. By default the pin text is set to `Math.round(value)`.<br /><br />See https://ionicframework.com/docs/troubleshooting/runtime#accessing-this if you need to access `this` from within the callback. |
+| **Attribute**   | `pin-formatter`                                                                                                                                                                                                                             |
+| **Type**        | `(value: number) => string ｜ number`                                                                                                                                                                                                       |
+| **Default**     | `(value: number): number => Math.round(value)`                                                                                                                                                                                              |
+
+### snaps
+
+|                 |                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the knob snaps to tick marks evenly spaced based on the step property value. |
+| **Attribute**   | `snaps`                                                                                 |
+| **Type**        | `boolean`                                                                               |
+| **Default**     | `false`                                                                                 |
+
+### step
+
+|                 |                                  |
+| --------------- | -------------------------------- |
+| **Description** | Specifies the value granularity. |
+| **Attribute**   | `step`                           |
+| **Type**        | `number`                         |
+| **Default**     | `1`                              |
+
+### ticks
+
+|                 |                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, tick marks are displayed based on the step value. Only applies when `snaps` is `true`. |
+| **Attribute**   | `ticks`                                                                                           |
+| **Type**        | `boolean`                                                                                         |
+| **Default**     | `true`                                                                                            |
+
+### value
+
+|                 |                                               |
+| --------------- | --------------------------------------------- |
+| **Description** | the value of the range.                       |
+| **Attribute**   | `value`                                       |
+| **Type**        | `number ｜ { lower: number; upper: number; }` |
+| **Default**     | `0`                                           |
 
 ## Events
 
-<Events />
+| Name               | Description                                                                                                                                                                                                                                                                                         | Bubbles |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionBlur`          | Emitted when the range loses focus.                                                                                                                                                                                                                                                                 | `true`  |
+| `ionChange`        | The `ionChange` event is fired for `<ion-range>` elements when the user modifies the element's value: - When the user releases the knob after dragging; - When the user moves the knob with keyboard arrows<br /><br />This event will not emit when programmatically setting the `value` property. | `true`  |
+| `ionFocus`         | Emitted when the range has focus.                                                                                                                                                                                                                                                                   | `true`  |
+| `ionInput`         | The `ionInput` event is fired for `<ion-range>` elements when the value is modified. Unlike `ionChange`, `ionInput` is fired continuously while the user is dragging the knob.                                                                                                                      | `true`  |
+| `ionKnobMoveEnd`   | Emitted when the user finishes moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.                                                                                                                                                                           | `true`  |
+| `ionKnobMoveStart` | Emitted when the user starts moving the range knob, whether through mouse drag, touch gesture, or keyboard interaction.                                                                                                                                                                             | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name          | Description                                |
+| ------------- | ------------------------------------------ |
+| `bar`         | The inactive part of the bar.              |
+| `bar-active`  | The active part of the bar.                |
+| `knob`        | The handle that is used to drag the range. |
+| `label`       | The label text describing the range.       |
+| `pin`         | The counter that appears above a knob.     |
+| `tick`        | An inactive tick mark.                     |
+| `tick-active` | An active tick mark.                       |
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--bar-background` | Background of the range bar |
+| `--bar-background-active` | Background of the active range bar |
+| `--bar-border-radius` | Border radius of the range bar |
+| `--bar-height` | Height of the range bar |
+| `--height` | Height of the range |
+| `--knob-background` | Background of the range knob |
+| `--knob-border-radius` | Border radius of the range knob |
+| `--knob-box-shadow` | Box shadow of the range knob |
+| `--knob-size` | Size of the range knob |
+| `--pin-background` | Background of the range pin (only available in MD mode) |
+| `--pin-color` | Color of the range pin (only available in MD mode) |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--bar-background` | Background of the range bar |
+| `--bar-background-active` | Background of the active range bar |
+| `--bar-border-radius` | Border radius of the range bar |
+| `--bar-height` | Height of the range bar |
+| `--height` | Height of the range |
+| `--knob-background` | Background of the range knob |
+| `--knob-border-radius` | Border radius of the range knob |
+| `--knob-box-shadow` | Box shadow of the range knob |
+| `--knob-size` | Size of the range knob |
+| `--pin-background` | Background of the range pin (only available in MD mode) |
+| `--pin-color` | Color of the range pin (only available in MD mode) |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+| Name    | Description                                                                                                                               |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `end`   | Content is placed to the right of the range slider in LTR, and to the left in RTL.                                                        |
+| `label` | The label text to associate with the range. Use the "labelPlacement" property to control where the label is placed relative to the range. |
+| `start` | Content is placed to the left of the range slider in LTR, and to the right in RTL.                                                        |

@@ -5,13 +5,6 @@ title: "ion-tab-bar"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v8/tab-bar/props.md';
-import Events from '@ionic-internal/component-api/v8/tab-bar/events.md';
-import Methods from '@ionic-internal/component-api/v8/tab-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v8/tab-bar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/tab-bar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/tab-bar/slots.md';
-
 <head>
   <title>ion-tab-bar: Tab Bar Component with CSS Custom Properties</title>
   <meta name="description" content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties." />
@@ -161,24 +154,92 @@ import InsideTabBar from '@site/static/ionic/usage/v8/badge/inside-tab-bar/index
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
+
+### selectedTab
+
+|                 |                            |
+| --------------- | -------------------------- |
+| **Description** | The selected tab component |
+| **Attribute**   | `selected-tab`             |
+| **Type**        | `string ｜ undefined`      |
+| **Default**     | `undefined`                |
+
+### translucent
+
+|                 |                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the tab bar will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). |
+| **Attribute**   | `translucent`                                                                                                                                                                                                          |
+| **Type**        | `boolean`                                                                                                                                                                                                              |
+| **Default**     | `false`                                                                                                                                                                                                                |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the tab bar |
+| `--border` | Border of the tab bar |
+| `--color` | Color of the tab bar |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background of the tab bar |
+| `--border` | Border of the tab bar |
+| `--color` | Color of the tab bar |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

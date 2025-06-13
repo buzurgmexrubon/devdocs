@@ -2,13 +2,6 @@
 title: "ion-route-redirect"
 ---
 
-import Props from '@ionic-internal/component-api/v8/route-redirect/props.md';
-import Events from '@ionic-internal/component-api/v8/route-redirect/events.md';
-import Methods from '@ionic-internal/component-api/v8/route-redirect/methods.md';
-import Parts from '@ionic-internal/component-api/v8/route-redirect/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/route-redirect/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/route-redirect/slots.md';
-
 <head>
   <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>
   <meta name="description" content="ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin." />
@@ -92,24 +85,42 @@ routeRedirect.setAttribute("to", isLoggedIn ? undefined : "/login")
 
 ## Properties
 
-<Props />
+### from
+
+|                 |                                                                                                                                                                                                                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | A redirect route, redirects "from" a URL "to" another URL. This property is that "from" URL. It needs to be an exact match of the navigated URL in order to apply.<br /><br />The path specified in this value is always an absolute path, even if the initial `/` slash is not specified. |
+| **Attribute**   | `from`                                                                                                                                                                                                                                                                                     |
+| **Type**        | `string`                                                                                                                                                                                                                                                                                   |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                |
+
+### to
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | A redirect route, redirects "from" a URL "to" another URL. This property is that "to" URL. When the defined `ion-route-redirect` rule matches, the router will redirect to the path specified in this property.<br /><br />The value of this property is always an absolute path inside the scope of routes defined in `ion-router` it can't be used with another router or to perform a redirection to a different domain.<br /><br />Note that this is a virtual redirect, it will not cause a real browser refresh, again, it's a redirect inside the context of ion-router.<br /><br />When this property is not specified or his value is `undefined` the whole redirect route is noop, even if the "from" value matches. |
+| **Attribute**   | `to`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Type**        | `null ｜ string ｜ undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ## Events
 
-<Events />
+| Name                      | Description                                                                                                                                                                                                                         | Bubbles |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionRouteRedirectChanged` | Internal event that fires when any value of this rule is added/removed from the DOM, or any of his public properties changes.<br /><br />`ion-router` captures this event in order to update his internal registry of router rules. | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

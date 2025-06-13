@@ -2,13 +2,6 @@
 title: "ion-card-content"
 ---
 
-import Props from '@ionic-internal/component-api/v8/card-content/props.md';
-import Events from '@ionic-internal/component-api/v8/card-content/events.md';
-import Methods from '@ionic-internal/component-api/v8/card-content/methods.md';
-import Parts from '@ionic-internal/component-api/v8/card-content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/card-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/card-content/slots.md';
-
 import EncapsulationPill from '@site/src/components/page/api/EncapsulationPill';
 
 Card content is a child component of card that adds padding around its contents. It is recommended that any text content for a card should be placed inside of card content.
@@ -17,24 +10,31 @@ See the [Card](./card) documentation for more information.
 
 ## Properties
 
-<Props />
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

@@ -2,13 +2,6 @@
 title: "ion-list"
 ---
 
-import Props from '@ionic-internal/component-api/v8/list/props.md';
-import Events from '@ionic-internal/component-api/v8/list/events.md';
-import Methods from '@ionic-internal/component-api/v8/list/methods.md';
-import Parts from '@ionic-internal/component-api/v8/list/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/list/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/list/slots.md';
-
 <head>
   <title>ion-list: Item List View Component for iOS and Android Apps</title>
   <meta name="description" content="ion-lists are made up of multiple rows of items containing text, icons, toggles, and more. Learn about the list view component for iOS and Android Ionic apps." />
@@ -45,24 +38,54 @@ import Lines from '@site/static/ionic/usage/v8/list/lines/index.md';
 
 ## Properties
 
-<Props />
+### inset
+
+|                 |                                                                     |
+| --------------- | ------------------------------------------------------------------- |
+| **Description** | If `true`, the list will have margin around it and rounded corners. |
+| **Attribute**   | `inset`                                                             |
+| **Type**        | `boolean`                                                           |
+| **Default**     | `false`                                                             |
+
+### lines
+
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | How the bottom border should be displayed on all items. |
+| **Attribute**   | `lines`                                                 |
+| **Type**        | `"full" ｜ "inset" ｜ "none" ｜ undefined`              |
+| **Default**     | `undefined`                                             |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+### closeSlidingItems
+
+|                 |                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `ion-item-sliding` are used inside the list, this method closes any open sliding item.<br /><br />Returns `true` if an actual `ion-item-sliding` is closed. |
+| **Signature**   | `closeSlidingItems() => Promise<boolean>`                                                                                                                      |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

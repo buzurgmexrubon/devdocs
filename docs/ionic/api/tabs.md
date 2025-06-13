@@ -2,13 +2,6 @@
 title: "ion-tabs"
 ---
 
-import Props from '@ionic-internal/component-api/v8/tabs/props.md';
-import Events from '@ionic-internal/component-api/v8/tabs/events.md';
-import Methods from '@ionic-internal/component-api/v8/tabs/methods.md';
-import Parts from '@ionic-internal/component-api/v8/tabs/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/tabs/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/tabs/slots.md';
-
 <head>
   <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
   <meta name="description" content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps." />
@@ -64,24 +57,52 @@ interface TabsCustomEvent extends CustomEvent {
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+| Name                | Description                                                                | Bubbles |
+| ------------------- | -------------------------------------------------------------------------- | ------- |
+| `ionTabsDidChange`  | Emitted when the navigation has finished transitioning to a new component. | `false` |
+| `ionTabsWillChange` | Emitted when the navigation is about to transition to a new component.     | `false` |
 
 ## Methods
 
-<Methods />
+### getSelected
+
+|                 |                                                                                                                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Get the currently selected tab. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router. |
+| **Signature**   | `getSelected() => Promise<string ｜ undefined>`                                                                                                                                            |
+
+### getTab
+
+|                 |                                                                                                                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Get a specific tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router. |
+| **Signature**   | `getTab(tab: string ｜ HTMLIonTabElement) => Promise<HTMLIonTabElement ｜ undefined>`                                                                                                                                                     |
+| **Parameters**  | **tab**: The tab instance to select. If passed a string, it should be the value of the tab's `tab` property.                                                                                                                              |
+
+### select
+
+|                 |                                                                                                                                                                                                                                     |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Select a tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router. |
+| **Signature**   | `select(tab: string ｜ HTMLIonTabElement) => Promise<boolean>`                                                                                                                                                                      |
+| **Parameters**  | **tab**: The tab instance to select. If passed a string, it should be the value of the tab's `tab` property.                                                                                                                        |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+| Name     | Description                                                           |
+| -------- | --------------------------------------------------------------------- |
+| ``       | Content is placed between the named slots if provided without a slot. |
+| `bottom` | Content is placed at the bottom of the screen.                        |
+| `top`    | Content is placed at the top of the screen.                           |

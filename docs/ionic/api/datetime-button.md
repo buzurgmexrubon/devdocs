@@ -2,13 +2,6 @@
 title: "ion-datetime-button"
 ---
 
-import Props from '@ionic-internal/component-api/v8/datetime-button/props.md';
-import Events from '@ionic-internal/component-api/v8/datetime-button/events.md';
-import Methods from '@ionic-internal/component-api/v8/datetime-button/methods.md';
-import Parts from '@ionic-internal/component-api/v8/datetime-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/datetime-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.md';
-
 <head>
   <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
   <meta name="description" content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more." />
@@ -64,24 +57,63 @@ TODO
 
 ## Properties
 
-<Props />
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `'primary'`                                                                                                                                                                                                                                                            |
+
+### datetime
+
+|                 |                                                                            |
+| --------------- | -------------------------------------------------------------------------- |
+| **Description** | The ID of the `ion-datetime` instance associated with the datetime button. |
+| **Attribute**   | `datetime`                                                                 |
+| **Type**        | `string ｜ undefined`                                                      |
+| **Default**     | `undefined`                                                                |
+
+### disabled
+
+|                 |                                                      |
+| --------------- | ---------------------------------------------------- |
+| **Description** | If `true`, the user cannot interact with the button. |
+| **Attribute**   | `disabled`                                           |
+| **Type**        | `boolean`                                            |
+| **Default**     | `false`                                              |
+
+### mode
+
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
+| **Description** | The mode determines which platform styles to use. |
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" ｜ "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+| Name     | Description                                         |
+| -------- | --------------------------------------------------- |
+| `native` | The native HTML button that wraps the slotted text. |
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+| Name          | Description                                  |
+| ------------- | -------------------------------------------- |
+| `date-target` | Content displayed inside of the date button. |
+| `time-target` | Content displayed inside of the time button. |

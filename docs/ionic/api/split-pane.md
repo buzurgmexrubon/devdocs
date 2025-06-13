@@ -2,13 +2,6 @@
 title: "ion-split-pane"
 ---
 
-import Props from '@ionic-internal/component-api/v8/split-pane/props.md';
-import Events from '@ionic-internal/component-api/v8/split-pane/events.md';
-import Methods from '@ionic-internal/component-api/v8/split-pane/methods.md';
-import Parts from '@ionic-internal/component-api/v8/split-pane/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/split-pane/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/split-pane/slots.md';
-
 <head>
   <title>ion-split-pane: Split Plane for Menus and Multi-View Layouts</title>
   <meta name="description" content="ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases." />
@@ -63,24 +56,91 @@ import CSSProperties from '@site/static/ionic/usage/v8/split-pane/theming/css-pr
 
 ## Properties
 
-<Props />
+### contentId
+
+|                 |                                                                                                                                                                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The `id` of the main content. When using a router this is typically `ion-router-outlet`. When not using a router, this is typically your main view's `ion-content`. This is not the id of the `ion-content` inside of your `ion-menu`. |
+| **Attribute**   | `content-id`                                                                                                                                                                                                                           |
+| **Type**        | `string ｜ undefined`                                                                                                                                                                                                                  |
+| **Default**     | `undefined`                                                                                                                                                                                                                            |
+
+### disabled
+
+|                 |                                           |
+| --------------- | ----------------------------------------- |
+| **Description** | If `true`, the split pane will be hidden. |
+| **Attribute**   | `disabled`                                |
+| **Type**        | `boolean`                                 |
+| **Default**     | `false`                                   |
+
+### when
+
+|                 |                                                                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | When the split-pane should be shown. Can be a CSS media query expression, or a shortcut expression. Can also be a boolean expression. |
+| **Attribute**   | `when`                                                                                                                                |
+| **Type**        | `boolean ｜ string`                                                                                                                   |
+| **Default**     | `QUERY['lg']`                                                                                                                         |
 
 ## Events
 
-<Events />
+| Name                  | Description                                                        | Bubbles |
+| --------------------- | ------------------------------------------------------------------ | ------- |
+| `ionSplitPaneVisible` | Expression to be called when the split-pane visibility has changed | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--border` | Border between panes |
+| `--side-max-width` | Maximum width of the side pane. Does not apply when split pane is collapsed. |
+| `--side-min-width` | Minimum width of the side pane. Does not apply when split pane is collapsed. |
+| `--side-width` | Width of the side pane. Does not apply when split pane is collapsed. |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--border` | Border between panes |
+| `--side-max-width` | Maximum width of the side pane. Does not apply when split pane is collapsed. |
+| `--side-min-width` | Minimum width of the side pane. Does not apply when split pane is collapsed. |
+| `--side-width` | Width of the side pane. Does not apply when split pane is collapsed. |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

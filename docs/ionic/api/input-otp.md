@@ -2,13 +2,6 @@
 title: "ion-input-otp"
 ---
 
-import Props from '@ionic-internal/component-api/v8/input-otp/props.md';
-import Events from '@ionic-internal/component-api/v8/input-otp/events.md';
-import Methods from '@ionic-internal/component-api/v8/input-otp/methods.md';
-import Parts from '@ionic-internal/component-api/v8/input-otp/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/input-otp/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/input-otp/slots.md';
-
 <head>
   <title>ion-input-otp: One-Time Password Input Component</title>
   <meta name="description" content="ion-input-otp is a component for entering one-time passwords (OTP) with support for multiple input boxes and automatic focus management." />
@@ -162,24 +155,229 @@ These keyboard interactions apply to all `ion-input-otp` elements when the compo
 
 ## Properties
 
-<Props />
+### autocapitalize
+
+|                 |                                                                                                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`. |
+| **Attribute**   | `autocapitalize`                                                                                                                                                                                          |
+| **Type**        | `string`                                                                                                                                                                                                  |
+| **Default**     | `'off'`                                                                                                                                                                                                   |
+
+### color
+
+|                 |                                                                                                                                                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                |
+| **Type**        | `"danger" ｜ "dark" ｜ "light" ｜ "medium" ｜ "primary" ｜ "secondary" ｜ "success" ｜ "tertiary" ｜ "warning" ｜ string ｜ undefined`                                                                                                                                 |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                            |
+
+### disabled
+
+|                 |                                                     |
+| --------------- | --------------------------------------------------- |
+| **Description** | If `true`, the user cannot interact with the input. |
+| **Attribute**   | `disabled`                                          |
+| **Type**        | `boolean`                                           |
+| **Default**     | `false`                                             |
+
+### fill
+
+|                 |                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The fill for the input boxes. If `"solid"` the input boxes will have a background. If `"outline"` the input boxes will be transparent with a border. |
+| **Attribute**   | `fill`                                                                                                                                               |
+| **Type**        | `"outline" ｜ "solid" ｜ undefined`                                                                                                                  |
+| **Default**     | `'outline'`                                                                                                                                          |
+
+### inputmode
+
+|                 |                                                                                                                                                                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.<br /><br />For numbers (type="number"): "numeric" For text (type="text"): "text" |
+| **Attribute**   | `inputmode`                                                                                                                                                                                                                                       |
+| **Type**        | `"decimal" ｜ "email" ｜ "none" ｜ "numeric" ｜ "search" ｜ "tel" ｜ "text" ｜ "url" ｜ undefined`                                                                                                                                                |
+| **Default**     | `undefined`                                                                                                                                                                                                                                       |
+
+### length
+
+|                 |                                       |
+| --------------- | ------------------------------------- |
+| **Description** | The number of input boxes to display. |
+| **Attribute**   | `length`                              |
+| **Type**        | `number`                              |
+| **Default**     | `4`                                   |
+
+### pattern
+
+|                 |                                                                                                                                                                         |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | A regex pattern string for allowed characters. Defaults based on type.<br /><br />For numbers (`type="number"`): `"[\p{N}]"` For text (`type="text"`): `"[\p{L}\p{N}]"` |
+| **Attribute**   | `pattern`                                                                                                                                                               |
+| **Type**        | `string ｜ undefined`                                                                                                                                                   |
+| **Default**     | `undefined`                                                                                                                                                             |
+
+### readonly
+
+|                 |                                              |
+| --------------- | -------------------------------------------- |
+| **Description** | If `true`, the user cannot modify the value. |
+| **Attribute**   | `readonly`                                   |
+| **Type**        | `boolean`                                    |
+| **Default**     | `false`                                      |
+
+### separators
+
+|                 |                                                                                                                                                                                                                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Where separators should be shown between input boxes. Can be a comma-separated string or an array of numbers.<br /><br />For example: `"3"` will show a separator after the 3rd input box. `[1,4]` will show a separator after the 1st and 4th input boxes. `"all"` will show a separator between every input box. |
+| **Attribute**   | `separators`                                                                                                                                                                                                                                                                                                       |
+| **Type**        | `number[] ｜ string ｜ undefined`                                                                                                                                                                                                                                                                                  |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                        |
+
+### shape
+
+|                 |                                                                                                                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | The shape of the input boxes. If "round" they will have an increased border radius. If "rectangular" they will have no border radius. If "soft" they will have a soft border radius. |
+| **Attribute**   | `shape`                                                                                                                                                                              |
+| **Type**        | `"rectangular" ｜ "round" ｜ "soft"`                                                                                                                                                 |
+| **Default**     | `'round'`                                                                                                                                                                            |
+
+### size
+
+|                 |                                  |
+| --------------- | -------------------------------- |
+| **Description** | The size of the input boxes.     |
+| **Attribute**   | `size`                           |
+| **Type**        | `"large" ｜ "medium" ｜ "small"` |
+| **Default**     | `'medium'`                       |
+
+### type
+
+|                 |                                               |
+| --------------- | --------------------------------------------- |
+| **Description** | The type of input allowed in the input boxes. |
+| **Attribute**   | `type`                                        |
+| **Type**        | `"number" ｜ "text"`                          |
+| **Default**     | `'number'`                                    |
+
+### value
+
+|                 |                                         |
+| --------------- | --------------------------------------- |
+| **Description** | The value of the input group.           |
+| **Attribute**   | `value`                                 |
+| **Type**        | `null ｜ number ｜ string ｜ undefined` |
+| **Default**     | `''`                                    |
 
 ## Events
 
-<Events />
+| Name          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Bubbles |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionBlur`     | Emitted when the input group loses focus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `true`  |
+| `ionChange`   | The `ionChange` event is fired when the user modifies the input's value. Unlike the `ionInput` event, the `ionChange` event is only fired when changes are committed, not as the user types.<br /><br />The `ionChange` event fires when the `<ion-input-otp>` component loses focus after its value has changed.<br /><br />This event will not emit when programmatically setting the `value` property.                                                                                                                                                                          | `true`  |
+| `ionComplete` | Emitted when all input boxes have been filled with valid values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `true`  |
+| `ionFocus`    | Emitted when the input group has focus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | `true`  |
+| `ionInput`    | The `ionInput` event is fired each time the user modifies the input's value. Unlike the `ionChange` event, the `ionInput` event is fired for each alteration to the input's value. This typically happens for each keystroke as the user types.<br /><br />For elements that accept text input (`type=text`, `type=tel`, etc.), the interface is [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others, the interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If the input is cleared on edit, the type is `null`. | `true`  |
 
 ## Methods
 
-<Methods />
+### setFocus
+
+|                 |                                                                                                                                                                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Sets focus to an input box.                                                                                                                                                                                                                   |
+| **Signature**   | `setFocus(index?: number) => Promise<void>`                                                                                                                                                                                                   |
+| **Parameters**  | **index**: - The index of the input box to focus (0-based). If provided and the input box has a value, the input box at that index will be focused. Otherwise, the first empty input box or the last input if all are filled will be focused. |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+import Tabs from '@theme/Tabs';
+
+import TabItem from '@theme/TabItem';
+
+```mdx-code-block
+<Tabs
+  groupId="mode"
+  defaultValue="ios"
+  values={[
+    { value: 'ios', label: 'iOS' },
+    { value: 'md', label: 'MD' },
+  ]
+}>
+<TabItem value="ios">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background color of the input boxes |
+| `--border-color` | Border color of the input boxes |
+| `--border-radius` | Border radius of the input boxes |
+| `--border-width` | Border width of the input boxes |
+| `--color` | Text color of the input |
+| `--height` | Height of input boxes |
+| `--highlight-color-focused` | The color of the highlight on the input when focused |
+| `--highlight-color-invalid` | The color of the highlight on the input when invalid |
+| `--highlight-color-valid` | The color of the highlight on the input when valid |
+| `--margin-bottom` | Bottom margin of the input group |
+| `--margin-end` | Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group |
+| `--margin-start` | Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group |
+| `--margin-top` | Top margin of the input group |
+| `--min-width` | Minimum width of input boxes |
+| `--padding-bottom` | Bottom padding of the input group |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group |
+| `--padding-top` | Top padding of the input group |
+| `--separator-border-radius` | Border radius of the separator between boxes |
+| `--separator-color` | Color of the separator between boxes |
+| `--separator-height` | Height of the separator between boxes |
+| `--separator-width` | Width of the separator between boxes |
+| `--width` | Width of input boxes |
+
+
+</TabItem>
+
+<TabItem value="md">
+
+
+    | Name | Description |
+  | --- | --- |
+  | `--background` | Background color of the input boxes |
+| `--border-color` | Border color of the input boxes |
+| `--border-radius` | Border radius of the input boxes |
+| `--border-width` | Border width of the input boxes |
+| `--color` | Text color of the input |
+| `--height` | Height of input boxes |
+| `--highlight-color-focused` | The color of the highlight on the input when focused |
+| `--highlight-color-invalid` | The color of the highlight on the input when invalid |
+| `--highlight-color-valid` | The color of the highlight on the input when valid |
+| `--margin-bottom` | Bottom margin of the input group |
+| `--margin-end` | Right margin if direction is left-to-right, and left margin if direction is right-to-left of the input group |
+| `--margin-start` | Left margin if direction is left-to-right, and right margin if direction is right-to-left of the input group |
+| `--margin-top` | Top margin of the input group |
+| `--min-width` | Minimum width of input boxes |
+| `--padding-bottom` | Bottom padding of the input group |
+| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input group |
+| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input group |
+| `--padding-top` | Top padding of the input group |
+| `--separator-border-radius` | Border radius of the separator between boxes |
+| `--separator-color` | Color of the separator between boxes |
+| `--separator-height` | Height of the separator between boxes |
+| `--separator-width` | Width of the separator between boxes |
+| `--width` | Width of input boxes |
+
+
+</TabItem>
+</Tabs>
+
+```
 
 ## Slots
 
-<Slots />
+No slots available for this component.

@@ -2,13 +2,6 @@
 title: "ion-backdrop"
 ---
 
-import Props from '@ionic-internal/component-api/v8/backdrop/props.md';
-import Events from '@ionic-internal/component-api/v8/backdrop/events.md';
-import Methods from '@ionic-internal/component-api/v8/backdrop/methods.md';
-import Parts from '@ionic-internal/component-api/v8/backdrop/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/backdrop/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/backdrop/slots.md';
-
 import EncapsulationPill from '@site/src/components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
@@ -35,24 +28,51 @@ import Styling from '@site/static/ionic/usage/v8/backdrop/styling/index.md';
 
 ## Properties
 
-<Props />
+### stopPropagation
+
+|                 |                                                       |
+| --------------- | ----------------------------------------------------- |
+| **Description** | If `true`, the backdrop will stop propagation on tap. |
+| **Attribute**   | `stop-propagation`                                    |
+| **Type**        | `boolean`                                             |
+| **Default**     | `true`                                                |
+
+### tappable
+
+|                 |                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the backdrop will can be clicked and will emit the `ionBackdropTap` event. |
+| **Attribute**   | `tappable`                                                                            |
+| **Type**        | `boolean`                                                                             |
+| **Default**     | `true`                                                                                |
+
+### visible
+
+|                 |                                          |
+| --------------- | ---------------------------------------- |
+| **Description** | If `true`, the backdrop will be visible. |
+| **Attribute**   | `visible`                                |
+| **Type**        | `boolean`                                |
+| **Default**     | `true`                                   |
 
 ## Events
 
-<Events />
+| Name             | Description                          | Bubbles |
+| ---------------- | ------------------------------------ | ------- |
+| `ionBackdropTap` | Emitted when the backdrop is tapped. | `true`  |
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

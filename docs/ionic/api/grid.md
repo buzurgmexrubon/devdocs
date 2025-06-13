@@ -2,13 +2,6 @@
 title: "ion-grid"
 ---
 
-import Props from '@ionic-internal/component-api/v8/grid/props.md';
-import Events from '@ionic-internal/component-api/v8/grid/events.md';
-import Methods from '@ionic-internal/component-api/v8/grid/methods.md';
-import Parts from '@ionic-internal/component-api/v8/grid/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/grid/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/grid/slots.md';
-
 <head>
   <title>ion-grid: Display Grids for Mobile-First Custom App Layout</title>
   <meta name="description" content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size." />
@@ -191,24 +184,45 @@ import Padding from '@site/static/ionic/usage/v8/grid/customizing/padding/index.
 
 ## Properties
 
-<Props />
+### fixed
+
+|                 |                                                                       |
+| --------------- | --------------------------------------------------------------------- |
+| **Description** | If `true`, the grid will have a fixed width based on the screen size. |
+| **Attribute**   | `fixed`                                                               |
+| **Type**        | `boolean`                                                             |
+| **Default**     | `false`                                                               |
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+No public methods available for this component.
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+    | Name | Description |
+
+| --- | --- |
+| `--ion-grid-padding` | Padding for the Grid |
+| `--ion-grid-padding-lg` | Padding for the Grid on lg screens |
+| `--ion-grid-padding-md` | Padding for the Grid on md screens |
+| `--ion-grid-padding-sm` | Padding for the Grid on sm screens |
+| `--ion-grid-padding-xl` | Padding for the Grid on xl screens |
+| `--ion-grid-padding-xs` | Padding for the Grid on xs screens |
+| `--ion-grid-width` | Width of the fixed Grid |
+| `--ion-grid-width-lg` | Width of the fixed Grid on lg screens |
+| `--ion-grid-width-md` | Width of the fixed Grid on md screens |
+| `--ion-grid-width-sm` | Width of the fixed Grid on sm screens |
+| `--ion-grid-width-xl` | Width of the fixed Grid on xl screens |
+| `--ion-grid-width-xs` | Width of the fixed Grid on xs screens |
 
 ## Slots
 
-<Slots />
+No slots available for this component.

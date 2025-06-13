@@ -2,13 +2,6 @@
 title: "ion-app"
 ---
 
-import Props from '@ionic-internal/component-api/v8/app/props.md';
-import Events from '@ionic-internal/component-api/v8/app/events.md';
-import Methods from '@ionic-internal/component-api/v8/app/methods.md';
-import Parts from '@ionic-internal/component-api/v8/app/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/app/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/app/slots.md';
-
 <head>
   <title>ion-app: Container Element for an Ionic Application</title>
   <meta name="description" content="ion-app is a container element for an Ionic application. Apps can have many Ionic components including menus, headers, content, and footers. Read to learn more." />
@@ -37,24 +30,29 @@ import SetFocus from '@site/static/ionic/usage/v8/app/set-focus/index.md';
 
 ## Properties
 
-<Props />
+No properties available for this component.
 
 ## Events
 
-<Events />
+No events available for this component.
 
 ## Methods
 
-<Methods />
+### setFocus
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Used to set focus on an element that uses `ion-focusable`. Do not use this if focusing the element as a result of a keyboard event as the focus utility should handle this for us. This method should be used when we want to programmatically focus an element as a result of another user action. (Ex: We focus the first element inside of a popover when the user presents it, but the popover is not always presented as a result of keyboard action.) |
+| **Signature**   | `setFocus(elements: HTMLElement[]) => Promise<void>`                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.

@@ -2,13 +2,6 @@
 title: "ion-infinite-scroll"
 ---
 
-import Props from '@ionic-internal/component-api/v8/infinite-scroll/props.md';
-import Events from '@ionic-internal/component-api/v8/infinite-scroll/events.md';
-import Methods from '@ionic-internal/component-api/v8/infinite-scroll/methods.md';
-import Parts from '@ionic-internal/component-api/v8/infinite-scroll/parts.md';
-import CustomProps from '@ionic-internal/component-api/v8/infinite-scroll/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v8/infinite-scroll/slots.md';
-
 <head>
   <title>ion-infinite-scroll: Infinite Scroller Action Component</title>
   <meta name="description" content="The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page." />
@@ -101,24 +94,56 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 
 ## Properties
 
-<Props />
+### disabled
+
+|                 |                                                                                                                                                                                                                                                                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | If `true`, the infinite scroll will be hidden and scroll event listeners will be removed.<br /><br />Set this to true to disable the infinite scroll from actively trying to receive new data while scrolling. This is useful when it is known that there is no more data that can be added, and the infinite scroll is no longer needed. |
+| **Attribute**   | `disabled`                                                                                                                                                                                                                                                                                                                                |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                 |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                   |
+
+### position
+
+|                 |                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------- |
+| **Description** | The position of the infinite scroll element. The value can be either `top` or `bottom`. |
+| **Attribute**   | `position`                                                                              |
+| **Type**        | `"bottom" ｜ "top"`                                                                     |
+| **Default**     | `'bottom'`                                                                              |
+
+### threshold
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The threshold distance from the bottom of the content to call the `infinite` output event when scrolled. The threshold value can be either a percent, or in pixels. For example, use the value of `10%` for the `infinite` output event to get called when the user has scrolled 10% from the bottom of the page. Use the value `100px` when the scroll is within 100 pixels from the bottom of the page. |
+| **Attribute**   | `threshold`                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Type**        | `string`                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Default**     | `'15%'`                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ## Events
 
-<Events />
+| Name          | Description                                                                                                                                                                                 | Bubbles |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| `ionInfinite` | Emitted when the scroll reaches the threshold distance. From within your infinite handler, you must call the infinite scroll's `complete()` method when your async operation has completed. | `true`  |
 
 ## Methods
 
-<Methods />
+### complete
+
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Call `complete()` within the `ionInfinite` output event handler when your async operation has completed. For example, the `loading` state is while the app is performing an asynchronous operation, such as receiving more data from an AJAX request to add more items to a data list. Once the data has been received and UI updated, you then call this method to signify that the loading has completed. This method will change the infinite scroll's state from `loading` to `enabled`. |
+| **Signature**   | `complete() => Promise<void>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 ## CSS Shadow Parts
 
-<Parts />
+No CSS shadow parts available for this component.
 
 ## CSS Custom Properties
 
-<CustomProps />
+No CSS custom properties available for this component.
 
 ## Slots
 
-<Slots />
+No slots available for this component.
